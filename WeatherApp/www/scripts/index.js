@@ -12,10 +12,8 @@
         document.addEventListener( 'pause', onPause.bind( this ), false );
         document.addEventListener( 'resume', onResume.bind( this ), false );
         
-        // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
-        var element = document.getElementById("deviceready");
-        element.innerHTML = 'Device Ready';
-        element.className += ' ready';
+
+        $('#get-weather-btn').click(getWeatherWithZipCode);
     };
 
     function onPause() {

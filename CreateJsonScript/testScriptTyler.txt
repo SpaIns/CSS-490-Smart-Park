@@ -4,11 +4,11 @@ curl -X PATCH -d '
 	{         
 		"Floor1" :
 		{             
-			"Space1" :             
+			"2001" :             
 			{ 
 				"is_available" : true
 			},
-			"Space2" :
+			"2002" :
 			{
 				"is_available" : false
 			}

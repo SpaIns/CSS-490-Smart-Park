@@ -16,7 +16,9 @@ curl -X PATCH -d '
 			{
 				
 				"is_available" : false,
-				"spaceNumber" : 2002
+				"spaceNumber" : 2002,
+				"spaceType" : reg,
+				"garage" : north
 			}
 		},
 		"Floor2" :

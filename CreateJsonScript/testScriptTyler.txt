@@ -1,41 +1,23 @@
 curl -X PATCH -d '
-
 {
-"
-NorthGarage" :
-{ 
-        
-"Floor1" :
-{ 
-            
-"Space1" : 
-            
-{ 
-"is_available" : true
-
-},
-
-"Space2" :
-
-{
-"
-is_available" : false
-
-},
-
-
-},
-"Floor2" :
-{
-
-}
-
-},
-
-"SouthGarage" :
-
-{
-
-}
-
+	"NorthGarage" :
+	{         
+		"Floor1" :
+		{             
+			"Space1" :             
+			{ 
+				"is_available" : true
+			},
+			"Space2" :
+			{
+				"is_available" : false
+			}
+		},
+		"Floor2" :
+		{
+		}
+	},
+	"SouthGarage" :
+	{
+	}
 }' 'https://smartpark-aa8eb.firebaseio.com/parking.json'

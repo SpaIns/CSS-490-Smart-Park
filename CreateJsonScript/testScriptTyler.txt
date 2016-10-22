@@ -6,10 +6,12 @@ curl -X PATCH -d '
 		{             
 			"2001" :             
 			{ 
+				"spaceNumber" : 2001,
 				"is_available" : true
 			},
 			"2002" :
 			{
+				"spaceNumber" : 2002,
 				"is_available" : false
 			}
 		},

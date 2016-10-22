@@ -7,7 +7,7 @@ curl -X PATCH -d '
 			"2001" :             
 			{ 
 				
-				"is_available" : true,
+				"isAvailable" : true,
 				"spaceNumber" : 2001,
 				"spaceType" : "reg",
 				"garage" : "north",
@@ -16,7 +16,7 @@ curl -X PATCH -d '
 			"2002" :
 			{
 				
-				"is_available" : false,
+				"isAvailable" : false,
 				"spaceNumber" : 2002,
 				"spaceType" : "moto",
 				"garage" : "north",
@@ -28,7 +28,7 @@ curl -X PATCH -d '
 			"2101" :             
 			{ 
 				
-				"is_available" : true,
+				"isAvailable" : true,
 				"spaceNumber" : 2101,
 				"spaceType" : "ev",
 				"garage" : "north",
@@ -37,7 +37,7 @@ curl -X PATCH -d '
 			"2102" :
 			{
 				
-				"is_available" : false,
+				"isAvailable" : false,
 				"spaceNumber" : 2102,
 				"spaceType" : "dis",
 				"garage" : "north",
@@ -52,7 +52,7 @@ curl -X PATCH -d '
 			"1001" :             
 			{ 
 				
-				"is_available" : true,
+				"isAvailable" : true,
 				"spaceNumber" : 1001,
 				"spaceType" : "reg",
 				"garage" : "south",
@@ -61,7 +61,7 @@ curl -X PATCH -d '
 			"1002" :
 			{
 				
-				"is_available" : false,
+				"isAvailable" : false,
 				"spaceNumber" : 1002,
 				"spaceType" : "moto",
 				"garage" : "south",
@@ -73,7 +73,7 @@ curl -X PATCH -d '
 			"1101" :             
 			{ 
 				
-				"is_available" : true,
+				"isAvailable" : true,
 				"spaceNumber" : 1101,
 				"spaceType" : "ev",
 				"garage" : "south",
@@ -82,7 +82,7 @@ curl -X PATCH -d '
 			"1102" :
 			{
 				
-				"is_available" : false,
+				"isAvailable" : false,
 				"spaceNumber" : 1102,
 				"spaceType" : "dis",
 				"garage" : "south",

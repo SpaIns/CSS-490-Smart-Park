@@ -46,6 +46,48 @@ curl -X PATCH -d '
 		}
 	},
 	"SouthGarage" :
-	{
+	{         
+		"Floor1" :
+		{             
+			"1001" :             
+			{ 
+				
+				"is_available" : true,
+				"spaceNumber" : 1001,
+				"spaceType" : "reg",
+				"garage" : "south",
+				"floor" : 1
+		},
+			"1002" :
+			{
+				
+				"is_available" : false,
+				"spaceNumber" : 1002,
+				"spaceType" : "moto",
+				"garage" : "south",
+				"floor" : 1
+			}
+		},
+		"Floor2" :
+		{             
+			"1101" :             
+			{ 
+				
+				"is_available" : true,
+				"spaceNumber" : 1101,
+				"spaceType" : "ev",
+				"garage" : "south",
+				"floor" : 2
+		},
+			"1102" :
+			{
+				
+				"is_available" : false,
+				"spaceNumber" : 1102,
+				"spaceType" : "dis",
+				"garage" : "south",
+				"floor" : 2
+			}
+		}
 	}
 }' 'https://smartpark-aa8eb.firebaseio.com/parking.json'

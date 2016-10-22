@@ -9,17 +9,40 @@ curl -X PATCH -d '
 				
 				"is_available" : true,
 				"spaceNumber" : 2001,
-				"garage" : "north"
+				"spaceType" : "reg",
+				"garage" : "north",
+				"floor" : 1
 		},
 			"2002" :
 			{
 				
 				"is_available" : false,
-				"spaceNumber" : 2002
+				"spaceNumber" : 2002,
+				"spaceType" : "moto",
+				"garage" : "north",
+				"floor" : 1
 			}
 		},
 		"Floor2" :
-		{
+		{             
+			"2101" :             
+			{ 
+				
+				"is_available" : true,
+				"spaceNumber" : 2101,
+				"spaceType" : "ev",
+				"garage" : "north",
+				"floor" : 2
+		},
+			"2102" :
+			{
+				
+				"is_available" : false,
+				"spaceNumber" : 2102,
+				"spaceType" : "dis",
+				"garage" : "north",
+				"floor" : 2
+			}
 		}
 	},
 	"SouthGarage" :

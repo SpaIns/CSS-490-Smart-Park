@@ -7,7 +7,7 @@ curl -X PATCH -d '
 			"2001" :             
 			{ 
 				
-				"is_available" : true				
+				"spaceNumber" : 2001				
 			},
 			"2002" :
 			{

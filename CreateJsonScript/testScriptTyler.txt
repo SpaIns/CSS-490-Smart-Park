@@ -13,7 +13,8 @@ curl -X PATCH -d '
 			"2002" :
 			{
 				
-				"is_available" : false
+				"is_available" : false,
+				"spaceNumber" : 2002
 			}
 		},
 		"Floor2" :

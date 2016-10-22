@@ -18,7 +18,7 @@ namespace CreateJsonScript
         public Space(int spaceNumber, string spaceType, bool isAvailable, string garage, int floor)
         {
             this.SpaceNumber = spaceNumber;
-            this.SpaceType = SpaceType;
+            this.SpaceType = spaceType;
             this.IsAvailable = isAvailable;
             this.Garage = garage;
             this.Floor = floor;

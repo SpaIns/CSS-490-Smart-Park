@@ -109,7 +109,7 @@
 
         static void WriteScript()
         {
-            const string startCmd = "curl - X PATCH - d '{";
+            const string startCmd = "curl -X PATCH -d '{";
             const string openNorth = "\"NorthGarage\" : {";
             const string openSouth = "\"SouthGarage\" : {";
 

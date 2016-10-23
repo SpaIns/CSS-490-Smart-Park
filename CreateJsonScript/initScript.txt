@@ -1,4 +1,4 @@
-curl - X PATCH - d '{
+curl -X PATCH -d '{
 "NorthGarage" : {
 "Floor1" : {
 "2001" : {

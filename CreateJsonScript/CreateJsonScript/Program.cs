@@ -7,9 +7,7 @@
     {
         static List<Space>[] northSpaces;
         static List<Space>[] southSpaces;
-
-        const string startCmd = "curl - X PATCH - d '{";
-        const string endCmd = "}' 'https://smartpark-aa8eb.firebaseio.com/test.json'";
+        
         const string projectPath = @"C:\Users\JohnBlaze\SmartPark\CSS-490-Smart-Park\CreateJsonScript";
 
         static void Main(string[] args)
@@ -18,10 +16,10 @@
             southSpaces = new List<Space>[5];
 
             ParseFiles();
-
-            TestOutput(); 
+            WriteScript();
         }
 
+        #region ParseFiles
         private static void ParseFiles()
         {
             // North garage has 4 floors
@@ -80,7 +78,9 @@
                 }
             }
         }
+        #endregion
 
+        #region TestOutput
         private static void TestOutput()
         {
             for (int i = 0; i < northSpaces.Length; i++)
@@ -103,6 +103,57 @@
                         sw.WriteLine(space.SpaceNumber + " " + space.Floor + " " + space.IsAvailable + " " + space.Garage + " " + space.SpaceType);
                     }
                 }
+            }
+        }
+        #endregion
+
+        static void WriteScript()
+        {
+            const string startCmd = "curl - X PATCH - d '{";
+            const string openNorth = "\"NorthGarage\" : {";
+            const string openSouth = "\"SouthGarage\" : {";
+
+            const string endCmd = "}' 'https://smartpark-aa8eb.firebaseio.com/test.json'";
+
+            using (StreamWriter sw = new StreamWriter(projectPath + @"\initScript.txt"))
+            {
+                sw.WriteLine(startCmd);
+                sw.WriteLine(openNorth);
+
+                for (int i = 0; i < northSpaces.Length; i++)
+                {
+                    sw.WriteLine("\"Floor" + (i + 1) + "\" : {");
+
+                    for (int j = 0; j < northSpaces[i].Count; j++)
+                    {                        
+                        sw.WriteLine("\"" + northSpaces[i][j].SpaceNumber + "\" : {");
+                        sw.WriteLine("\"garage\" : \"" + northSpaces[i][j].Garage + "\",");
+                        sw.WriteLine("\"floor\" : " + northSpaces[i][j].Floor + ",");
+                        sw.WriteLine("\"isAvailable\" : " + northSpaces[i][j].IsAvailable.ToString().ToLower() + ",");
+                        sw.WriteLine("\"spaceNumber\" : " + northSpaces[i][j].SpaceNumber + ",");
+                        sw.WriteLine("\"spaceType\" : \"" + northSpaces[i][j].SpaceType + "\"");
+
+                        if (j < northSpaces[i].Count - 1)
+                        {
+                            sw.WriteLine("},");
+                        }
+                        else
+                        {
+                            sw.WriteLine("}");
+                        }
+                    }
+
+                    if (i < northSpaces.Length - 1)
+                    {
+                        sw.WriteLine("},");
+                    }
+                    else
+                    {
+                        sw.WriteLine("}");
+                    }
+                }
+
+                sw.WriteLine(endCmd);
             }
         }
     }

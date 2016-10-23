@@ -3179,4 +3179,5 @@ curl -X PATCH -d '{
 "spaceType" : "REG"
 }
 }
+}
 }' 'https://smartpark-aa8eb.firebaseio.com/test.json'

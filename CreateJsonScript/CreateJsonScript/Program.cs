@@ -152,7 +152,7 @@
                         sw.WriteLine("}");
                     }
                 }
-
+                sw.WriteLine("}");
                 sw.WriteLine(endCmd);
             }
         }

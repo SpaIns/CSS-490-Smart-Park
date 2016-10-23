@@ -114,7 +114,7 @@
             const string openNorth = "\"NorthGarage\" : {";
             const string openSouth = "\"SouthGarage\" : {";
 
-            const string endCmd = "}' 'https://smartpark-aa8eb.firebaseio.com/test.json'";
+            const string endCmd = "}' 'https://smartpark-aa8eb.firebaseio.com/parking.json'";
 
             using (StreamWriter sw = new StreamWriter(projectPath + @"\initScript.txt"))
             {

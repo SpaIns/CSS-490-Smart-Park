@@ -118,6 +118,7 @@
             using (StreamWriter sw = new StreamWriter(projectPath + @"\initScript.txt"))
             {
                 sw.WriteLine(startCmd);
+
                 sw.WriteLine(openNorth);
 
                 for (int i = 0; i < northSpaces.Length; i++)
@@ -152,6 +153,43 @@
                         sw.WriteLine("}");
                     }
                 }
+
+                sw.WriteLine("},");
+                sw.WriteLine(openSouth);
+
+                for (int i = 0; i < southSpaces.Length; i++)
+                {
+                    sw.WriteLine("\"Floor" + (i + 1) + "\" : {");
+
+                    for (int j = 0; j < southSpaces[i].Count; j++)
+                    {
+                        sw.WriteLine("\"" + southSpaces[i][j].SpaceNumber + "\" : {");
+                        sw.WriteLine("\"garage\" : \"" + southSpaces[i][j].Garage + "\",");
+                        sw.WriteLine("\"floor\" : " + southSpaces[i][j].Floor + ",");
+                        sw.WriteLine("\"isAvailable\" : " + southSpaces[i][j].IsAvailable.ToString().ToLower() + ",");
+                        sw.WriteLine("\"spaceNumber\" : " + southSpaces[i][j].SpaceNumber + ",");
+                        sw.WriteLine("\"spaceType\" : \"" + southSpaces[i][j].SpaceType + "\"");
+
+                        if (j < southSpaces[i].Count - 1)
+                        {
+                            sw.WriteLine("},");
+                        }
+                        else
+                        {
+                            sw.WriteLine("}");
+                        }
+                    }
+
+                    if (i < southSpaces.Length - 1)
+                    {
+                        sw.WriteLine("},");
+                    }
+                    else
+                    {
+                        sw.WriteLine("}");
+                    }
+                }
+
                 sw.WriteLine("}");
                 sw.WriteLine(endCmd);
             }

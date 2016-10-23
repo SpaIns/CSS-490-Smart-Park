@@ -1,5 +1,6 @@
 ﻿namespace CreateJsonScript
 {
+    using System;
     using System.Collections.Generic;
     using System.IO;
 
@@ -22,6 +23,8 @@
         #region ParseFiles
         private static void ParseFiles()
         {
+            Random rand = new Random();
+            
             // North garage has 4 floors
             for (int floor = 1; floor <= 4; floor++)
             {
@@ -46,7 +49,19 @@
                         }                        
                     }
 
-                    northSpaces[floor - 1].Add(new Space(spaceNumber, spaceType, true, "North", floor));                    
+                    int nextRand = rand.Next(0, 50);
+                    bool isAvailable;
+
+                    if (nextRand < 25)
+                    {
+                        isAvailable = false;
+                    }
+                    else
+                    {
+                        isAvailable = true;
+                    }
+
+                    northSpaces[floor - 1].Add(new Space(spaceNumber, spaceType, isAvailable, "North", floor));                    
                 }
             }
 
@@ -74,39 +89,25 @@
                         }
                     }
 
-                    southSpaces[floor - 1].Add(new Space(spaceNumber, spaceType, true, "South", floor));
+                    int nextRand = rand.Next(0, 50);
+                    bool isAvailable;
+
+                    if (nextRand < 25)
+                    {
+                        isAvailable = false;
+                    }
+                    else
+                    {
+                        isAvailable = true;
+                    }
+
+                    southSpaces[floor - 1].Add(new Space(spaceNumber, spaceType, isAvailable, "South", floor));
                 }
             }
         }
         #endregion
 
-        #region TestOutput
-        private static void TestOutput()
-        {
-            for (int i = 0; i < northSpaces.Length; i++)
-            {
-                using (StreamWriter sw = new StreamWriter(projectPath + @"\northTest" + i + ".txt"))
-                {
-                    foreach (var space in northSpaces[i])
-                    {
-                        sw.WriteLine(space.SpaceNumber + " " + space.Floor + " " + space.IsAvailable + " " + space.Garage + " " + space.SpaceType);
-                    }
-                }
-            }
-
-            for (int i = 0; i < southSpaces.Length; i++)
-            {
-                using (StreamWriter sw = new StreamWriter(projectPath + @"\southTest" + i + ".txt"))
-                {
-                    foreach (var space in southSpaces[i])
-                    {
-                        sw.WriteLine(space.SpaceNumber + " " + space.Floor + " " + space.IsAvailable + " " + space.Garage + " " + space.SpaceType);
-                    }
-                }
-            }
-        }
-        #endregion
-
+        #region WriteScript
         static void WriteScript()
         {
             const string startCmd = "curl -X PATCH -d '{";
@@ -194,50 +195,6 @@
                 sw.WriteLine(endCmd);
             }
         }
+        #endregion
     }
-}
-//using (StreamWriter sw = new StreamWriter(@"C:\Users\grasopper\Desktop\initScript.txt"))
-//{
-//    sw.WriteLine(startCmd);
-//    for (int i = 0; i < spaceArray.Length - 1; i++)
-//    {
-//        sw.WriteLine("\"" + spaceArray[i] + "\" : { \"is_available\" : true },");
-//    }
-//    sw.WriteLine("\"" + spaceArray[spaceArray.Length - 1] + "\" : { \"is_available\" : true }");
-//    sw.WriteLine(endCmd);
-
-//}  
-
-//// North garage has 4 floors
-//for (int floor = 1; floor <= 4; floor++)
-//{
-//    string[] northSpaces = File.ReadAllLines(projectPath + @"\n" + floor + ".txt");
-//    for (int i = 0; i < northSpaces.Length; i++)
-//    {
-//        string[] splitStr = northSpaces[i].Split(new char[] { '\t' });
-//        int spaceNumber = int.Parse(splitStr[0]);
-//        string spaceType = "";
-
-//        if (splitStr.Length > 1)
-//        {
-//            spaceType = splitStr[1];
-//        }
-//    }
-//}
-
-//// South garage has 5 floors
-//for (int floor = 1; floor <= 5; floor++)
-//{
-//    string[] southSpaces = File.ReadAllLines(projectPath + @"\s" + floor + ".txt");
-//    for (int i = 0; i < southSpaces.Length; i++)
-//    {
-//        string[] splitStr = southSpaces[i].Split(new char[] { '\t' });
-//        int spaceNumber = int.Parse(splitStr[0]);
-//        string spaceType = "";
-
-//        if (splitStr.Length > 1)
-//        {
-//            spaceType = splitStr[1];
-//        }
-//    }
-//}  
+}  

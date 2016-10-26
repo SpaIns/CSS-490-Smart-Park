@@ -11,7 +11,7 @@
         // Handle the Cordova pause and resume events
         document.addEventListener( 'pause', onPause.bind( this ), false );
         document.addEventListener( 'resume', onResume.bind( this ), false );
-        alert('123 test 123');
+        alert('123 test 123 for index.js');
 
         $('#get-weather-btn').click(getWeatherWithZipCode);
     };

@@ -1,0 +1,93 @@
+curl -X PATCH -d '
+{
+	"NorthGarage" :
+	{         
+		"Floor1" :
+		{             
+			"2001" :             
+			{ 
+				
+				"isAvailable" : true,
+				"spaceNumber" : 2001,
+				"spaceType" : "reg",
+				"garage" : "north",
+				"floor" : 1
+		},
+			"2002" :
+			{
+				
+				"isAvailable" : false,
+				"spaceNumber" : 2002,
+				"spaceType" : "moto",
+				"garage" : "north",
+				"floor" : 1
+			}
+		},
+		"Floor2" :
+		{             
+			"2101" :             
+			{ 
+				
+				"isAvailable" : true,
+				"spaceNumber" : 2101,
+				"spaceType" : "ev",
+				"garage" : "north",
+				"floor" : 2
+		},
+			"2102" :
+			{
+				
+				"isAvailable" : false,
+				"spaceNumber" : 2102,
+				"spaceType" : "dis",
+				"garage" : "north",
+				"floor" : 2
+			}
+		}
+	},
+	"SouthGarage" :
+	{         
+		"Floor1" :
+		{             
+			"1001" :             
+			{ 
+				
+				"isAvailable" : true,
+				"spaceNumber" : 1001,
+				"spaceType" : "reg",
+				"garage" : "south",
+				"floor" : 1
+		},
+			"1002" :
+			{
+				
+				"isAvailable" : false,
+				"spaceNumber" : 1002,
+				"spaceType" : "moto",
+				"garage" : "south",
+				"floor" : 1
+			}
+		},
+		"Floor2" :
+		{             
+			"1101" :             
+			{ 
+				
+				"isAvailable" : true,
+				"spaceNumber" : 1101,
+				"spaceType" : "ev",
+				"garage" : "south",
+				"floor" : 2
+		},
+			"1102" :
+			{
+				
+				"isAvailable" : false,
+				"spaceNumber" : 1102,
+				"spaceType" : "dis",
+				"garage" : "south",
+				"floor" : 2
+			}
+		}
+	}
+}' 'https://smartpark-aa8eb.firebaseio.com/parking.json'

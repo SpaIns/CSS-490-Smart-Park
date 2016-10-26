@@ -18,37 +18,21 @@ http://api.jquerymobile.com/swipeleft/
         alert('123 test 123');
     };
 
-    $(function () {
-        // Bind the swipeHandler callback function to the swipe event on div.box
-        $().on("swiperight", swipeHandler);
-
-        // Callback function references the event target and adds the 'swipe' class to it
-        function swipeHandler(event) {
-            $(event.target).addClass("swiperight");
-        }
-    });
-
-    $(function () {
-        // Bind the swipeHandler callback function to the swipe event on div.box
-        $().on("swipeleft", swipeHandler);
-
-        // Callback function references the event target and adds the 'swipe' class to it
-        function swipeHandler(event) {
-            $(event.target).addClass("swipeleft");
-        }
-    });
-
     /*
     The user swiped to the left (finger moved left). Proceed to go up a floor, if available
     */
     function swipedLeft() {
-        
+        $(event.target).addClass("swipeleft");
+        var href = $('#go-up-down-btn').attr('href');
+        window.location.replace(href);
     };
 
     /*
     The user swiped to the right (finger moved right). Proceed to go down a floor, if available
     */
     function swipedRight() {
-        
+        $(event.target).addClass("swiperight");
+        var href = $('#go-up-down-btn').attr('href');
+        window.location.replace(href);
     };
 })();

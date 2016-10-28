@@ -1,6 +1,32 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <!-- FireBase database-->
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDIkSj_PO9zfpbqYcoeDfton9NLPkQUdrI",
+        authDomain: "smartpark-aa8eb.firebaseapp.com",
+        databaseURL: "https://smartpark-aa8eb.firebaseio.com",
+        storageBucket: "smartpark-aa8eb.appspot.com",
+        messagingSenderId: "563892478420"
+      };
+      firebase.initializeApp(config);
+    </script>
+    
+    <script>
+        var database = firebase.database(); //get a database reference
+        var parkingRef = database.ref('parking');
+        var northGarageRef = parkingRef.ref('NorthGarage');
+        var firstFloorRef = northGarageRef.ref('Floor1');
+        firstFloorRef.once('value').then(function(dataSnapshot) {
+            // handle read data.
+            System.out.println(dataSnapshot);
+          });
+    </script>
+
     <title>Level 1</title>
 </head>
 <body>

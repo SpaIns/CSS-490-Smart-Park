@@ -7,35 +7,15 @@ http://api.jquerymobile.com/swipe/
 http://api.jquerymobile.com/swipeleft/
 */
 (function () {
-    "use strict";
+    // Bind the swipeleftHandler callback function to the swipe event on div.box
+    $(this).on("swipeleft", swipeleftHandler);
+    alert('hit a swipe');
 
-    document.addEventListener('deviceready', onDeviceReady.bind(this), false);
-
-    function onDeviceReady() {
-        // Handle the Cordova pause and resume events
-        document.addEventListener('swipedleft', swipedLeft.bind(this), false);
-        document.addEventListener('swipedright', swipedRight.bind(this), false);
-        alert('123 test 123');
-        alert("I'm in the onDeviceReadyForSwipe.js")
-    };
-
-    /*
-    The user swiped to the left (finger moved left). Proceed to go up a floor, if available
-    */
-    function swipedLeft() {
-        alert('swiped left');
+    // Callback function references the event target and adds the 'swipeleft' class to it
+    function swipeleftHandler(event) {
         $(event.target).addClass("swipeleft");
+        alert('handled left');
         var href = $('#go-up-down-btn').attr('href');
         window.location.replace(href);
-    };
-
-    /*
-    The user swiped to the right (finger moved right). Proceed to go down a floor, if available
-    */
-    function swipedRight() {
-        alert('swiped right');
-        $(event.target).addClass("swiperight");
-        var href = $('#go-up-down-btn').attr('href');
-        window.location.replace(href);
-    };
-})();
+    }
+});

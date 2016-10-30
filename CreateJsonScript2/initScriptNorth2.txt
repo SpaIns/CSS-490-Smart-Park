@@ -1,0 +1,786 @@
+curl -X PATCH -d '{
+"2117" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2117,
+"spaceType" : "REG"
+},
+"2118" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2118,
+"spaceType" : "REG"
+},
+"2119" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2119,
+"spaceType" : "REG"
+},
+"2120" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2120,
+"spaceType" : "REG"
+},
+"2121" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2121,
+"spaceType" : "REG"
+},
+"2122" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2122,
+"spaceType" : "REG"
+},
+"2123" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2123,
+"spaceType" : "REG"
+},
+"2124" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2124,
+"spaceType" : "REG"
+},
+"2125" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2125,
+"spaceType" : "REG"
+},
+"2126" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2126,
+"spaceType" : "REG"
+},
+"2127" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2127,
+"spaceType" : "REG"
+},
+"2128" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2128,
+"spaceType" : "REG"
+},
+"2129" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2129,
+"spaceType" : "REG"
+},
+"2130" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2130,
+"spaceType" : "REG"
+},
+"2131" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2131,
+"spaceType" : "REG"
+},
+"2132" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2132,
+"spaceType" : "REG"
+},
+"2133" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2133,
+"spaceType" : "REG"
+},
+"2134" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2134,
+"spaceType" : "REG"
+},
+"2135" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2135,
+"spaceType" : "REG"
+},
+"2136" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2136,
+"spaceType" : "REG"
+},
+"2137" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2137,
+"spaceType" : "REG"
+},
+"2138" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2138,
+"spaceType" : "REG"
+},
+"2139" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2139,
+"spaceType" : "REG"
+},
+"2140" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2140,
+"spaceType" : "REG"
+},
+"2141" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2141,
+"spaceType" : "REG"
+},
+"2142" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2142,
+"spaceType" : "REG"
+},
+"2143" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2143,
+"spaceType" : "REG"
+},
+"2144" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2144,
+"spaceType" : "REG"
+},
+"2145" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2145,
+"spaceType" : "REG"
+},
+"2146" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2146,
+"spaceType" : "REG"
+},
+"2147" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2147,
+"spaceType" : "REG"
+},
+"2148" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2148,
+"spaceType" : "REG"
+},
+"2149" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2149,
+"spaceType" : "REG"
+},
+"2150" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2150,
+"spaceType" : "REG"
+},
+"2151" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2151,
+"spaceType" : "REG"
+},
+"2152" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2152,
+"spaceType" : "REG"
+},
+"2153" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2153,
+"spaceType" : "REG"
+},
+"2154" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2154,
+"spaceType" : "REG"
+},
+"2155" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2155,
+"spaceType" : "REG"
+},
+"2156" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2156,
+"spaceType" : "REG"
+},
+"2157" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2157,
+"spaceType" : "REG"
+},
+"2158" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2158,
+"spaceType" : "REG"
+},
+"2159" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2159,
+"spaceType" : "REG"
+},
+"2160" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2160,
+"spaceType" : "REG"
+},
+"2161" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2161,
+"spaceType" : "REG"
+},
+"2162" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2162,
+"spaceType" : "REG"
+},
+"2163" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2163,
+"spaceType" : "REG"
+},
+"2164" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2164,
+"spaceType" : "REG"
+},
+"2165" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2165,
+"spaceType" : "REG"
+},
+"2166" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2166,
+"spaceType" : "REG"
+},
+"2167" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2167,
+"spaceType" : "REG"
+},
+"2168" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2168,
+"spaceType" : "REG"
+},
+"2169" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2169,
+"spaceType" : "REG"
+},
+"2170" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2170,
+"spaceType" : "REG"
+},
+"2171" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2171,
+"spaceType" : "REG"
+},
+"2172" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2172,
+"spaceType" : "REG"
+},
+"2173" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2173,
+"spaceType" : "REG"
+},
+"2174" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2174,
+"spaceType" : "REG"
+},
+"2175" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2175,
+"spaceType" : "REG"
+},
+"2176" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2176,
+"spaceType" : "REG"
+},
+"2177" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2177,
+"spaceType" : "REG"
+},
+"2178" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2178,
+"spaceType" : "REG"
+},
+"2179" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2179,
+"spaceType" : "REG"
+},
+"2180" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2180,
+"spaceType" : "REG"
+},
+"2181" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2181,
+"spaceType" : "REG"
+},
+"2182" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2182,
+"spaceType" : "REG"
+},
+"2183" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2183,
+"spaceType" : "REG"
+},
+"2184" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2184,
+"spaceType" : "REG"
+},
+"2185" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2185,
+"spaceType" : "REG"
+},
+"2186" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2186,
+"spaceType" : "REG"
+},
+"2187" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2187,
+"spaceType" : "REG"
+},
+"2188" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2188,
+"spaceType" : "REG"
+},
+"2189" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2189,
+"spaceType" : "REG"
+},
+"2190" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2190,
+"spaceType" : "REG"
+},
+"2191" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2191,
+"spaceType" : "REG"
+},
+"2192" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2192,
+"spaceType" : "REG"
+},
+"2193" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2193,
+"spaceType" : "REG"
+},
+"2194" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2194,
+"spaceType" : "REG"
+},
+"2195" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2195,
+"spaceType" : "REG"
+},
+"2196" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2196,
+"spaceType" : "REG"
+},
+"2197" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2197,
+"spaceType" : "REG"
+},
+"2198" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2198,
+"spaceType" : "REG"
+},
+"2199" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2199,
+"spaceType" : "REG"
+},
+"2200" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2200,
+"spaceType" : "REG"
+},
+"2201" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2201,
+"spaceType" : "REG"
+},
+"2202" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2202,
+"spaceType" : "REG"
+},
+"2203" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2203,
+"spaceType" : "REG"
+},
+"2204" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2204,
+"spaceType" : "REG"
+},
+"2205" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2205,
+"spaceType" : "REG"
+},
+"2206" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2206,
+"spaceType" : "REG"
+},
+"2207" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2207,
+"spaceType" : "REG"
+},
+"2208" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2208,
+"spaceType" : "REG"
+},
+"2209" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2209,
+"spaceType" : "REG"
+},
+"2210" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2210,
+"spaceType" : "REG"
+},
+"2211" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2211,
+"spaceType" : "REG"
+},
+"2212" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2212,
+"spaceType" : "REG"
+},
+"2213" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2213,
+"spaceType" : "REG"
+},
+"2214" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2214,
+"spaceType" : "REG"
+},
+"2215" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2215,
+"spaceType" : "REG"
+},
+"2216" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2216,
+"spaceType" : "REG"
+},
+"2217" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2217,
+"spaceType" : "REG"
+},
+"2218" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2218,
+"spaceType" : "REG"
+},
+"2219" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2219,
+"spaceType" : "REG"
+},
+"2220" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2220,
+"spaceType" : "REG"
+},
+"2221" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2221,
+"spaceType" : "REG"
+},
+"2222" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2222,
+"spaceType" : "REG"
+},
+"2223" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2223,
+"spaceType" : "REG"
+},
+"2224" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2224,
+"spaceType" : "REG"
+},
+"2225" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2225,
+"spaceType" : "REG"
+},
+"2226" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : false,
+"spaceNumber" : 2226,
+"spaceType" : "REG"
+},
+"2227" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2227,
+"spaceType" : "REG"
+},
+"2228" : {
+"garage" : "North",
+"floor" : 2,
+"isAvailable" : true,
+"spaceNumber" : 2228,
+"spaceType" : "REG"
+}
+}' 'https://smartpark-aa8eb.firebaseio.com/spaces.json'

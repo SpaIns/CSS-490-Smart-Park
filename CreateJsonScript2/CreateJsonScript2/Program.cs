@@ -113,12 +113,12 @@
             const string startCmd = "curl -X PATCH -d '{";
             const string endCmd = "}' 'https://smartpark-aa8eb.firebaseio.com/spaces.json'";
 
-            using (StreamWriter sw = new StreamWriter(projectPath + @"\initScriptNorth.txt"))
+            for (int i = 0; i < northSpaces.Length; i++)
             {
-                sw.WriteLine(startCmd);
-
-                for (int i = 0; i < northSpaces.Length; i++)
+                using (StreamWriter sw = new StreamWriter(projectPath + @"\initScriptNorth" + (i + 1) + ".txt"))
                 {
+                    sw.WriteLine(startCmd);
+                    
                     for (int j = 0; j < northSpaces[i].Count; j++)
                     {
                         sw.WriteLine("\"" + northSpaces[i][j].SpaceNumber + "\" : {");
@@ -137,33 +137,9 @@
                             sw.WriteLine("}");
                         }
                     }                    
-                }
 
-                sw.WriteLine(endCmd);
-
-                //for (int i = 0; i < southSpaces.Length; i++)
-                //{
-                //    for (int j = 0; j < southSpaces[i].Count; j++)
-                //    {
-                //        sw.WriteLine("\"" + southSpaces[i][j].SpaceNumber + "\" : {");
-                //        sw.WriteLine("\"garage\" : \"" + southSpaces[i][j].Garage + "\",");
-                //        sw.WriteLine("\"floor\" : " + southSpaces[i][j].Floor + ",");
-                //        sw.WriteLine("\"isAvailable\" : " + southSpaces[i][j].IsAvailable.ToString().ToLower() + ",");
-                //        sw.WriteLine("\"spaceNumber\" : " + southSpaces[i][j].SpaceNumber + ",");
-                //        sw.WriteLine("\"spaceType\" : \"" + southSpaces[i][j].SpaceType + "\"");
-
-                //        if (j < southSpaces[i].Count - 1)
-                //        {
-                //            sw.WriteLine("},");
-                //        }
-                //        else
-                //        {
-                //            sw.WriteLine("}");
-                //        }
-                //    }
-                //}
-
-                
+                    sw.WriteLine(endCmd);
+                }                  
             }
         }
         #endregion

@@ -141,6 +141,35 @@
                     sw.WriteLine(endCmd);
                 }                  
             }
+
+            for (int i = 0; i < southSpaces.Length; i++)
+            {
+                using (StreamWriter sw = new StreamWriter(projectPath + @"\initScriptSouth" + (i + 1) + ".txt"))
+                {
+                    sw.WriteLine(startCmd);
+
+                    for (int j = 0; j < southSpaces[i].Count; j++)
+                    {
+                        sw.WriteLine("\"" + southSpaces[i][j].SpaceNumber + "\" : {");
+                        sw.WriteLine("\"garage\" : \"" + southSpaces[i][j].Garage + "\",");
+                        sw.WriteLine("\"floor\" : " + southSpaces[i][j].Floor + ",");
+                        sw.WriteLine("\"isAvailable\" : " + southSpaces[i][j].IsAvailable.ToString().ToLower() + ",");
+                        sw.WriteLine("\"spaceNumber\" : " + southSpaces[i][j].SpaceNumber + ",");
+                        sw.WriteLine("\"spaceType\" : \"" + southSpaces[i][j].SpaceType + "\"");
+
+                        if (j < southSpaces[i].Count - 1)
+                        {
+                            sw.WriteLine("},");
+                        }
+                        else
+                        {
+                            sw.WriteLine("}");
+                        }
+                    }
+
+                    sw.WriteLine(endCmd);
+                }
+            }
         }
         #endregion
 

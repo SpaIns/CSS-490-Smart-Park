@@ -16,7 +16,7 @@ curl -X PATCH -d '{
 "2338" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2338,
 "spaceType" : "REG"
 },
@@ -37,7 +37,7 @@ curl -X PATCH -d '{
 "2341" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2341,
 "spaceType" : "REG"
 },
@@ -72,7 +72,7 @@ curl -X PATCH -d '{
 "2346" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2346,
 "spaceType" : "REG"
 },
@@ -86,7 +86,7 @@ curl -X PATCH -d '{
 "2348" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2348,
 "spaceType" : "REG"
 },
@@ -107,21 +107,21 @@ curl -X PATCH -d '{
 "2351" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2351,
 "spaceType" : "REG"
 },
 "2352" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2352,
 "spaceType" : "REG"
 },
 "2353" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2353,
 "spaceType" : "REG"
 },
@@ -135,35 +135,35 @@ curl -X PATCH -d '{
 "2355" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2355,
 "spaceType" : "REG"
 },
 "2356" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2356,
 "spaceType" : "REG"
 },
 "2357" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2357,
 "spaceType" : "REG"
 },
 "2358" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2358,
 "spaceType" : "REG"
 },
 "2359" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2359,
 "spaceType" : "REG"
 },
@@ -177,7 +177,7 @@ curl -X PATCH -d '{
 "2361" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2361,
 "spaceType" : "REG"
 },
@@ -205,14 +205,14 @@ curl -X PATCH -d '{
 "2365" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2365,
 "spaceType" : "REG"
 },
 "2366" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2366,
 "spaceType" : "REG"
 },
@@ -240,14 +240,14 @@ curl -X PATCH -d '{
 "2370" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2370,
 "spaceType" : "REG"
 },
 "2371" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2371,
 "spaceType" : "REG"
 },
@@ -268,21 +268,21 @@ curl -X PATCH -d '{
 "2374" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2374,
 "spaceType" : "REG"
 },
 "2375" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2375,
 "spaceType" : "REG"
 },
 "2376" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2376,
 "spaceType" : "REG"
 },
@@ -303,7 +303,7 @@ curl -X PATCH -d '{
 "2379" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2379,
 "spaceType" : "REG"
 },
@@ -324,28 +324,28 @@ curl -X PATCH -d '{
 "2382" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2382,
 "spaceType" : "REG"
 },
 "2383" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2383,
 "spaceType" : "REG"
 },
 "2384" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2384,
 "spaceType" : "REG"
 },
 "2385" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2385,
 "spaceType" : "REG"
 },
@@ -373,21 +373,21 @@ curl -X PATCH -d '{
 "2389" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2389,
 "spaceType" : "REG"
 },
 "2390" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2390,
 "spaceType" : "REG"
 },
 "2391" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2391,
 "spaceType" : "REG"
 },
@@ -401,7 +401,7 @@ curl -X PATCH -d '{
 "2393" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2393,
 "spaceType" : "REG"
 },
@@ -415,7 +415,7 @@ curl -X PATCH -d '{
 "2395" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2395,
 "spaceType" : "REG"
 },
@@ -429,7 +429,7 @@ curl -X PATCH -d '{
 "2397" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2397,
 "spaceType" : "REG"
 },
@@ -443,7 +443,7 @@ curl -X PATCH -d '{
 "2399" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2399,
 "spaceType" : "REG"
 },
@@ -457,7 +457,7 @@ curl -X PATCH -d '{
 "2401" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2401,
 "spaceType" : "REG"
 },
@@ -478,14 +478,14 @@ curl -X PATCH -d '{
 "2404" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2404,
 "spaceType" : "REG"
 },
 "2405" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2405,
 "spaceType" : "REG"
 },
@@ -499,7 +499,7 @@ curl -X PATCH -d '{
 "2407" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2407,
 "spaceType" : "REG"
 },
@@ -520,14 +520,14 @@ curl -X PATCH -d '{
 "2410" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2410,
 "spaceType" : "REG"
 },
 "2411" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2411,
 "spaceType" : "REG"
 },
@@ -541,7 +541,7 @@ curl -X PATCH -d '{
 "2413" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2413,
 "spaceType" : "REG"
 },
@@ -555,14 +555,14 @@ curl -X PATCH -d '{
 "2415" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2415,
 "spaceType" : "REG"
 },
 "2416" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2416,
 "spaceType" : "REG"
 },
@@ -590,21 +590,21 @@ curl -X PATCH -d '{
 "2420" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2420,
 "spaceType" : "REG"
 },
 "2421" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2421,
 "spaceType" : "REG"
 },
 "2422" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2422,
 "spaceType" : "REG"
 },
@@ -660,14 +660,14 @@ curl -X PATCH -d '{
 "2430" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2430,
 "spaceType" : "REG"
 },
 "2431" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2431,
 "spaceType" : "REG"
 },
@@ -688,7 +688,7 @@ curl -X PATCH -d '{
 "2434" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2434,
 "spaceType" : "REG"
 },
@@ -723,21 +723,21 @@ curl -X PATCH -d '{
 "2439" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2439,
 "spaceType" : "REG"
 },
 "2440" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2440,
 "spaceType" : "REG"
 },
 "2441" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2441,
 "spaceType" : "REG"
 },
@@ -751,7 +751,7 @@ curl -X PATCH -d '{
 "2443" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : false,
+"isAvailable" : true,
 "spaceNumber" : 2443,
 "spaceType" : "REG"
 },
@@ -772,14 +772,14 @@ curl -X PATCH -d '{
 "2446" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2446,
 "spaceType" : "REG"
 },
 "2447" : {
 "garage" : "North",
 "floor" : 4,
-"isAvailable" : true,
+"isAvailable" : false,
 "spaceNumber" : 2447,
 "spaceType" : "REG"
 },

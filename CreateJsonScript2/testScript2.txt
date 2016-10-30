@@ -6,11 +6,11 @@ curl -X PATCH -d '{
 "spaceNumber" : 2001,
 "spaceType" : "REG"
 },
-"2002" : {
-"garage" : "North",
-"floor" : 1,
+"907" : {
+"garage" : "South",
+"floor" : 5,
 "isAvailable" : true,
-"spaceNumber" : 2002,
+"spaceNumber" : 907,
 "spaceType" : "REG"
 }
 }' 'https://smartpark-aa8eb.firebaseio.com/spaces.json'

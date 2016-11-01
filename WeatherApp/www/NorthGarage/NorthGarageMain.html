@@ -11,8 +11,22 @@
 <body>
     <script type="text/javascript">
         //Test code for swipes
-        jQuery(window).on("swipe", function (event) {
-            alert("swipe detected");
+        jQuery(window).on("swipeleft", function (event) {
+            alert("swipe detected (left)"); //left means finger/mouse moves 
+            var href = $('#go-up-floor-btn').attr('href');
+            alert(href);
+            window.location.replace(href);
+        });
+
+        jQuery(window).on("swiperight", function (event) {
+            alert("swipe detected (right)"); //right means mouse/finger moves right
+            var href = $('#go-down-floor-btn').attr('href');
+            alert(href);
+            if (href == '') {
+                href = "../index.html";
+                alert("hit if statement");
+            }
+            window.location.replace(href);
         });
     </script>
     <div>

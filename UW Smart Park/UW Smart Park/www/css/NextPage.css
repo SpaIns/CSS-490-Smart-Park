@@ -1,0 +1,49 @@
+﻿body
+{
+
+
+}
+div {
+
+}
+
+div.box {
+    width: 30em;
+    height: 3em;
+    background-color: #108040;
+  }
+  
+div.box.swipe {
+    background-color: #7ACEF4;
+  }
+
+.BGroup {
+ position:absolute;
+ bottom: 10px;
+}
+
+.CustomButton {
+     background-color: mediumorchid;
+     border:hidden;
+     color:gold;
+     padding: 8px 16px;
+     cursor:pointer;
+     text-align:match-parent;
+     position:relative;
+     float:left;
+     box-shadow: 0 5px #808080;
+     border-radius: 10px;
+     
+        }
+
+
+    
+.CustomButton:hover {
+        background-color:darkorchid;
+    }
+    
+.CustomButton:active{
+        transform:translateY(3px);
+        box-shadow: 0 2px #000000
+    }
+

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>This is the title</title>
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+    <style>
+    </style>
+
+    <div class="box">
+        <link rel="stylesheet" href="css/NextPage.css" />
+    </div>
+    <div class="BGroup" style="width:500px">
+        <link rel="stylesheet" href="css/NextPage.css" />
+        <button class="CustomButton">Button1</button>
+        <button class="CustomButton">Button2</button>
+        <button class="CustomButton">Button3</button>
+        <button class="CustomButton">Button4</button>
+    </div>
+   <script>
+       $(function () {
+           // Bind the swipeHandler callback function to the swipe event on div.box
+           $("div.box").on("swipe", swipeHandler);
+
+           // Callback function references the event target and adds the 'swipe' class to it
+           function swipeHandler(event) {
+               $(event.target).addClass("swipe");
+           }
+       });
+   </script>
+  
+</body>
+</html>

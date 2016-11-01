@@ -12,8 +12,6 @@
         document.addEventListener( 'pause', onPause.bind( this ), false );
         document.addEventListener( 'resume', onResume.bind( this ), false );
         alert('123 test 123 for index.js');
-
-        $('#get-weather-btn').click(getWeatherWithZipCode);
     };
 
     function onPause() {

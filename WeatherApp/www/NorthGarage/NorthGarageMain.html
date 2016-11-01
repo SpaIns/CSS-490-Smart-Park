@@ -2,14 +2,19 @@
 <html>
 <head>
     <title>North Parking Garage</title>
-    <script type="text/javascript" src="../scripts/floorSwipes.js"></script>
+    <!--<script type="text/javascript" src="../scripts/floorSwipes.js"></script>-->
     <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
     <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
     <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
 
 </head>
 <body>
-
+    <script type="text/javascript">
+        //Test code for swipes
+        jQuery(window).on("swipe", function (event) {
+            alert("swipe detected");
+        });
+    </script>
     <div>
         <!-- Adding an invisible button for the sake of the floorSwipes.js-->
         <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel1.html"></a>

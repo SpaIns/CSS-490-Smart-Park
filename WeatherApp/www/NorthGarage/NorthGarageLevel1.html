@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-   
+    <title>Level 1</title>   
 </head>
+
 <body>
 
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
@@ -34,10 +35,11 @@
 
         var database = firebase.database(); //get a database reference
 
-        firebase.database().ref('/parking/NorthGarage/Floor1/2001').once('value').then(function(snapshot)) {
+        firebase.database().ref('/parking/NorthGarage/Floor1/2001').once('value').then(function (snapshot) {
             var spaceType = snapshot.val().spaceType;
             console.log(spaceType);
-        }
+            document.write("Hello");
+        });
 
         //firstFloorRef.once('value').then(function(dataSnapshot) {
         //    // handle read data.
@@ -45,7 +47,8 @@
         //  });
     </script>
 
-    <title>Level 1</title>
+    
+
     <div>Content goes here.</div>
 
     <div>

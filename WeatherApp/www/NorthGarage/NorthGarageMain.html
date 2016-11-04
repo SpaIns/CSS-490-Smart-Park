@@ -15,7 +15,7 @@
             alert("swipe detected (left)"); //left means finger/mouse moves 
             var href = $('#go-up-floor-btn').attr('href');
             alert(href);
-            window.location.replace(href);
+            window.location=href;
         });
 
         jQuery(window).on("swiperight", function (event) {
@@ -26,7 +26,7 @@
                 href = "../index.html";
                 alert("hit if statement");
             }
-            window.location.replace(href);
+            window.location=href;
         });
     </script>
     <div>

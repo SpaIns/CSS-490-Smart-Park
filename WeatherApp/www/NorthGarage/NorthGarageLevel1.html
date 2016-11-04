@@ -26,7 +26,7 @@
         ////filter floor=floor1
         //var northGarageRef = parkingRef.ref('NorthGarage');
         //var firstFloorRef = northGarageRef.ref('Floor1');
-        alert('ALERT!');
+        //alert('ALERT!');
         var config = {
             apiKey: "AIzaSyDIkSj_PO9zfpbqYcoeDfton9NLPkQUdrI",
             databaseURL: "https://smartpark-aa8eb.firebaseio.com",
@@ -34,11 +34,14 @@
         firebase.initializeApp(config);
 
         var database = firebase.database(); //get a database reference
+       
+        alert((database == null) + "");
 
         firebase.database().ref('/parking/NorthGarage/Floor1/2001').once('value').then(function (snapshot) {
             var spaceType = snapshot.val().spaceType;
-            console.log(spaceType);
-            document.write("Hello");
+            //console.log(spaceType);
+            document.write(spaceType);
+           //alert("Blah");
         });
 
         //firstFloorRef.once('value').then(function(dataSnapshot) {

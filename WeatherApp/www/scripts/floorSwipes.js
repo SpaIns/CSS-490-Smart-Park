@@ -6,25 +6,21 @@ Currently, it will have code functionality to set up swiping one direction or an
 http://api.jquerymobile.com/swipe/
 http://api.jquerymobile.com/swipeleft/
 */
-window.onload = function () {
-    // Bind the swipeleftHandler callback function to the swipe event on div.box
-    try {
-        alert("test #1");
-        document.addEventListener("DOMContentLoaded", swipeleftHandler);
-        $(this).on("swipeleft", swipeleftHandler);
-    }
-    catch (Exception) {
-        console.error("caught exception in floorswipes.js");
-        alert("exception caught, console knows");
-    }
-
-    
-};
-
-// Callback function references the event target and adds the 'swipeleft' class to it
-function swipeleftHandler(event) {
-    $(event.target).addClass("swipeleft");
-    alert('handled left');
-    var href = $('#go-up-down-btn').attr('href');
+//Test code for swipes
+jQuery(window).on("swipeleft", function (event) {
+    alert("swipe detected (left)"); //left means finger/mouse moves 
+    var href = $('#go-up-floor-btn').attr('href');
+    alert(href);
     window.location.replace(href);
-}
+});
+
+jQuery(window).on("swiperight", function (event) {
+    alert("swipe detected (right)"); //right means mouse/finger moves right
+    var href = $('#go-down-floor-btn').attr('href');
+    alert(href);
+    if (href == '') {
+        href = "../index.html";
+        alert("hit if statement");
+    }
+    window.location.replace(href);
+});

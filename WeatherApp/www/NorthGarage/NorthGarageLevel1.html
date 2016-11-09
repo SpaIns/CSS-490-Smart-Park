@@ -1,19 +1,29 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
-    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
-    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
-    <script src="../scripts/floorSwipes.js"></script>
+    <script src="../scripts/Handlebars/handlebars-v4.0.5.js"></script>
+    <script type="text/javascript">
+        function displayPage() {
+            var theTemplateScript;
+            $.getScript('../floorTemplate.js', function() {
+                theTemplateScript = $("#floorTemplate").html();
+            });
+            
+            var template = Handlebars.compile(templateScript);
+            var data = {
+                "floor_level": "Level 1", "floor_up_ref": "NorthGarageLevel2.html",
+                "up_msg": "Go Up A Floor", "floor_down_ref": "NorthGarageMain.html",
+                "down_msg": ""
+            };
+            var result = template(data);
+        }
+    </script>
 </head>
 <body>
-    <h5>Level 1</h5>
-    <div>Content goes here.</div>
-
-    <div>
-        <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel2.html">Go Up A Floor</a>
-        <!-- invisible button to redirect swipe to North Main-->
-        <a id="go-down-floor-btn" class="button" data-icon="search" href="NorthGarageMain.html"></a>
-    </div>
+    testing123
+    <script>
+        displayPage();
+    </script>
+    
 </body>
 </html>

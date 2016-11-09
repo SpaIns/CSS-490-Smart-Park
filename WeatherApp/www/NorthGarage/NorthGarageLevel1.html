@@ -3,9 +3,9 @@
 <head>
     <title>Level 1</title>   
 </head>
-    <script  src="../scripts/getData.js"></script>
-<body>
 
+<body>
+    <script  src="../scripts/getData.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
     <!-- FireBase database-->
     <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
@@ -21,6 +21,7 @@
       //firebase.initializeApp(config);
     </script>
     <script>
+        obtainData("NorthGarage","Floor1");
     </script>
     <script type="text/javascript"> 
         //var parkingRef = database.ref('parking');
@@ -28,6 +29,7 @@
         //var northGarageRef = parkingRef.ref('NorthGarage');
         //var firstFloorRef = northGarageRef.ref('Floor1');
         //alert('ALERT!');
+        /*
         var config = {
             apiKey: "AIzaSyDIkSj_PO9zfpbqYcoeDfton9NLPkQUdrI",
             databaseURL: "https://smartpark-aa8eb.firebaseio.com",
@@ -50,6 +52,7 @@
 
             });
         }
+        */
         //firstFloorRef.once('value').then(function(dataSnapshot) {
         //    // handle read data.
         //    System.out.println(dataSnapshot);

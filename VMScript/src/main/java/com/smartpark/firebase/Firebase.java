@@ -1,7 +1,7 @@
 package com.smartpark.firebase;
 
-import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,12 +30,12 @@ public class Firebase {
 	public Map<String, Object> getData() {
 		// Read in space numbers
 		ClassLoader classLoader = getClass().getClassLoader();
-		File spacesFile = new File(classLoader.getResource(spacesFilePath).getFile());
+		InputStream is = classLoader.getResourceAsStream(spacesFilePath);
 		
 		Scanner s = null;
 		ArrayList<String> spaces = null;
 		try {
-			s = new Scanner(spacesFile);
+			s = new Scanner(is);
 			spaces = new ArrayList<String>();
 			while(s.hasNext()) {
 				spaces.add(s.next());

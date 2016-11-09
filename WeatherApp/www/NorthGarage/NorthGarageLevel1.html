@@ -3,7 +3,7 @@
 <head>
     <title>Level 1</title>   
 </head>
-
+    <script  src="../scripts/getData.js"></script>
 <body>
 
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
@@ -20,8 +20,9 @@
       //};
       //firebase.initializeApp(config);
     </script>
-
-    <script type="text/javascript">
+    <script>
+    </script>
+    <script type="text/javascript"> 
         //var parkingRef = database.ref('parking');
         ////filter floor=floor1
         //var northGarageRef = parkingRef.ref('NorthGarage');
@@ -36,14 +37,19 @@
         var database = firebase.database(); //get a database reference
        
         alert((database == null) + "");
+        for (i = 2001; i <= 2475; i++) {
+            firebase.database().ref('/parking/NorthGarage/Floor1/' + i).once('value').then(function (snapshot) {
+                
+                var spaceNumber = snapshot.val().spaceNumber;
+                var spaceType = snapshot.val().spaceType;
+                var avail = snapshot.val().isAvailable;
+                document.write("Number: " + spaceNumber + ", ");
+                document.write("Type: " + spaceType + ",  ");
+                document.write("Is available: " + avail + ",\n ");
+                
 
-        firebase.database().ref('/parking/NorthGarage/Floor1/2001').once('value').then(function (snapshot) {
-            var spaceType = snapshot.val().spaceType;
-            //console.log(spaceType);
-            document.write(spaceType);
-           //alert("Blah");
-        });
-
+            });
+        }
         //firstFloorRef.once('value').then(function(dataSnapshot) {
         //    // handle read data.
         //    System.out.println(dataSnapshot);

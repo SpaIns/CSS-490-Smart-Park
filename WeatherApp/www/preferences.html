@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function changeToUpDown() {
+            var storage = window.localStorage;
+            //var value = storage.getItem(key); // Pass a key name to get its value.
+            storage.setItem("swipes", "updown") // Pass a key name and its value to add or update that key.
+            //storage.removeItem(key) // Pass a key name to remove that key from storage.
+            document.right(storage.getItem("swipes"));
+        }
+        function changeToLeftRight() {
+            var storage = window.localStorage;
+            storage.setItem("swipes", "leftright");
+            document.right(storage.getItem("swipes"));
+        }
+    </script>
+</head>
+<body>
+    <h5>Choose your preferences</h5>
+
+
+    <div id="swiping">
+        <h3>Swipe Directions</h3>
+        <a class="btn btn-default" id="updownset" role="button">Up/Down</a>
+        <a class="btn btn-default" id="leftrightset" role="button">Left/Right</a>
+        $('#updownset').click(function(){ changeToUpDown(); return false; });
+        $('#leftrightset').click(function(){ changeToLeftRight(); return false; });       
+    </div>
+
+    <div id="favorite">
+        <h3>Favorite</h3>
+    </div>
+    
+    <div id="motorcycle">
+
+    </div>
+
+    <div id="disabled">
+
+    </div>
+</body>
+</html>

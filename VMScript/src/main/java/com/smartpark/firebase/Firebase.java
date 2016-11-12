@@ -1,6 +1,8 @@
 package com.smartpark.firebase;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Firebase {
 	
 	private String databaseUrl, serviceAccountPath, spacesFilePath;
+	private int s1, s2, s3, s4, n1, n2, n3, n4;
 	final AtomicBoolean done = new AtomicBoolean(false);
 	
 	public Firebase(String databaseUrl, String serviceAccountPath, String spacesFilePath) {
@@ -28,31 +31,40 @@ public class Firebase {
 	}
 	
 	public Map<String, Object> getData() {
-		// Read in space numbers
-		ClassLoader classLoader = getClass().getClassLoader();
-		InputStream is = classLoader.getResourceAsStream(spacesFilePath);
-		
-		Scanner s = null;
-		ArrayList<String> spaces = null;
+		// Read in space numbers		
+		BufferedReader br = null;
+		ArrayList<Space> spaces = null;
+		String line = "";
 		try {
-			s = new Scanner(is);
-			spaces = new ArrayList<String>();
-			while(s.hasNext()) {
-				spaces.add(s.next());
+			spaces = new ArrayList<Space>();
+			br = new BufferedReader(new FileReader(spacesFilePath));
+			while ((line = br.readLine()) != null) {
+				String[] space = line.split(",");
+				spaces.add(new Space(Integer.parseInt(space[0]), Integer.parseInt(space[1]), space[2]));
 			}
+			br.close();
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-		}
-		finally {
-			s.close();
 		}
 		
 		
 		Map<String, Object> spaceUpdates = new HashMap<String, Object>();
 		
-		for(String space : spaces) {
-			spaceUpdates.put(space + "/isAvailable", getRandomBool());
+		for(Space space : spaces) {
+			int spaceNumber = space.getSpaceNumber();
+			if(space.getGarage().equals("North") && space.getFloorNumber() == 4) {
+				spaceUpdates.put(space.getSpaceNumber() + "/isAvailable", "unknown");
+			}
+			else if((spaceNumber >= 628 && spaceNumber <= 689) || (spaceNumber >= 792 && spaceNumber <= 907)) {
+				spaceUpdates.put(space.getSpaceNumber() + "/isAvailable", "unknown");
+			}
+			else if((spaceNumber >= 126 && spaceNumber <= 133) || (spaceNumber == 2454) || (spaceNumber == 2267)) {
+				spaceUpdates.put(space.getSpaceNumber() + "/isAvailable", "unknown");
+			}
+			else {
+				spaceUpdates.put(space.getSpaceNumber() + "/isAvailable", getRandomBool());
+			}			
 		}
 		
 		return spaceUpdates;
@@ -94,13 +106,13 @@ public class Firebase {
 		}
 	}
 	
-	private boolean getRandomBool() {
+	private String getRandomBool() {
 		Random rand = new Random();
 		if(rand.nextInt(100) < 50) {
-			return false;
+			return "false";
 		}
 		else {
-			return true;
+			return "true";
 		}
 	}
 }

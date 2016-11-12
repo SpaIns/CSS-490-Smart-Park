@@ -2,13 +2,11 @@ package com.smartpark.firebase;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import com.google.firebase.FirebaseApp;
@@ -21,53 +19,90 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Firebase {
 	
 	private String databaseUrl, serviceAccountPath, spacesFilePath;
-	private int s1, s2, s3, s4, n1, n2, n3, n4;
+	private int s1, s2, s3, s4, n1, n2, n3;		// n4, s5, and half of s4 don't have sensors
 	final AtomicBoolean done = new AtomicBoolean(false);
 	
 	public Firebase(String databaseUrl, String serviceAccountPath, String spacesFilePath) {
 		this.databaseUrl = databaseUrl;
 		this.serviceAccountPath = serviceAccountPath;
 		this.spacesFilePath = spacesFilePath;
+		s1 = s2 = s3 = s4 = n1 = n2 = n3 = 0;
 	}
 	
 	public Map<String, Object> getData() {
+		ArrayList<Space> spaces = parseAllSpaces();
+		Map<String, Object> spaceUpdates = new HashMap<String, Object>();
+		
+		for(Space space : spaces) {
+			spaceUpdates.put(space.getSpaceNumber() + "/isAvailable", space.getIsAvailable());	
+		}
+		
+		return spaceUpdates;
+	}
+
+	private ArrayList<Space> parseAllSpaces() {
 		// Read in space numbers		
 		BufferedReader br = null;
 		ArrayList<Space> spaces = null;
 		String line = "";
 		try {
 			spaces = new ArrayList<Space>();
-			br = new BufferedReader(new FileReader(spacesFilePath));
+			br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(spacesFilePath)));
 			while ((line = br.readLine()) != null) {
 				String[] space = line.split(",");
-				spaces.add(new Space(Integer.parseInt(space[0]), Integer.parseInt(space[1]), space[2]));
+				int spaceNumber = Integer.parseInt(space[0]);
+				int floorNumber = Integer.parseInt(space[1]);
+				String garage = space[2];
+				String isAvailable = getRandomBool();
+				
+				// All spaces on the 4th floor North Garage don't have sensors
+				if(garage.equals("North") && floorNumber == 4) {
+					isAvailable = "unknown";
+				}
+				// These spaces are normal spaces that don't have sensors
+				else if((spaceNumber >= 628 && spaceNumber <= 689) || (spaceNumber >= 792 && spaceNumber <= 907)) {
+					isAvailable = "unknown";
+				}
+				// These spaces are motorcycle spaces which don't have sensors
+				else if((spaceNumber >= 126 && spaceNumber <= 133) || (spaceNumber == 2454) || (spaceNumber == 2267)) {
+					isAvailable = "unknown";
+				}
+				
+				spaces.add(new Space(spaceNumber, floorNumber, garage, isAvailable));
+				
+				// Calculate total available spaces per garage per floor
+				if(garage.equals("North") && !isAvailable.equals("unknown")){
+					if(floorNumber == 1) {
+						n1++;
+					}
+					else if(floorNumber == 2) {
+						n2++;
+					}
+					else if(floorNumber == 3) {
+						n3++;
+					}
+				}
+				else if(garage.equals("South") && !isAvailable.equals("unknown")) {
+					if(floorNumber == 1) {
+						s1++;
+					}
+					else if(floorNumber == 2) {
+						s2++;
+					}
+					else if(floorNumber == 3) {
+						s3++;
+					}
+					else if(floorNumber == 4) {
+						s4++;
+					}
+				}
 			}
 			br.close();
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		Map<String, Object> spaceUpdates = new HashMap<String, Object>();
-		
-		for(Space space : spaces) {
-			int spaceNumber = space.getSpaceNumber();
-			if(space.getGarage().equals("North") && space.getFloorNumber() == 4) {
-				spaceUpdates.put(space.getSpaceNumber() + "/isAvailable", "unknown");
-			}
-			else if((spaceNumber >= 628 && spaceNumber <= 689) || (spaceNumber >= 792 && spaceNumber <= 907)) {
-				spaceUpdates.put(space.getSpaceNumber() + "/isAvailable", "unknown");
-			}
-			else if((spaceNumber >= 126 && spaceNumber <= 133) || (spaceNumber == 2454) || (spaceNumber == 2267)) {
-				spaceUpdates.put(space.getSpaceNumber() + "/isAvailable", "unknown");
-			}
-			else {
-				spaceUpdates.put(space.getSpaceNumber() + "/isAvailable", getRandomBool());
-			}			
-		}
-		
-		return spaceUpdates;
+		return spaces;
 	}
 	
 	public void uploadData(Map<String, Object> updates) {

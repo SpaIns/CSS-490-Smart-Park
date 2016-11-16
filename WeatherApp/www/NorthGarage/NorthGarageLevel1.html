@@ -9,59 +9,11 @@
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
     <!-- FireBase database-->
     <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
-    <script>
-      // Initialize Firebase
-      //var config = {
-      //  apiKey: "AIzaSyDIkSj_PO9zfpbqYcoeDfton9NLPkQUdrI",
-      //  authDomain: "smartpark-aa8eb.firebaseapp.com",
-      //  databaseURL: "https://smartpark-aa8eb.firebaseio.com",
-      //  storageBucket: "smartpark-aa8eb.appspot.com",
-      //  messagingSenderId: "563892478420"
-      //};
-      //firebase.initializeApp(config);
-    </script>
+    
     <script>
         obtainData("NorthGarage","Floor1");
     </script>
-    <script type="text/javascript"> 
-        //var parkingRef = database.ref('parking');
-        ////filter floor=floor1
-        //var northGarageRef = parkingRef.ref('NorthGarage');
-        //var firstFloorRef = northGarageRef.ref('Floor1');
-        //alert('ALERT!');
-        /*
-        var config = {
-            apiKey: "AIzaSyDIkSj_PO9zfpbqYcoeDfton9NLPkQUdrI",
-            databaseURL: "https://smartpark-aa8eb.firebaseio.com",
-        };
-        firebase.initializeApp(config);
-
-        var database = firebase.database(); //get a database reference
-       
-        alert((database == null) + "");
-        for (i = 2001; i <= 2475; i++) {
-            firebase.database().ref('/parking/NorthGarage/Floor1/' + i).once('value').then(function (snapshot) {
-                
-                var spaceNumber = snapshot.val().spaceNumber;
-                var spaceType = snapshot.val().spaceType;
-                var avail = snapshot.val().isAvailable;
-                document.write("Number: " + spaceNumber + ", ");
-                document.write("Type: " + spaceType + ",  ");
-                document.write("Is available: " + avail + ",\n ");
-                
-
-            });
-        }
-        */
-        //firstFloorRef.once('value').then(function(dataSnapshot) {
-        //    // handle read data.
-        //    System.out.println(dataSnapshot);
-        //  });
-    </script>
-
-    
-
-    <div>Content goes here.</div>
+    <div></div>
 
     <div>
         <a href="NorthGarageLevel2.html"><h5>Go Up A Floor</h5></a>

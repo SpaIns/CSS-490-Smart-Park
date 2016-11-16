@@ -9,7 +9,7 @@ function obtainData(garage,floor) {
     firebase.initializeApp(config);
 
     var database = firebase.database(); //get a database reference
-    link = '/parking/' + garage + '/' + floor + '/';
+    link = '/spaces/';
     begin = 0;
     end = 0;
     if (garage=='NorthGarage') {
@@ -51,20 +51,28 @@ function obtainData(garage,floor) {
         else {
             begin= 792;
             end = 907;
-        }
-       
+        } 
     }
-
+    
     for (i = begin; i <= end; i++) {
+
+
+        var spaceNumer = null;
+        var spaceType = null;
+        var avail = null;
+        
         firebase.database().ref(link + i).once('value').then(function (snapshot) {
+            setTimeout(function () {
+                spaceNumber = snapshot.val().spaceNumber;
+                spaceType = snapshot.val().spaceType;
+                avail = snapshot.val().isAvailable;
+                document.write("Space: "+spaceNumber + ", ");
+                document.write("Type: "+spaceType + ",  ");
+                document.write("Open: "+avail + "<br>"+"<br>");
+            },4000);
+            
 
-            var spaceNumber = snapshot.val().spaceNumber;
-            var spaceType = snapshot.val().spaceType;
-            var avail = snapshot.val().isAvailable;
-            document.write("Number: " + spaceNumber + ", ");
-            document.write("Type: " + spaceType + ",  ");
-            document.write("Is available: " + avail + ",\n ");
-
-        });
-    }
+       });
+    } 
 }
+

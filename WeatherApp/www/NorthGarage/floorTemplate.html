@@ -7,13 +7,14 @@
     <script src="../scripts/floorSwipes.js"></script>
 </head>
 <body>
-    <h5>{{floor_level}}</h5>
+    <h5 data-content="floorLevel"></h5>
     <div>Content goes here.</div>
 
     <div>
-        <a id="go-up-floor-btn" class="btn btn-primary btn-lg active" role="button" href="{{floor_up_ref}}">{{up_msg}}</a>
-        <!-- invisible button to redirect swipe to South Main-->
-        <a id="go-down-floor-btn" class="btn btn-primary btn-lg active" role="button" href="{{floor_down_ref}}">{{down_msg}}</a>
+        <!-- invisible button to redirect swipe to main lot page on highest lvl-->
+        <a id="go-up-floor-btn" class="btn btn-primary btn-lg active" role="button" data-link="floorUpRef" data-content="floorUpMsg"></a>
+        <!-- invisible button to redirect swipe to main lot page on lvl 1-->
+        <a id="go-down-floor-btn" class="btn btn-primary btn-lg active" role="button" data-link="floorDownRef" data-content="floorDownMsg"></a>
     </div>
 </body>
 </html>

@@ -11,18 +11,6 @@
         // Handle the Cordova pause and resume events
         document.addEventListener( 'pause', onPause.bind( this ), false );
         document.addEventListener('resume', onResume.bind(this), false);
-        //This method is called on page load to set the favorite lot on the index page
-        //the document bit is called, but the if statement within it & ready aren't
-        $(document).ready(function () {
-            if ($('#favorite-lot')[0]) { //if the favorite-lot id exists
-                var a = document.getElementById('favorite-lot');
-                var storage = window.localStorage;
-                a.href = storage.getItem("favoriteLot");
-            }
-            else {
-                //do nothing
-            }
-        });
         //alert('123 test 123 for index.js');
     };
 
@@ -35,3 +23,20 @@
     };
 
 })();
+
+//This method is called on page load to set the favorite lot on the index page
+//the document bit is called, but the if statement within it & ready aren't
+//$(document).ready(function () {
+$('#favorite-lot').click(function () {
+    var storage = window.localStorage;
+    var href = storage.getItem("favoriteLot");
+    if (href != null) {
+        //now redirect
+        window.location.replace(href);
+    }
+    else {
+        //favorite lot not yet set
+        alert("No favorite lot set - please set in the preferences page");
+    }
+});
+//});

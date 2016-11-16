@@ -1,19 +1,22 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
-    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
-    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
     <script src="../scripts/floorSwipes.js"></script>
+    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
+    <script src="../scripts/getData.js"></script>
+    <title>Level 4</title>
 </head>
 <body>
-    <h5>Level 4</h5>
+    <script>
+        obtainData("NorthGarage","Floor4");
+    </script>
     <div>Content goes here.</div>
 
     <div>
-        <!-- invisible button to redirect swipe to North Main-->
         <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageMain.html"></a>
-
+        <!-- invisible button to redirect swipe to North Main-->
         <a id="go-down-floor-btn" class="button" data-icon="search" href="NorthGarageLevel3.html">Go Down A Floor</a>
     </div>
 </body>

@@ -16,6 +16,7 @@
 
     function onPause() {
         // TODO: This application has been suspended. Save application state here.
+        window.location="scripts/page.html"
     };
 
     function onResume() {

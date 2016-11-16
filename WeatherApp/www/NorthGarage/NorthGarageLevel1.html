@@ -1,23 +1,27 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript">
-    </script>
-    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
-    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
-    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
     <script src="../scripts/floorSwipes.js"></script>
+    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
+    <script  src="../scripts/getData.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <!-- FireBase database-->
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
+    <title>Level 1</title>   
 </head>
+
 <body>
+    
     <script>
-        //displayPage();
+        obtainData("NorthGarage","Floor1");
     </script>
-    <h5>Level 2</h5>
-    <div>Content goes here.</div>
+    <div></div>
 
     <div>
-        <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel2.html">Go Up A Floor</a>
         <a id="go-down-floor-btn" class="button" data-icon="search" href="NorthGarageMain.html"></a>
+        <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel2.html">Go Up A Floor</a>
     </div>
 </body>
 </html>

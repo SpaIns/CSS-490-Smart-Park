@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="../scripts/jQueryTemplate/jquery.loadTemplate.js"></script>
+    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
+    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../scripts/floorSwipes.js"></script>
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        $("#template-container").loadTemplate("floorTemplate.html",
+            {
+                floorLevel: 'Level 1',
+                floorUpRef: 'NorthGarageLevel2.html',
+                floorUpMsg: 'Go Up a Floor',
+                floorDownRef: 'NorthGarageMain.html',
+                floorDownMsg: '' //invisible cuz no lower floor
+            });
+    </script>
+</body>
+</html>

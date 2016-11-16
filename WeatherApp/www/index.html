@@ -13,14 +13,14 @@
         <link rel="stylesheet" href="css/JQueryMobile/jquery.mobile-1.4.5.min.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>WeatherApp</title>
-    </head>
-    <body>
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+        <!--this script is making stuff act wierd--><!--<script src="scripts/JQuery/jquery-2.2.4.js"></script>-->
+        <script src="scripts/JQueryMobile/jquery.mobile-1.4.5.js"></script>
         <script type="text/javascript" src="scripts/index.js"></script>
-        <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
-        <script src="scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
-        <script src="scripts/weather.js"></script>
+    </head>
+    <body>
 
 
         <div data-role="page" id="weather-page">
@@ -30,8 +30,10 @@
             </div>
 
             <div role="main" class="ui-content">
+                <a id="favorite-lot" href=""><h5>Favorite Lot</h5></a>
                 <a href="NorthGarage/NorthGarageMain.html"><h5>North Garage</h5></a>
                 <a href="SouthGarage/SouthGarageMain.html"><h5>South Garage</h5></a>
+                <a href="preferences.html"><h5>Preferences</h5></a>
                 <div id="error-msg" class="not-displayed">
                 </div>
 

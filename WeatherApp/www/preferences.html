@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Preferences</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- use this to enable pinch zoom etc on bootstrap objects-->
+    <script type="text/javascript" src="scripts/JQuery/jquery-2.2.4.js"></script>
+    <script type="text/javascript" src="scripts/JQueryMobile/jquery.mobile-1.4.5.js"></script>
+    <script type="text/javascript" src="scripts/Preferences/swipepreference.js"></script>
+    <script type="text/javascript" src="scripts/Preferences/favoritelot.js"></script>
+    <script type="text/javascript" src="scripts/Preferences/spacefiltering.js"></script>
+   
+
+    <link rel="stylesheet" type="text/css" href="css/JQueryMobile/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/BootStrap/bootstrap.css" />
+</head>
+<body>
+    <h5>Choose your preferences</h5>
+
+    <div class="container">
+
+        <div id="swiping" class="row">
+            <h3>Swipe Directions</h3>
+            <input type="text" id="textbox" class="form-control" placeholder="Text input">
+            <button class="btn btn-default" id="updownset" type="submit">Up/Down</button>
+            <button class="btn btn-default" id="leftrightset" type="submit">Left/Right</button>
+        </div>
+
+        <div id="favorite" class="row">
+            <h3>Favorite Lot</h3>
+            <h6>Pick a favorite parking lot to store as your favorite on the home page</h6>
+            <button class="btn btn-default favorite" id="favorite-northgarage" type="submit" href="NorthGarage/NorthGarageMain.html">North Garage</button>
+            <button class="btn btn-default favorite" id="favorite-southgarage" type="submit" href="SouthGarage/SouthGarageMain.html">South Garage</button>
+            <!-- Add more lots here as they become available. Maybe there's a way to automate this process when new pages are generated -->
+        </div>
+
+        <div id="motorcycle" class="row">
+            <h3>Show Motorcyle Spaces?</h3>
+            <button class="btn btn-default space-filter" id="motorcycle-yes" type="submit">Yes</button>
+            <button class="btn btn-default space-filter" id="motorcycle-no" type="submit">No</button>
+        </div>
+
+        <div id="disabled" class="row">
+            <h3>Show Disabled Spaces?</h3>
+            <button class="btn btn-default space-filter" id="disabled-yes" type="submit">Yes</button>
+            <button class="btn btn-default space-filter" id="disabled-no" type="submit">No</button>
+        </div>
+
+        <div id="carpool" class="row">
+            <h3>Show Carpool Spaces?</h3>
+            <button class="btn btn-default space-filter" id="carpool-yes" type="submit">Yes</button>
+            <button class="btn btn-default space-filter" id="carpool-no" type="submit">No</button>
+        </div>
+
+    </div>
+</body>
+</html>

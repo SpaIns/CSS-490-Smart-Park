@@ -95,9 +95,11 @@ function obtainData(garage, floor) {
            
              snap.forEach(function (cSnap) {
                  setTimeout(function () {
-                     val=cSnap.val()
+                     val = cSnap.val();
                      if(val.isAvailable==true){
-                         document.write("Space: " + val.spaceNumber + " Type: " + val.spaceType+"<br>");
+                         //document.write("Space: " + val.spaceNumber + " Type: " + val.spaceType+"<br>");
+                         var databox = document.getElementById('#databox');
+                         databox.val = databox.val + ("Space: " + val.spaceNumber + " Type: " + val.spaceType + "<br>" + '\n');
                      }
                      //Next three lines are for printing all spaces instead of available ones
                      //document.write("Space: "+val.spaceNumber);
@@ -110,7 +112,7 @@ function obtainData(garage, floor) {
           }, 4000);
 
       });
-
+      document.write("finished grabbing data");
     
 }
 

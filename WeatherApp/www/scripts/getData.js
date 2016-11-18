@@ -67,9 +67,11 @@ function obtainData(garage,floor) {
                 spaceNumber = snapshot.val().spaceNumber;
                 spaceType = snapshot.val().spaceType;
                 avail = snapshot.val().isAvailable;
-                document.write("Space: "+spaceNumber + ", ");
-                document.write("Type: "+spaceType + ",  ");
-                document.write("Open: "+avail + "<br>"+"<br>");
+                var databox = document.getElementById("databox");
+                databox.value = databox.value + ("Space: " + spaceNumber + ", ");
+                databox.value = databox.value + ("Type: " + spaceType + ",  ");
+                databox.value = databox.value + ("Open: " + avail + "<br>" + "<br>");
+                databox.value = databox.value + ('\n');
             },4000);
             
 

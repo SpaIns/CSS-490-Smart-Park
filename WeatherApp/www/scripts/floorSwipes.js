@@ -6,33 +6,130 @@ Currently, it will have code functionality to set up swiping one direction or an
 http://api.jquerymobile.com/swipe/
 http://api.jquerymobile.com/swipeleft/
 */
-(function () {
-    "use strict";
+//Test code for swipes
+var supportTouch = $.support.touch,
+            scrollEvent = "touchmove scroll",
+            touchStartEvent = supportTouch ? "touchstart" : "mousedown",
+            touchStopEvent = supportTouch ? "touchend" : "mouseup",
+            touchMoveEvent = supportTouch ? "touchmove" : "mousemove";
+$.event.special.swipeupdown = {
+    setup: function () {
+        var thisObject = this;
+        var $this = $(thisObject);
+        $this.bind(touchStartEvent, function (event) {
+            var data = event.originalEvent.touches ?
+                    event.originalEvent.touches[0] :
+                    event,
+                    start = {
+                        time: (new Date).getTime(),
+                        coords: [data.pageX, data.pageY],
+                        origin: $(event.target)
+                    },
+                    stop;
 
-    document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+            function moveHandler(event) {
+                if (!start) {
+                    return;
+                }
+                var data = event.originalEvent.touches ?
+                        event.originalEvent.touches[0] :
+                        event;
+                stop = {
+                    time: (new Date).getTime(),
+                    coords: [data.pageX, data.pageY]
+                };
 
-    function onDeviceReady() {
-        // Handle the Cordova pause and resume events
-        document.addEventListener('swipedleft', swipedLeft.bind(this), false);
-        document.addEventListener('swipedright', swipedRight.bind(this), false);
-        alert('123 test 123');
+                // prevent scrolling
+                if (Math.abs(start.coords[1] - stop.coords[1]) > 10) {
+                    event.preventDefault();
+                }
+            }
+            $this
+                    .bind(touchMoveEvent, moveHandler)
+                    .one(touchStopEvent, function (event) {
+                        $this.unbind(touchMoveEvent, moveHandler);
+                        if (start && stop) {
+                            if (stop.time - start.time < 1000 &&
+                                    Math.abs(start.coords[1] - stop.coords[1]) > 30 &&
+                                    Math.abs(start.coords[0] - stop.coords[0]) < 75) {
+                                start.origin
+                                        .trigger("swipeupdown")
+                                        .trigger(start.coords[1] > stop.coords[1] ? "swipeup" : "swipedown");
+                            }
+                        }
+                        start = stop = undefined;
+                    });
+        });
+    }
+};
+$.each({
+    swipedown: "swipeupdown",
+    swipeup: "swipeupdown"
+}, function (event, sourceEvent) {
+    $.event.special[event] = {
+        setup: function () {
+            $(this).bind(sourceEvent, $.noop);
+        }
     };
+});
 
-    /*
-    The user swiped to the left (finger moved left). Proceed to go up a floor, if available
-    */
-    function swipedLeft() {
-        $(event.target).addClass("swipeleft");
-        var href = $('#go-up-down-btn').attr('href');
+
+//This is the code that I actually wrote and that executes the L/R or U/D switch
+var storage = window.localStorage;
+var updown = "";
+if (storage.getItem("swipes") == "updown") {
+    updown = "true";
+}
+else {
+    updown = "false";
+}
+jQuery(window).on("swipeup", function (event) {
+    if (updown == "true") {
+        alert("swipe detected (up)"); //up means finger/mouse moves up
+        var href = $('#go-up-floor-btn').attr('href');
+        alert(href);
         window.location.replace(href);
-    };
+    }
+});
 
-    /*
-    The user swiped to the right (finger moved right). Proceed to go down a floor, if available
-    */
-    function swipedRight() {
-        $(event.target).addClass("swiperight");
-        var href = $('#go-up-down-btn').attr('href');
+jQuery(window).on("swipedown", function (event) {
+    if (updown == "true") {
+        alert("swipe detected (down)"); //down means finger moves down
+        var href = $('#go-down-floor-btn').attr('href');
+        alert(href);
+        if (href == '') {
+            href = "../index.html";
+            alert("hit if statement");
+        }
         window.location.replace(href);
-    };
-})();
+    }
+});
+
+
+
+jQuery(window).on("swipeleft", function (event) {
+    if (updown == "false") {
+        alert("swipe detected (left)"); //left means finger/mouse moves left
+        var href = $('#go-up-floor-btn').attr('href');
+        alert(href);
+        window.location.replace(href);
+    }
+});
+
+jQuery(window).on("swiperight", function (event) {
+    if (updown == "false") {
+        alert("swipe detected (right)"); //right means mouse/finger moves right
+        var href = $('#go-down-floor-btn').attr('href');
+        alert(href);
+        if (href == '') {
+            href = "../index.html";
+            alert("hit if statement");
+        }
+        window.location.replace(href);
+    }
+});
+
+function setUpDown(tf) {
+    updown = tf;
+}
+

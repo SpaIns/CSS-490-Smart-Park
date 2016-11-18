@@ -2,43 +2,24 @@
 <html>
 <head>
     <title>North Parking Garage</title>
-    <!--<script type="text/javascript" src="../scripts/floorSwipes.js"></script>-->
+    
     <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
-    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
-    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js" defer></script>
+    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js" defer></script>
+    <script type="text/javascript" src="../scripts/floorSwipes.js" defer></script>
 
 </head>
 <body>
     
-    <script type="text/javascript">
-        //Test code for swipes
-        jQuery(window).on("swipeleft", function (event) {
-            alert("swipe detected (left)"); //left means finger/mouse moves 
-            var href = $('#go-up-floor-btn').attr('href');
-            alert(href);
-            window.location=href;
-        });
-
-        jQuery(window).on("swiperight", function (event) {
-            alert("swipe detected (right)"); //right means mouse/finger moves right
-            var href = $('#go-down-floor-btn').attr('href');
-            alert(href);
-            if (href == '') {
-                href = "../index.html";
-                alert("hit if statement");
-            }
-            window.location=href;
-        });
-    </script>
     <div>
         <!-- Adding an invisible button for the sake of the floorSwipes.js-->
         <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel1.html"></a>
 
-        <a href="NorthGarageLevel1.html"><h5>Level 1</h5></a>
-        <a href="NorthGarageLevel2.html"><h5>Level 2</h5></a>
-        <a href="NorthGarageLevel3.html"><h5>Level 3</h5></a>
-        <a href="NorthGarageLevel4.html"><h5>Level 4</h5></a>
-        <a href="NorthGarageLevel5.html"><h5>Level 5</h5></a>
+        <a class="button" data-icon="search" href="NorthGarageLevel1.html"><h5>Level 1</h5></a>
+        <a class="button" data-icon="search" href="NorthGarageLevel2.html"><h5>Level 2</h5></a>
+        <a class="button" data-icon="search" href="NorthGarageLevel3.html"><h5>Level 3</h5></a>
+        <a class="button" data-icon="search" href="NorthGarageLevel4.html"><h5>Level 4</h5></a>
+        <a class="button" data-icon="search" href="NorthGarageLevel5.html"><h5>Level 5</h5></a>
     </div>
 
     <div>

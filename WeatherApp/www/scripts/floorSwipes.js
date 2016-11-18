@@ -6,7 +6,7 @@ Currently, it will have code functionality to set up swiping one direction or an
 http://api.jquerymobile.com/swipe/
 http://api.jquerymobile.com/swipeleft/
 */
-//Test code for swipes
+//Code for swipes up/down
 var supportTouch = $.support.touch,
             scrollEvent = "touchmove scroll",
             touchStartEvent = supportTouch ? "touchstart" : "mousedown",

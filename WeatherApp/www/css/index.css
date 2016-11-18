@@ -32,3 +32,10 @@ form {
     margin-top: 50%;
     font-weight: bold;
 }
+
+/* nav bar */
+ul {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

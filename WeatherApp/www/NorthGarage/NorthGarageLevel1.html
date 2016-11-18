@@ -1,24 +1,23 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <script src="../scripts/floorSwipes.js"></script>
-    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
-    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
     <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
-    <script  src="../scripts/getData.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js" defer></script>
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js" defer></script>
+    <script  src="../scripts/getData.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js" defer></script>
     <!-- FireBase database-->
-    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js" defer></script>
+    <script src="../scripts/floorSwipes.js" defer></script>
     <title>Level 1</title>   
 </head>
 
 <body>
     
-    
     <div id="data">
         <input type="text" id="databox" class="form-control" placeholder="Please wait, data loading">
         <script>
-            obtainData("NorthGarage","Floor1");
+            obtainData("North",1);
         </script>
     </div>
 

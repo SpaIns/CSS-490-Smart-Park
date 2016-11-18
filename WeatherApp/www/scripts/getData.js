@@ -1,6 +1,7 @@
 // JavaScript source code
 //General Script to show parking data
 
+/*
 function obtainData(garage,floor) {
     var config = {
         apiKey: "AIzaSyDIkSj_PO9zfpbqYcoeDfton9NLPkQUdrI",
@@ -74,5 +75,40 @@ function obtainData(garage,floor) {
 
        });
     } 
+}
+*/
+function obtainData(garage, floor) {
+    var config = {
+        apiKey: "AIzaSyDIkSj_PO9zfpbqYcoeDfton9NLPkQUdrI",
+        databaseURL: "https://smartpark-aa8eb.firebaseio.com",
+    };
+    firebase.initializeApp(config);
+
+    var database = firebase.database(); //get a database reference
+    link = "/parking/" + garage +"/" +floor;
+    x = [];
+    
+      firebase.database().ref(link).once('value').then(function (snap) {
+         setTimeout(function () {
+           
+             snap.forEach(function (cSnap) {
+                 setTimeout(function () {
+                     val=cSnap.val()
+                     if(val.isAvailable==true){
+                         document.write("Space: " + val.spaceNumber + " Type: " + val.spaceType+"<br>");
+                     }
+                     //Next three lines are for printing all spaces instead of available ones
+                     //document.write("Space: "+val.spaceNumber);
+                     //document.write(" Type: "+val.spaceType);
+                     //document.write(" Open: "+val.isAvailable+"<br>");
+
+                 },100);
+             });
+
+          }, 4000);
+
+      });
+
+    
 }
 

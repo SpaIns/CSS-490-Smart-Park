@@ -53,7 +53,8 @@ public class Firebase {
 				int spaceNumber = Integer.parseInt(space[0]);
 				int floorNumber = Integer.parseInt(space[1]);
 				String garage = space[2];
-				String isAvailable = getRandomBool();
+                String spaceType = space[3];
+				String isAvailable = getRandomBool();                
 				
 				// All spaces on the 4th floor North Garage don't have sensors
 				if(garage.equals("North") && floorNumber == 4) {
@@ -68,7 +69,7 @@ public class Firebase {
 					isAvailable = "unknown";
 				}
 				
-				spaces.add(new Space(spaceNumber, floorNumber, garage, isAvailable));
+				spaces.add(new Space(spaceNumber, floorNumber, garage, isAvailable, spaceType));
 				
 				// Calculate total available spaces per garage per floor
 				if(garage.equals("North") && !isAvailable.equals("unknown")){

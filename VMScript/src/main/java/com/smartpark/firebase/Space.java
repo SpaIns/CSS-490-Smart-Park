@@ -2,13 +2,14 @@ package com.smartpark.firebase;
 
 public class Space {
 	private int spaceNumber, floorNumber;
-	private String garage, isAvailable;
+	private String garage, isAvailable, spaceType;
 	
-	public Space(int spaceNumber, int floorNumber, String garage, String isAvailable) {
+	public Space(int spaceNumber, int floorNumber, String garage, String isAvailable, String spaceType) {
 		this.spaceNumber = spaceNumber;
 		this.floorNumber = floorNumber;
 		this.garage = garage;
 		this.isAvailable = isAvailable;
+        this.spaceType = spaceType;
 	}
 	
 	public int getSpaceNumber() {
@@ -42,4 +43,8 @@ public class Space {
 	public void setIsAvailable(String isAvailable) {
 		this.isAvailable = isAvailable;
 	}
+    
+    public String getSpaceType(){
+        return this.spaceType;
+    }
 }

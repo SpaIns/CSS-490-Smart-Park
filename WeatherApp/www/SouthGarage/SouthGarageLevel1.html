@@ -1,9 +1,25 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <link href="../css/BootStrap/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
+    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../scripts/floorSwipes.js"></script>
+    <script src="../scripts/getData.js"></script>
 </head>
 <body>
+    <h5>Level 1</h5>
     <div>Content goes here.</div>
+    <script>
+        obtainData("SouthGarage","Floor1");
+    </script>
+
+    <div>
+        <a id="go-up-floor-btn" class="btn btn-primary btn-lg active" role="button" href="SouthGarageLevel2.html">Go Up A Floor</a>
+        <!-- invisible button to redirect swipe to South Main-->
+        <a id="go-down-floor-btn" class="btn btn-primary btn-lg active" role="button" href="SouthGarageMain.html"></a>
+    </div>
 </body>
 </html>
+    

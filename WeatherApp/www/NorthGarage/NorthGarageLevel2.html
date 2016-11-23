@@ -1,16 +1,23 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
+    <script src="../scripts/getData.js"></script>
+    <script src="../scripts/floorSwipes.js"></script>
     <title>Level 2</title>
 </head>
 <body>
-    <div>Content goes here. NL2
+    <script>
+        obtainData("NorthGarage","Floor2");
+    </script>
+    <div>
        <!--<img id=example src="../images/NG Fl 2-Layout2.png" height="1200" width="800"/> --> 
     </div>
-    fireJQuery
     <div>
-        <a href="NorthGarageLevel3.html"><h5>Go up a floor.</h5></a>
-        <a href="NorthGarageLevel1.html"><h5>Go down a floor.</h5></a>
+        <a id="go-down-floor-btn" class="button" data-icon="search" href="NorthGarageLevel1.html">Go Down A Floor</a>
+        <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel3.html">Go Up A Floor</a>
     </div>
 </body>
 </html>

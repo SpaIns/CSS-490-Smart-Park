@@ -15,9 +15,19 @@
 <body>
     
     <script>
-        obtainData("North",1);
+        var y;
+        obtainData("North", 1).then(function () {
+            
+            y = getArray();
+            document.writeln(y.length);
+            //showArray();
+        
+        });
+        //showArray();
     </script>
-    <div></div>
+    <div>
+        
+    </div>
 
     <div>
         <a id="go-down-floor-btn" class="button" data-icon="search" href="NorthGarageMain.html"></a>

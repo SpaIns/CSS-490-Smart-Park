@@ -2,6 +2,7 @@ package com.smartpark.firebase;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,12 +21,13 @@ public class Firebase {
 	
 	private String databaseUrl, serviceAccountPath, spacesFilePath;
 	private Floor north1, north2, north3, south1, south2, south3, south4;
-	final AtomicBoolean done = new AtomicBoolean(false);
+	AtomicBoolean done = new AtomicBoolean(false);
 	
 	public Firebase(String databaseUrl, String serviceAccountPath, String spacesFilePath) {
 		this.databaseUrl = databaseUrl;
 		this.serviceAccountPath = serviceAccountPath;
 		this.spacesFilePath = spacesFilePath;
+		
 		north1 = new Floor();
 		north2 = new Floor();
 		north3 = new Floor();
@@ -45,35 +47,79 @@ public class Firebase {
 		return spaceUpdates;
 	}
 	
-	public Map<String, Object> getTotalCounts() {
+	public Map<String, Object> getTotalCounts(ArrayList<Space> spaces) {
 		Map<String, Object> totalUpdates = new HashMap<String, Object>();
 		
+		for(Space space : spaces) {
+			switch(space.getGarage()) {
+				case "North":
+					switch(space.getFloorNumber()) {
+						case 1:
+							north1.incrementCount(space);
+							break;
+						case 2:
+							north2.incrementCount(space);
+							break;
+						case 3:
+							north3.incrementCount(space);
+							break;
+						case 4:
+							break;
+						default:
+							throw new IllegalArgumentException("Invalid floor");
+					}
+					break;
+				case "South":
+					switch(space.getFloorNumber()) {
+						case 1:
+							south1.incrementCount(space);
+							break;
+						case 2:
+							south2.incrementCount(space);
+							break;
+						case 3:
+							south3.incrementCount(space);
+							break;
+						case 4:
+							south4.incrementCount(space);
+							break;
+						case 5:
+							break;
+						default:
+							throw new IllegalArgumentException("Invalid floor");
+					}
+					break;
+				default:
+					throw new IllegalArgumentException("Invalid garage");
+			}
+		}
+		
 		// North 1
-		totalUpdates.put("North1REG", north1.getRegCount());
-		totalUpdates.put("North1UCar", north1.getuCarCount());
-		totalUpdates.put("North1DIS", north1.getDisCount());
-		totalUpdates.put("North1Carpool", north1.getCarpoolCount());
-		totalUpdates.put("North1Reserved", north1.getReservedCount());
-		totalUpdates.put("North1EV", north1.getEvCount());
-		totalUpdates.put("North1Total", north1.getTotal());
+		totalUpdates.put("north1REG", north1.getRegCount());
+		totalUpdates.put("north1UCar", north1.getuCarCount());
+		totalUpdates.put("north1DIS", north1.getDisCount());
+		totalUpdates.put("north1Carpool", north1.getCarpoolCount());
+		totalUpdates.put("north1Reserved", north1.getReservedCount());
+		totalUpdates.put("north1EV", north1.getEvCount());
+		totalUpdates.put("north1Total", north1.getTotal());
 
 		// North 2
-		totalUpdates.put("North2REG", north2.getRegCount());
-		totalUpdates.put("North2UCar", north2.getuCarCount());
-		totalUpdates.put("North2DIS", north2.getDisCount());
-		totalUpdates.put("North2Carpool", north2.getCarpoolCount());
-		totalUpdates.put("North2Reserved", north2.getReservedCount());
-		totalUpdates.put("North2EV", north2.getEvCount());
-		totalUpdates.put("North2Total", north2.getTotal());
+		totalUpdates.put("north2REG", north2.getRegCount());
+		totalUpdates.put("north2UCar", north2.getuCarCount());
+		totalUpdates.put("north2DIS", north2.getDisCount());
+		totalUpdates.put("north2Carpool", north2.getCarpoolCount());
+		totalUpdates.put("north2Reserved", north2.getReservedCount());
+		totalUpdates.put("north2EV", north2.getEvCount());
+		totalUpdates.put("north2Total", north2.getTotal());
 		
 		// North 3
-		totalUpdates.put("North3REG", north3.getRegCount());
-		totalUpdates.put("North3UCar", north3.getuCarCount());
-		totalUpdates.put("North3DIS", north3.getDisCount());
-		totalUpdates.put("North3Carpool", north3.getCarpoolCount());
-		totalUpdates.put("North3Reserved", north3.getReservedCount());
-		totalUpdates.put("North3EV", north3.getEvCount());
-		totalUpdates.put("North3Total", north3.getTotal());
+		totalUpdates.put("north3REG", north3.getRegCount());
+		totalUpdates.put("north3UCar", north3.getuCarCount());
+		totalUpdates.put("north3DIS", north3.getDisCount());
+		totalUpdates.put("north3Carpool", north3.getCarpoolCount());
+		totalUpdates.put("north3Reserved", north3.getReservedCount());
+		totalUpdates.put("north3EV", north3.getEvCount());
+		totalUpdates.put("north3Total", north3.getTotal());
 		
 		// South 1
 		totalUpdates.put("south1REG", south1.getRegCount());
@@ -145,42 +191,6 @@ public class Firebase {
 				Space spaceToAdd = new Space(spaceNumber, floorNumber, garage, isAvailable, spaceType);
 				
 				spaces.add(spaceToAdd);
-				
-				switch(garage) {
-					case "North":
-						switch(floorNumber) {
-							case 1:
-								north1.incrementCount(spaceToAdd);
-								break;
-							case 2:
-								north2.incrementCount(spaceToAdd);
-								break;
-							case 3:
-								north3.incrementCount(spaceToAdd);
-								break;
-							default:
-								throw new IllegalArgumentException("Invalid floor");
-						}
-					case "South":
-						switch(floorNumber) {
-							case 1:
-								south1.incrementCount(spaceToAdd);
-								break;
-							case 2:
-								south2.incrementCount(spaceToAdd);
-								break;
-							case 3:
-								south3.incrementCount(spaceToAdd);
-								break;
-							case 4:
-								south4.incrementCount(spaceToAdd);
-								break;
-							default:
-								throw new IllegalArgumentException("Invalid floor");
-						}
-					default:
-						throw new IllegalArgumentException("Invalid garage");
-				}
 			}
 			br.close();
 		}
@@ -190,40 +200,47 @@ public class Firebase {
 		return spaces;
 	}
 	
-	public void uploadData(Map<String, Object> updates, String reference) {
+	public boolean initializeFirebase() {
+		// Configure Firebase options
 		FirebaseOptions options;
 		try {
-			// Configure Firebase options
 			options = new FirebaseOptions.Builder()
 			  .setServiceAccount(new FileInputStream(serviceAccountPath))
 			  .setDatabaseUrl(databaseUrl)
 			  .build();
 			FirebaseApp.initializeApp(options);
-			
-			// Get the spaces key reference
-			DatabaseReference ref = FirebaseDatabase
-					.getInstance()
-				    .getReference(reference);
-						
-			// Update the db with the new data
-			ref.updateChildren(updates, new CompletionListener() {
-				@Override
-				public void onComplete(DatabaseError databaseError, DatabaseReference database) {
-					done.set(true);
-					
-					if (databaseError != null) {
-			            System.out.println("Data could not be updated. " + databaseError.getMessage());
-			        } else {
-			            System.out.println("Data updated successfully.");
-			        }
-				}
-			});
-			while (!done.get());		// wait until updateChildren is done updating the db
-			return;
 		} 
-		catch (Exception e) {
+		catch (FileNotFoundException e) {
 			e.printStackTrace();
+			return false;
 		}
+		
+		return true;
+	}
+	
+	public void uploadData(Map<String, Object> updates, String reference) {
+		done = new AtomicBoolean(false);
+		
+		// Get the spaces key reference
+		DatabaseReference ref = FirebaseDatabase
+				.getInstance()
+			    .getReference(reference);
+					
+		// Update the db with the new data
+		ref.updateChildren(updates, new CompletionListener() {
+			@Override
+			public void onComplete(DatabaseError databaseError, DatabaseReference database) {
+				done.set(true);
+				
+				if (databaseError != null) {
+		            System.out.println("Data could not be updated. " + databaseError.getMessage());
+		        } else {
+		            System.out.println("Data updated successfully to " + reference + ".");
+		        }
+			}
+		});
+		while (!done.get());		// wait until updateChildren is done updating the db
+		return;
 	}
 	
 	private String getRandomBool() {

@@ -64,29 +64,33 @@ public class Floor {
 	}
 	
 	public void incrementCount(Space space) {
-		switch (space.getSpaceType()){
-			case "REG":
-				regCount++;
-				break;
-			case "U-Car":
-				uCarCount++;
-				break;
-			case "DIS":
-				disCount++;
-				break;
-			case "Carpool":
-				carpoolCount++;
-				break;
-			case "Reserved":
-				reservedCount++;
-				break;
-			case "EV":
-				evCount++;
-				break;
-			default:
-				throw new IllegalArgumentException("Invalid space type");
+		if(space.getIsAvailable().equals("true")) {			
+			switch (space.getSpaceType()){
+				case "REG":
+					regCount++;
+					break;
+				case "U-Car":
+					uCarCount++;
+					break;
+				case "DIS":
+					disCount++;
+					break;
+				case "Carpool":
+					carpoolCount++;
+					break;
+				case "Reserved":
+					reservedCount++;
+					break;
+				case "EV":
+					evCount++;
+					break;
+				case "Motorcycle":
+					break;
+				default:
+					throw new IllegalArgumentException("Invalid space type");
+			}
+			total++;
 		}
-		total++;
 		return;
 	}
 }

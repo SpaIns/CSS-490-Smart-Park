@@ -16,10 +16,13 @@
     
     <div id="data">
         <input type="text" id="databox" class="form-control" placeholder="Please wait, data loading">
-        <script>
-            obtainData("North",1);
-        </script>
     </div>
+
+    <script type="text/javascript">
+            $(document).ready(function () {
+                obtainData("North", 1);
+            });
+    </script>
 
     <div>
         <a id="go-down-floor-btn" class="button" data-icon="search" href="NorthGarageMain.html"></a>

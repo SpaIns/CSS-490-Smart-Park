@@ -10,13 +10,15 @@ function obtainData(garage, floor) {
     firebase.initializeApp(config);
 
     var database = firebase.database(); //get a database reference
+    var databox = document.getElementById('#databox');
+    databox.val = "testing123";
     link = "/spaces";
       firebase.database().ref(link).once('value').then(function (snap) {
              snap.forEach(function (cSnap) {
                 val = cSnap.val();
                 if (val.garage == garage && val.floor== floor) {
                    //document.writeln(val.spaceNumber +"<br>"); 
-                   var databox = document.getElementById('#databox');
+                   //var databox = document.getElementById('#databox');
                    databox.val = databox.val + ("Space: " + val.spaceNumber + " Type: " + val.spaceType + "<br>" + '\n');
                 }
              });

@@ -1,0 +1,20 @@
+﻿<html>
+<head>
+    <link href="../css/BootStrap/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
+    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../scripts/floorSwipes.js"></script>
+</head>
+<body>
+    <h5 data-content="floorLevel"></h5>
+    <div>Content goes here.</div>
+
+    <div>
+        <!-- invisible button to redirect swipe to main lot page on highest lvl-->
+        <a id="go-up-floor-btn" class="btn btn-primary btn-lg active" role="button" data-link="floorUpRef" data-content="floorUpMsg"></a>
+        <!-- invisible button to redirect swipe to main lot page on lvl 1-->
+        <a id="go-down-floor-btn" class="btn btn-primary btn-lg active" role="button" data-link="floorDownRef" data-content="floorDownMsg"></a>
+    </div>
+</body>
+</html>

@@ -14,11 +14,18 @@
 
 <body>
     
-    <div id="data">
-        <input type="text" id="databox" class="form-control" placeholder="Please wait, data loading">
-        <script>
-            obtainData("North",1);
-        </script>
+
+    <script>
+        var y;
+        obtainData("North", 1).then(function () {
+            
+            //y = getArray();
+            //document.writeln(y.length);
+            //showArray();
+      
+        });
+    </script>
+    <div>
     </div>
 
     <div>

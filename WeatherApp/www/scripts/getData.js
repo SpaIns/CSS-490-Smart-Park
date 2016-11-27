@@ -17,6 +17,7 @@ function obtainData(garage, floor) {
         firebase.database().ref(link).once('value').then(function (snap) {
             snap.forEach(function (cSnap) {
                 val = cSnap.val();
+
                 typeMap = {"DIS":"disabled","Motorcycle":"motorcycle","Carpool":"carpool"};
                 //document.writeln(val.spaceType + "<br>");
 
@@ -32,6 +33,7 @@ function obtainData(garage, floor) {
                         data.push(dict);
                     }
                     //showArray();
+
                 }
             });
             resolve(data);

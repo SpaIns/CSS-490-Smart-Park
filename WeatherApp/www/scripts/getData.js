@@ -4,6 +4,7 @@ var data = [];
 
 
 function obtainData(garage, floor) {
+    //window.localStorage.setItem("disabled", "disabled-yes");
     var config = {
         apiKey: "AIzaSyDIkSj_PO9zfpbqYcoeDfton9NLPkQUdrI",
         databaseURL: "https://smartpark-aa8eb.firebaseio.com",
@@ -16,13 +17,21 @@ function obtainData(garage, floor) {
         firebase.database().ref(link).once('value').then(function (snap) {
             snap.forEach(function (cSnap) {
                 val = cSnap.val();
-                if (val.garage == garage && val.floor == floor && val.isAvailable == "true") {
-                    //document.writeln(val.spaceNumber +"<br>");
-                    dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType };
-                    data.push(dict);
+                typeMap = {"DIS":"disabled","Motorcycle":"motorcycle","Carpool":"carpool"};
+                //document.writeln(val.spaceType + "<br>");
+
+                if (val.garage == garage && val.floor == floor && val.isAvailable == "true") {    
+                    if(val.spaceType=="REG"){
+                        document.writeln(val.spaceType + "<br>");
+                        dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType };
+                        data.push(dict);
+                    }
+                    else if (window.localStorage.getItem(typeMap[val.spaceType]).includes("yes")) {
+                        document.writeln(val.spaceType + "<br>");
+                        dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType };
+                        data.push(dict);
+                    }
                     //showArray();
-
-
                 }
             });
             resolve(data);
@@ -40,10 +49,7 @@ function getArray(fireData) {
 }
 
 function showArray() {
-    document.writeln(data.length);
-    //for (i = 0; i < data.length; i++) {
-      //  document.writeln(data[i]["spaceNumber"]);
-    //}
-
+    document.writeln(window.localStorage.getItem("disabled"));
+ 
 }
 

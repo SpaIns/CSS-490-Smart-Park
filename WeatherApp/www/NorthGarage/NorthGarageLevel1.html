@@ -4,11 +4,13 @@
     <script src="../scripts/JQuery/jquery-2.2.4.min.js" defer></script>
     <!--<link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">-->
     <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js" defer></script>
-    <script  src="../scripts/getData.js" defer></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js" defer></script>
     <!-- FireBase database-->
     <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js" defer></script>
+    <script  src="../scripts/getData.js" defer></script>
     <script src="../scripts/floorSwipes.js" defer></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/BootStrap/bootstrap.css" />
     <title>Level 1</title>   
 </head>
 
@@ -35,8 +37,17 @@
     </div>
 
     <div>
-        <a id="go-down-floor-btn" class="button" data-icon="search" href="NorthGarageMain.html"></a>
-        <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel2.html">Go Up A Floor</a>
+        <div class="col-md-1">
+            <a id="go-down-floor-btn" class="btn btn-default" href="NorthGarageMain.html"></a>
+        </div>
+
+        <div class="col-md-1">
+            <a id="go-up-floor-btn" class="btn btn-default" href="NorthGarageLevel2.html" data-ajax="false">Go Up A Floor</a>
+        </div>
+    </div>
+
+    <div class="col-md-1">
+        <a id="go-down-floor-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
     </div>
 </body>
 </html>

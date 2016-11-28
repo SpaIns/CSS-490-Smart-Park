@@ -9,6 +9,7 @@
     <title>Level 3</title>
 </head>
 <body>
+
     <div>
         <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF3", "../images/NorthGarage/NorthGarageFloor_3_Layout.png")'>Refresh</button>
         <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel4.html">Go Up A Floor</a>
@@ -24,7 +25,10 @@
     <script>
         var refreshButton = document.getElementById('draw-btn');
         refreshButton.click();
-        obtainData("NorthGarage", "Floor3");
+        obtainData("North", 3).then(function () {
+
+
+        });
     </script>
 </body>
 </html>

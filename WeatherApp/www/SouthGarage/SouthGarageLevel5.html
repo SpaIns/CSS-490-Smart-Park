@@ -9,6 +9,7 @@
 </head>
 <body>
     <h5>Level 5</h5>
+
     <div>
         <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF5", "../images/SouthGarage/SouthGarageFloor_5_Layout.png")'>Refresh</button>
         <!-- invisible button to redirect swipe to South Main-->
@@ -25,7 +26,10 @@
     <script>
         var refreshButton = document.getElementById('draw-btn');
         refreshButton.click();
-        obtainData("SouthGarage", "Floor5");
+        obtainData("South", 5).then(function () {
+
+
+        });
     </script>
 
 </body>

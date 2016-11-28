@@ -9,13 +9,23 @@
 </head>
 <body>
     <h5>Level 3</h5>
-    <div>Content goes here.</div>
-    <script>
-        obtainData("SouthGarage","Floor3");
-    </script>
     <div>
+        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF3", "../images/SouthGarage/SouthGarageFloor_3_Layout.png")'>Refresh</button>
         <a id="go-up-floor-btn" class="button" data-icon="search" href="SouthGarageLevel4.html">Go Up A Floor</a>
         <a id="go-down-floor-btn" class="button" data-icon="search" href="SouthGarageLevel2.html">Go Down A Floor</a>
     </div>
+
+    <canvas id='canvasSGF3' width='8000' height='5000'></canvas>
+    <script src="../scripts/canvas.js">
+        var imagePath = "../images/SouthGarage/SouthGarageFloor_3_Layout.png";
+        drawFloor("canvasSGF3", imagePath);
+    </script>
+
+    <script>
+        var refreshButton = document.getElementById('draw-btn');
+        refreshButton.click();
+        obtainData("SouthGarage","Floor3");
+    </script>
+
 </body>
 </html>

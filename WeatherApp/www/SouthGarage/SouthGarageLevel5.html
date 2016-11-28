@@ -9,15 +9,24 @@
 </head>
 <body>
     <h5>Level 5</h5>
-    <div>Content goes here.</div>
-    <script>
-        obtainData("SouthGarage", "Floor5");
-    </script>
     <div>
+        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF5", "../images/SouthGarage/SouthGarageFloor_5_Layout.png")'>Refresh</button>
         <!-- invisible button to redirect swipe to South Main-->
         <a id="go-up-floor-btn" class="button" data-icon="search" href="SouthGarageMain.html"></a>
-        
         <a id="go-down-floor-btn" class="button" data-icon="search" href="SouthGarageLevel4.html"></a>
     </div>
+
+    <canvas id='canvasSGF5' width='8000' height='5000'></canvas>
+    <script src="../scripts/canvas.js">
+        var imagePath = "../images/SouthGarage/SouthGarageFloor_5_Layout.png";
+        drawFloor("canvasSGF5", imagePath);
+    </script>
+
+    <script>
+        var refreshButton = document.getElementById('draw-btn');
+        refreshButton.click();
+        obtainData("SouthGarage", "Floor5");
+    </script>
+
 </body>
 </html>

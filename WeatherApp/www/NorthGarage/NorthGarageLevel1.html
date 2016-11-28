@@ -11,19 +11,23 @@
     <script src="../scripts/floorSwipes.js" defer></script>
     <title>Level 1</title>   
 </head>
-
 <body>
-    
-    <div id="data">
-        <input type="text" id="databox" class="form-control" placeholder="Please wait, data loading">
-        <script>
-            obtainData("North",1);
-        </script>
-    </div>
-
     <div>
+        <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF1", "../images/NorthGarage/NorthGarageFloor_1_Layout.png")'>Refresh</button>
         <a id="go-down-floor-btn" class="button" data-icon="search" href="NorthGarageMain.html"></a>
         <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel2.html">Go Up A Floor</a>
-    </div>
+    </div>   
+
+    <canvas id='canvasNGF1' width='8000' height='3500'></canvas>
+    <script src="../scripts/canvas.js">
+        var imagePath = "../images/NorthGarage/NorthGarageFloor_1_Layout.png";
+        drawFloor("canvasNGF1", imagePath);
+    </script>
+
+    <script>
+        var refreshButton = document.getElementById('draw-btn');
+        refreshButton.click();
+        obtainData("North", 1);
+    </script>
 </body>
 </html>

@@ -9,15 +9,23 @@
     <title>Level 2</title>
 </head>
 <body>
-    <script>
-        obtainData("NorthGarage","Floor2");
-    </script>
     <div>
-       <!--<img id=example src="../images/NG Fl 2-Layout2.png" height="1200" width="800"/> --> 
-    </div>
-    <div>
+        <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF2", "../images/NorthGarage/NorthGarageFloor_2_Layout.png")'>Refresh</button>
         <a id="go-down-floor-btn" class="button" data-icon="search" href="NorthGarageLevel1.html">Go Down A Floor</a>
         <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel3.html">Go Up A Floor</a>
     </div>
+
+    <canvas id='canvasNGF2' width='8000' height='3500'></canvas>
+    <script src="../scripts/canvas.js">
+        var imagePath = "../images/NorthGarage/NorthGarageFloor_2_Layout.png";
+        drawFloor("canvasNGF2", imagePath);
+    </script>
+   
+    <script>
+        var refreshButton = document.getElementById('draw-btn');
+        refreshButton.click();
+        obtainData("NorthGarage", "Floor2");
+    </script>
+    
 </body>
 </html>

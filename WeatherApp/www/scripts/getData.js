@@ -19,20 +19,20 @@ function obtainData(garage, floor) {
                 val = cSnap.val();
 
                 typeMap = {"DIS":"disabled","Motorcycle":"motorcycle","Carpool":"carpool"};
-                //document.writeln(val.spaceType + "<br>");
+                
 
                 if (val.garage == garage && val.floor == floor && val.isAvailable == "true") {    
                     if(val.spaceType=="REG"){
-                        document.writeln(val.spaceType + "<br>");
+               
                         dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType };
                         data.push(dict);
                     }
                     else if (window.localStorage.getItem(typeMap[val.spaceType]).includes("yes")) {
                         document.writeln(val.spaceType + "<br>");
-                        dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType };
+                        dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType,"available:":val.isAvailable };
                         data.push(dict);
                     }
-                    //showArray();
+                 
 
                 }
             });
@@ -48,10 +48,5 @@ function obtainData(garage, floor) {
 
 function getArray(fireData) {
     return data;
-}
-
-function showArray() {
-    document.writeln(window.localStorage.getItem("disabled"));
- 
 }
 

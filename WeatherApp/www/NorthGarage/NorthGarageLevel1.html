@@ -16,9 +16,26 @@
 
 </head>
 <body>
+    <p style="text-align: center;">
+        Level 1
+    </p>
 
-    
-   
+    <canvas id='canvasNGF1' width='8000' height='3500'></canvas>
+
+    <script>
+
+        // var refreshButton = document.getElementById('draw-btn');
+        //refreshButton.click();
+        var dataArr;
+        obtainData("North", 1).then(function () {
+
+            dataArr = getArray();
+            var imagePath = "../images/NorthGarage/NorthGarageFloor_1_Layout.png";
+            drawFloor("canvasNGF1", imagePath, dataArr);
+            console.log("dataArray length is: " + dataArr.length);
+        });
+
+    </script>
 
     <div>
         <div class="col-md-1">
@@ -26,35 +43,21 @@
         </div>
 
         <div class="col-md-1">
-            <a id="go-down-floor-btn" class="btn btn-default" href="NorthGarageMain.html"></a>
+            <a id="go-up-floor-btn" class="btn btn-default" href="NorthGarageLevel2.html" data-ajax="false">Go Up A Floor</a>
         </div>
 
         <div class="col-md-1">
-            <a id="go-up-floor-btn" class="btn btn-default" href="NorthGarageLevel2.html" data-ajax="false">Go Up A Floor</a>
+            <a id="go-down-floor-btn" class="btn btn-default" href="NorthGarageMain.html">Return To North Garage</a>
+        </div>
+
+        <div class="col-md-1">
+            <a id="go-down-floor-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
+
         </div>
     </div>
 
-    <div class="col-md-1">
-        <a id="go-down-floor-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
-
-    </div>
-
-    <canvas id='canvasNGF1' width='8000' height='3500'></canvas>
 
 
-    <script>
 
-       // var refreshButton = document.getElementById('draw-btn');
-        //refreshButton.click();
-        var dataArr;
-        obtainData("North", 1).then(function () {
-            
-            dataArr = getArray();
-            var imagePath = "../images/NorthGarage/NorthGarageFloor_1_Layout.png";
-            drawFloor("canvasNGF1", imagePath, dataArr);
-            console.log("dataArray length is: " + dataArr.length);
-        });
-        
-    </script>
 </body>
 </html>

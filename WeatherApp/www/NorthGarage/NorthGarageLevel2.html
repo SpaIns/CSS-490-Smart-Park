@@ -15,11 +15,12 @@
     <title>Level 2</title>
 </head>
 <body>
-
+    <p style="text-align: center;">
+        Level 2
+    </p>
 
     <canvas id='canvasNGF2' width='8000' height='3500'></canvas>
-    
-   
+
     <script>
         var dataArr;
         obtainData("North", 2).then(function () {
@@ -37,13 +38,17 @@
         </div>
 
         <div class="col-md-1">
-            <a id="go-down-floor-btn" class="btn btn-default" href="NorthGarageLevel1.html" data-ajax="false">Go Down A Floor</a>
-        </div>
-
-        <div class="col-md-1">
             <a id="go-up-floor-btn" class="btn btn-default" href="NorthGarageLevel3.html" data-ajax="false">Go Up A Floor</a>
         </div>
 
+        <div class="col-md-1">
+            <a id="go-down-floor-btn" class="btn btn-default" href="NorthGarageLevel1.html" data-ajax="false">Go Down A Floor</a>
+        </div>
+
+    </div>
+
+    <div class="col-md-1">
+        <a id="go-down-floor-btn" class="btn btn-default" href="NorthGarageMain.html">Return To North Garage</a>
     </div>
 
     <div class="col-md-1">

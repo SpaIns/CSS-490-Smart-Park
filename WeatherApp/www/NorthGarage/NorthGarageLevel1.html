@@ -27,7 +27,9 @@
 
         //var refreshButton = document.getElementById('draw-btn');
         //refreshButton.click();
+        
         obtainData("North", 1).then(function () {
+            console.log(getArray().length);
             var imagePath = "../images/NorthGarage/NorthGarageFloor_1_Layout.png";
             drawFloor("canvasNGF1", imagePath);
 

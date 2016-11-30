@@ -28,7 +28,7 @@ function obtainData(garage, floor) {
                         data.push(dict);
                     }
                     else if (window.localStorage.getItem(typeMap[val.spaceType]).includes("yes")) {
-                        document.writeln(val.spaceType + "<br>");
+                       
                         dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType,"available:":val.isAvailable };
                         data.push(dict);
                     }
@@ -46,7 +46,7 @@ function obtainData(garage, floor) {
 }
 
 
-function getArray(fireData) {
+function getArray() {
     return data;
 }
 

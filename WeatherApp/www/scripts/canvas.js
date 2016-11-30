@@ -1328,10 +1328,11 @@ function drawFloor(canvasId, imagePath, dataArray)
 
         var isAvailable;
         var spaceType;
-        
+       
+        var count = 0;
         for (var i = 0; i < overlay.length; i++)
         {
-            var count = 0;
+            
             //for (item in dataArray)
             for (var ii = 0; ii < dataArray.length; ii++)
             {
@@ -1340,11 +1341,13 @@ function drawFloor(canvasId, imagePath, dataArray)
                 //if (overlay[i].spaceNumber == item.spaceNumber)
                 if (overlay[i].spaceNumber == dataArray[ii].spaceNumber)
                 {
-                    count++;
+                    
                     //isAvailable = item.available;
                     //spaceType = item.spaceType;
                     isAvailable = dataArray[ii].available;
                     spaceType = dataArray[ii].spaceType;
+                    break;
+
                 }
                 else
                 {
@@ -1352,7 +1355,7 @@ function drawFloor(canvasId, imagePath, dataArray)
                     spaceType = "reg";
                 }
             }
-            console.log(overlay[i].spaceNumber + " " + dataArray[i].spaceNumber);
+            
             // var currentAvailability[] =
             //     obtainData("South", 2);
             var xCor = parseInt(overlay[i].xCor);
@@ -1436,6 +1439,7 @@ function drawFloor(canvasId, imagePath, dataArray)
                 }
             }
         }
+        console.log("count is: " + count);
         ctx.stroke();
     }
     resizeCanvas(canvasId);

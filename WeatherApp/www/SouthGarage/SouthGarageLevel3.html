@@ -4,6 +4,9 @@
     <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
     <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
     <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <!-- FireBase database-->
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
     <script src="../scripts/floorSwipes.js"></script>
     <script src="../scripts/getData.js"></script>
     <script src="../scripts/canvas.js"></script>
@@ -12,17 +15,18 @@
     <h5>Level 3</h5>
 
     <div>
-        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF3", "../images/SouthGarage/SouthGarageFloor_3_Layout.png")'>Refresh</button>
+        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF3", "../images/SouthGarage/SouthGarageFloor_3_Layout.png",dataArr)'>Refresh</button>
         <a id="go-up-floor-btn" class="button" data-icon="search" href="SouthGarageLevel4.html">Go Up A Floor</a>
         <a id="go-down-floor-btn" class="button" data-icon="search" href="SouthGarageLevel2.html">Go Down A Floor</a>
     </div>
 
     <canvas id='canvasSGF3' width='8000' height='5000'></canvas>
     <script>
-
+        var dataArr;
         obtainData("South", 3).then(function () {
+            dataArr=getArray();
             var imagePath = "../images/SouthGarage/SouthGarageFloor_3_Layout.png";
-            drawFloor("canvasSGF3", imagePath);
+            drawFloor("canvasSGF3", imagePath,dataArr);
 
         });
     </script>

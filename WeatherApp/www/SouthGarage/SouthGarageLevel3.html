@@ -6,6 +6,7 @@
     <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
     <script src="../scripts/floorSwipes.js"></script>
     <script src="../scripts/getData.js"></script>
+    <script src="../scripts/canvas.js"></script>
 </head>
 <body>
     <h5>Level 3</h5>
@@ -16,15 +17,12 @@
     </div>
 
     <canvas id='canvasSGF3' width='8000' height='5000'></canvas>
-    <script src="../scripts/canvas.js">
-        var imagePath = "../images/SouthGarage/SouthGarageFloor_3_Layout.png";
-        drawFloor("canvasSGF3", imagePath);
-    </script>
-
     <script>
-        var refreshButton = document.getElementById('draw-btn');
-        refreshButton.click();
-        obtainData("SouthGarage","Floor3");
+        obtainData("South", 3).then(function () {
+            var imagePath = "../images/SouthGarage/SouthGarageFloor_3_Layout.png";
+            drawFloor("canvasSGF3", imagePath);
+
+        });
     </script>
 
 </body>

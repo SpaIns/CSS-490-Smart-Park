@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
     <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
     <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
     <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
@@ -10,15 +11,24 @@
     <script src="../scripts/floorSwipes.js"></script>
     <script src="../scripts/getData.js"></script>
     <script src="../scripts/canvas.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/BootStrap/bootstrap.css" />
+
     <title>Level 4</title>
 </head>
 <body>
-
-    <div>
+    <div class="col-md-1">
         <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF4", "../images/NorthGarage/NorthGarageFloor_4_Layout.png",dataArr)'>Refresh</button>
-        <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageMain.html"></a>
+    </div>
+
+    <div class="col-md-1">
+        <a id="go-up-floor-btn" class="button" href="NorthGarageMain.html"></a>
+
         <!-- invisible button to redirect swipe to North Main-->
-        <a id="go-down-floor-btn" class="button" data-icon="search" href="NorthGarageLevel3.html">Go Down A Floor</a>
+        <a id="go-down-floor-btn" class="btn btn-default" href="NorthGarageLevel3.html" data-ajax="false">Go Down A Floor</a>
+    </div>
+
+    <div class="col-md-1">
+        <a id="go-down-floor-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
     </div>
 
     <canvas id='canvasNGF4' width='8000' height='3500'></canvas>

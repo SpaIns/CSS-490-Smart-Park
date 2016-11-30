@@ -10,15 +10,12 @@
     <script src="../scripts/getData.js"></script>
     <script src="../scripts/floorSwipes.js"></script>
     <script src="../scripts/canvas.js"></script>
+   <link rel="stylesheet" type="text/css" href="../css/BootStrap/bootstrap.css" />
+
     <title>Level 2</title>
 </head>
 <body>
 
-    <div>
-        <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF2", "../images/NorthGarage/NorthGarageFloor_2_Layout.png",dataArr)'>Refresh</button>
-        <a id="go-down-floor-btn" class="button" data-icon="search" href="NorthGarageLevel1.html">Go Down A Floor</a>
-        <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel3.html">Go Up A Floor</a>
-    </div>
 
     <canvas id='canvasNGF2' width='8000' height='3500'></canvas>
     
@@ -33,6 +30,25 @@
 
         });
     </script>
-    
+
+    <div>
+        <div class="col-md-1">
+            <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF2", "../images/NorthGarage/NorthGarageFloor_2_Layout.png",dataArr)'>Refresh</button>
+        </div>
+
+        <div class="col-md-1">
+            <a id="go-down-floor-btn" class="btn btn-default" href="NorthGarageLevel1.html" data-ajax="false">Go Down A Floor</a>
+        </div>
+
+        <div class="col-md-1">
+            <a id="go-up-floor-btn" class="btn btn-default" href="NorthGarageLevel3.html" data-ajax="false">Go Up A Floor</a>
+        </div>
+
+    </div>
+
+    <div class="col-md-1">
+        <a id="go-down-floor-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
+    </div>
+
 </body>
 </html>

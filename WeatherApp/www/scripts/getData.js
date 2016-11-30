@@ -4,14 +4,19 @@ var data = [];
 
 
 function obtainData(garage, floor) {
+    
     //window.localStorage.setItem("disabled", "disabled-yes");
     var config = {
         apiKey: "AIzaSyDIkSj_PO9zfpbqYcoeDfton9NLPkQUdrI",
         databaseURL: "https://smartpark-aa8eb.firebaseio.com",
     };
+    
     firebase.initializeApp(config);
+    //alert("yea");
 
     var database = firebase.database(); //get a database reference
+   
+   
     link = "/spaces";
     return new Promise(function (resolve, reject) {
         firebase.database().ref(link).once('value').then(function (snap) {
@@ -22,9 +27,7 @@ function obtainData(garage, floor) {
 
 
                 if (val.garage == garage && val.floor == floor) {   // && val.isAvailable == "true"
-                    if (floor == 4) {
-                        console.log(val.spaceNumber);
-                    }
+                   
                     //if(val.spaceType=="REG"){
 
                     //    dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType,"available":val.isAvailable,"pref":"true" };

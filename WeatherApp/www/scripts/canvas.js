@@ -1,6 +1,6 @@
 ﻿var nGF1 = [
-   { spaceNumber: 2116, xCor: "710", yCor: "340", yMove: "down" },
-   { spaceNumber: 2115, xCor: "915", yCor: "340", yMove: "down" },
+   { spaceNumber: "2116", xCor: "710", yCor: "340", yMove: "down" },
+   { spaceNumber: "2115", xCor: "915", yCor: "340", yMove: "down" },
    { spaceNumber: "2114", xCor: "1125", yCor: "340", yMove: "down" },
    { spaceNumber: "2113", xCor: "1335", yCor: "340", yMove: "down" },
    { spaceNumber: "2112", xCor: "1547", yCor: "340", yMove: "down" },
@@ -1329,7 +1329,6 @@ function drawFloor(canvasId, imagePath, dataArray)
         var isAvailable;
         var spaceType;
        
-        var count = 0;
         for (var i = 0; i < overlay.length; i++)
         {
             
@@ -1339,7 +1338,10 @@ function drawFloor(canvasId, imagePath, dataArray)
                 
                 //console.log(dataArray[ii].spaceNumber);
                 //if (overlay[i].spaceNumber == item.spaceNumber)
-                if (overlay[i].spaceNumber == dataArray[ii].spaceNumber)
+                var over = "" + overlay[i].spaceNumber;
+                var data = "" + dataArray[ii].spaceNumber;
+                //if (overlay[i].spaceNumber == dataArray[ii].spaceNumber)
+                if(over === data)
                 {
                     
                     //isAvailable = item.available;
@@ -1351,6 +1353,7 @@ function drawFloor(canvasId, imagePath, dataArray)
                 }
                 else
                 {
+                    
                     isAvailable = "null";
                     spaceType = "reg";
                 }
@@ -1439,7 +1442,7 @@ function drawFloor(canvasId, imagePath, dataArray)
                 }
             }
         }
-        console.log("count is: " + count);
+
         ctx.stroke();
     }
     resizeCanvas(canvasId);

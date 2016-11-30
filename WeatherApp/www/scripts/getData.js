@@ -18,34 +18,38 @@ function obtainData(garage, floor) {
             snap.forEach(function (cSnap) {
                 val = cSnap.val();
 
-                typeMap = {"DIS":"disabled","Motorcycle":"motorcycle","Carpool":"carpool"};
-                
+                typeMap = { "DIS": "disabled", "Motorcycle": "motorcycle", "Carpool": "carpool" };
 
-                if (val.garage == garage && val.floor == floor ) {   // && val.isAvailable == "true"
-                    if(val.spaceType=="REG"){
-               
-                        dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType,"available":val.isAvailable,"pref":"true" };
-                        data.push(dict);
+
+                if (val.garage == garage && val.floor == floor) {   // && val.isAvailable == "true"
+                    if (floor == 4) {
+                        console.log(val.spaceNumber);
                     }
-                    else if (window.localStorage.getItem(typeMap[val.spaceType]).includes("yes")) {
+                    //if(val.spaceType=="REG"){
 
-                        dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType, "available:": val.isAvailable, "pref": "true" };
-                        data.push(dict);
-                    }
-                    else {
+                    //    dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType,"available":val.isAvailable,"pref":"true" };
+                    //    data.push(dict);
+                    //}
+                    //else if (window.localStorage.getItem(typeMap[val.spaceType]).includes("yes")) {
 
-                        dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType, "available:": val.isAvailable, "pref": "false" };
-                        data.push(dict);
-                    }
-                 
+                    //    dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType, "available:": val.isAvailable, "pref": "true" };
+                    //    data.push(dict);
+                    //}
+                    //else {
 
+                    //    dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType, "available:": val.isAvailable, "pref": "false" };
+                    //    data.push(dict);
+                    //}
+
+                    dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType, "available": val.isAvailable, "pref": "true" };
+                    data.push(dict);
                 }
             });
             resolve(data);
         });
 
     });
-    
+
 
 
 }

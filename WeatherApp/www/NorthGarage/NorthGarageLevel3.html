@@ -19,18 +19,17 @@
         <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel4.html">Go Up A Floor</a>
         <a id="go-down-floor-btn" class="button" data-icon="search" href="NorthGarageLevel2.html">Go Down A Floor</a>
     </div>
-    
+
     <canvas id='canvasNGF3' width='8000' height='3500'></canvas>
-    
+
 
     <script>
 
         var dataArr;
-       
         obtainData("North", 3).then(function () {
-            dataArr=getArray();
+            dataArr = getArray();
             var imagePath = "../images/NorthGarage/NorthGarageFloor_3_Layout.png";
-            drawFloor("canvasNGF3", imagePath,dataArr);
+            drawFloor("canvasNGF3", imagePath, dataArr);
 
 
         });

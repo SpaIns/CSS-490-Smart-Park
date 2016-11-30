@@ -12,6 +12,8 @@ function obtainData(garage, floor) {
     firebase.initializeApp(config);
 
     var database = firebase.database(); //get a database reference
+    var databox = document.getElementById('#databox');
+    databox.val = "testing123";
     link = "/spaces";
     return new Promise(function (resolve, reject) {
         firebase.database().ref(link).once('value').then(function (snap) {

@@ -10,6 +10,7 @@
 </head>
 <body>
     <h5>Level 2</h5>
+
     <div>
         <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF2", "../images/SouthGarage/SouthGarageFloor_2_Layout.png")'>Refresh</button>
         <a id="go-up-floor-btn" class="button" data-icon="search" href="SouthGarageLevel3.html">Go Up A Floor</a>
@@ -18,6 +19,7 @@
 
     <canvas id='canvasSGF2' width='8000' height='5000'></canvas>
     <script>
+
         obtainData("South", 2).then(function () {
             var imagePath = "../images/SouthGarage/SouthGarageFloor_2_Layout.png";
             drawFloor("canvasSGF2", imagePath);

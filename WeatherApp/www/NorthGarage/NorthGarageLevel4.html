@@ -10,6 +10,7 @@
     <title>Level 4</title>
 </head>
 <body>
+
     <div>
         <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF4", "../images/NorthGarage/NorthGarageFloor_4_Layout.png")'>Refresh</button>
         <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageMain.html"></a>
@@ -21,9 +22,11 @@
     
 
     <script>
+
         obtainData("North", 4).then(function () {
             var imagePath = "../images/NorthGarage/NorthGarageFloor_4_Layout.png";
             drawFloor("canvasNGF4", imagePath);
+
 
 
         });

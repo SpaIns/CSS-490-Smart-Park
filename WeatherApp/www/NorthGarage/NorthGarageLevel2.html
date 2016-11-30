@@ -1,23 +1,38 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
-    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
-    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
-    <script src="../scripts/getData.js"></script>
-    <script src="../scripts/floorSwipes.js"></script>
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js" defer></script>
+    <!--<link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">-->
+    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js" defer></script>
+    <script src="../scripts/getData.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js" defer></script>
+    <!-- FireBase database-->
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js" defer></script>
+    <script src="../scripts/floorSwipes.js" defer></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/BootStrap/bootstrap.css" />
     <title>Level 2</title>
 </head>
 <body>
     <script>
-        obtainData("NorthGarage","Floor2");
+        obtainData("North", 2).then(function () {
+
+
+        });
     </script>
     <div>
-       <!--<img id=example src="../images/NG Fl 2-Layout2.png" height="1200" width="800"/> --> 
+        <div class="col-md-1">
+            <a id="go-down-floor-btn" class="btn btn-default" href="NorthGarageLevel1.html" data-ajax="false">Go Down A Floor</a>
+        </div>
+
+        <div class="col-md-1">
+            <a id="go-up-floor-btn" class="btn btn-default" href="NorthGarageLevel3.html" data-ajax="false">Go Up A Floor</a>
+        </div>
+
     </div>
-    <div>
-        <a id="go-down-floor-btn" class="button" data-icon="search" href="NorthGarageLevel1.html">Go Down A Floor</a>
-        <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel3.html">Go Up A Floor</a>
+
+    <div class="col-md-1">
+        <a id="go-down-floor-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
     </div>
 </body>
 </html>

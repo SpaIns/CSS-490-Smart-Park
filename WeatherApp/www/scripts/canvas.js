@@ -1,6 +1,6 @@
 ﻿var nGF1 = [
-   { spaceNumber: "2116", xCor: "710", yCor: "340", yMove: "down" },
-   { spaceNumber: "2115", xCor: "915", yCor: "340", yMove: "down" },
+   { spaceNumber: 2116, xCor: "710", yCor: "340", yMove: "down" },
+   { spaceNumber: 2115, xCor: "915", yCor: "340", yMove: "down" },
    { spaceNumber: "2114", xCor: "1125", yCor: "340", yMove: "down" },
    { spaceNumber: "2113", xCor: "1335", yCor: "340", yMove: "down" },
    { spaceNumber: "2112", xCor: "1547", yCor: "340", yMove: "down" },
@@ -1284,7 +1284,7 @@ var sGF5 = [
    { spaceNumber: "824", xCor: "6849", yCor: "2865", yMove: "up" }
 ];
 
-function drawFloor(canvasId, imagePath)
+function drawFloor(canvasId, imagePath, dataArray)
 {
     var cnvs = document.getElementById(canvasId);
     var ctx = cnvs.getContext("2d");
@@ -1326,33 +1326,40 @@ function drawFloor(canvasId, imagePath)
         else if (canvasId == "canvasSGF5")
             overlay = sGF5;
 
-        var availability = [
-           "true",
-           "false",
-           "false",
-           "false",
-           "false",
-           "false",
-           "false"
-        ]
         var isAvailable;
-        //var config = {
-        //    apiKey: "AIzaSyDIkSj_PO9zfpbqYcoeDfton9NLPkQUdrI",
-        //    authDomain: "smartpark-aa8eb.firebaseapp.com",
-        //    databaseURL: "https://smartpark-aa8eb.firebaseio.com",
-        //    storageBucket: "smartpark-aa8eb.appspot.com",
-        //    messagingSenderId: "563892478420"
-        //};
-
+        var spaceType;
+        
         for (var i = 0; i < overlay.length; i++)
         {
+            var count = 0;
+            //for (item in dataArray)
+            for (var ii = 0; ii < dataArray.length; ii++)
+            {
+                
+                //console.log(dataArray[ii].spaceNumber);
+                //if (overlay[i].spaceNumber == item.spaceNumber)
+                if (overlay[i].spaceNumber == dataArray[ii].spaceNumber)
+                {
+                    count++;
+                    //isAvailable = item.available;
+                    //spaceType = item.spaceType;
+                    isAvailable = dataArray[ii].available;
+                    spaceType = dataArray[ii].spaceType;
+                }
+                else
+                {
+                    isAvailable = "null";
+                    spaceType = "reg";
+                }
+            }
+            console.log(overlay[i].spaceNumber + " " + dataArray[i].spaceNumber);
             // var currentAvailability[] =
             //     obtainData("South", 2);
             var xCor = parseInt(overlay[i].xCor);
             var yCor = parseInt(overlay[i].yCor);
 
             var rand = Math.floor(Math.random() * 5);
-            isAvailable = availability[rand];
+            //isAvailable = availability[rand];
             //isAvailable = "true";
             //isAvailable = "null";
             /*if (nGF2[i].spaceNumber >= 2117 && nGF2[i].spaceNumber <= 2149) {

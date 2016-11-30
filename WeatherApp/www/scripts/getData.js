@@ -21,15 +21,20 @@ function obtainData(garage, floor) {
                 typeMap = {"DIS":"disabled","Motorcycle":"motorcycle","Carpool":"carpool"};
                 
 
-                if (val.garage == garage && val.floor == floor && val.isAvailable == "true") {    
+                if (val.garage == garage && val.floor == floor ) {   // && val.isAvailable == "true"
                     if(val.spaceType=="REG"){
                
-                        dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType };
+                        dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType,"available":val.isAvailable,"pref":"true" };
                         data.push(dict);
                     }
                     else if (window.localStorage.getItem(typeMap[val.spaceType]).includes("yes")) {
-                       
-                        dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType,"available:":val.isAvailable };
+
+                        dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType, "available:": val.isAvailable, "pref": "true" };
+                        data.push(dict);
+                    }
+                    else {
+
+                        dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType, "available:": val.isAvailable, "pref": "false" };
                         data.push(dict);
                     }
                  

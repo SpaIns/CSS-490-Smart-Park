@@ -1,9 +1,49 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
+    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <!-- FireBase database-->
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
+    <script src="../scripts/floorSwipes.js"></script>
+    <script src="../scripts/getData.js"></script>
+    <script src="../scripts/canvas.js"></script>
 </head>
 <body>
-    <div>Content goes here.</div>
+    <h5>Level 2</h5>
+
+    
+
+    <canvas id='canvasSGF2' width='8000' height='5000'></canvas>
+    <script>
+        var dataArr;
+        obtainData("South", 2).then(function () {
+            dataArr=getArray();
+            var imagePath = "../images/SouthGarage/SouthGarageFloor_2_Layout.png";
+            drawFloor("canvasSGF2", imagePath,dataArr);
+
+
+        });
+    </script>
+    <div>
+        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF2", "../images/SouthGarage/SouthGarageFloor_2_Layout.png",dataArr)'>Refresh</button>
+        <div class="col-md-1">
+            <a id="go-up-floor-btn" class="btn btn-default" href="SouthGarageLevel3.html" data-ajax="false">Go Up A Floor</a>
+        </div>
+
+        <div class="col-md-1">
+            <a id="go-down-floor-btn" class="btn btn-default" href="SouthGarageLevel1.html" data-ajax="false">Go Down A Floor</a>
+        </div>
+    </div>
+
+    <div class="col-md-1">
+        <a id="go-garage-btn" class="btn btn-default" href="SouthGarageMain.html">Return To South Garage</a>
+    </div>
+
+    <div class="col-md-1">
+        <a id="go-home-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
+    </div>
 </body>
 </html>

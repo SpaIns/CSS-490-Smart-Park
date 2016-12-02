@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        
+        <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
+        <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js" defer></script>
+           
+        <link rel="stylesheet" type="text/css" href="../css/home.css">
+        <link rel="stylesheet" type="text/css" href="../css/BootStrap/bootstrap.css" />
+
+        <title>Homepage</title>
+    </head>
+
+    <body>
+        <div>Content goes hereee.</div>
+
+        <!--Links-->
+        <div id="redirects">
+            <div class="col-md-1">
+                <a class="btn btn-default" id="favorite-lot" href="" data-ajax="false"><h5>Favorite Lot</h5></a>
+            </div>
+
+            <div class="col-md-1">
+                <a class="btn btn-default" href="../NorthGarage/NorthGarageMain.html" data-ajax="false"><h5>North Garage</h5></a>
+            </div>
+
+            <div class="col-md-1">
+                <a class="btn btn-default" href="../SouthGarage/SouthGarageMain.html" data-ajax="false"><h5>South Garage</h5></a>
+            </div>
+
+            <div class="col-md-1">
+                <a class="btn btn-default" href="../preferences.html" data-ajax="false"><h5>Preferences</h5></a>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //Enable the changing of the Href here
+                var href = window.localStorage.getItem("favoriteLot");
+                if (href != null) {
+                    $('#favorite-lot').prop("href", href);
+                    //alert(href);
+                }
+                else {
+                    //make an onclick action that states that the pref isn't set as alert on click
+                    $('#favorite-lot').click(function () {
+                        alert("Favorite lot not set - go to preferences menu to set.");
+                    }); 
+                }
+            });
+        </script>
+
+        <!--Footer-->
+        <footer data-role="footer" data-position="absolute">
+            <h4>Smart Park - Because Parking </h4>
+        </footer>
+    </body>
+</html>

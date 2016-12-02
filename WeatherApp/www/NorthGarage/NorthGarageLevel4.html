@@ -1,15 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-
-    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
-    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
     <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
     <!-- FireBase database-->
     <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
-    <script src="../scripts/floorSwipes.js"></script>
     <script src="../scripts/getData.js"></script>
+    <script src="../scripts/floorSwipes.js"></script>
     <script src="../scripts/canvas.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/BootStrap/bootstrap.css" />
 
@@ -21,8 +20,8 @@
     </p>
 
     <canvas id='canvasNGF4' width='8000' height='3500'></canvas>
-   
-     <script>
+
+    <script>
         var dataArr;
         obtainData("North", 4).then(function () {
             dataArr = getArray();
@@ -49,10 +48,5 @@
     <div class="col-md-1">
         <a id="go-down-floor-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
     </div>
-
-   
-
-
-   
 </body>
 </html>

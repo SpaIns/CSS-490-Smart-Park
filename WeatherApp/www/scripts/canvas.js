@@ -1,4 +1,5 @@
-﻿var nGF1 = [
+﻿// arrays that store each floor's visual coordinates for each spot
+var nGF1 = [
    { spaceNumber: "2116", xCor: "710", yCor: "340", yMove: "down" },
    { spaceNumber: "2115", xCor: "915", yCor: "340", yMove: "down" },
    { spaceNumber: "2114", xCor: "1125", yCor: "340", yMove: "down" },
@@ -85,7 +86,7 @@
    { spaceNumber: "2035", xCor: "6513", yCor: "1825", yMove: "down" },
    { spaceNumber: "2034", xCor: "6723", yCor: "1825", yMove: "down" },
    { spaceNumber: "2033", xCor: "6931", yCor: "1825", yMove: "down" },
-   
+
    { spaceNumber: "2475", xCor: "732", yCor: "2813", yMove: "up" },
    { spaceNumber: "2001", xCor: "941", yCor: "2813", yMove: "up" },
    { spaceNumber: "2002", xCor: "1149", yCor: "2813", yMove: "up" },
@@ -1284,28 +1285,25 @@ var sGF5 = [
    { spaceNumber: "824", xCor: "6849", yCor: "2865", yMove: "up" }
 ];
 
-function drawFloor(canvasId, imagePath, dataArray)
-{
+// draws the floor layout and the visual overlay of parking space data
+function drawFloor(canvasId, imagePath, dataArray) {
     var cnvs = document.getElementById(canvasId);
     var ctx = cnvs.getContext("2d");
+    // create new image with the path as specified in the parameters
+    var background = new Image();
+    var path = imagePath;
+    background.src = path;
+    var isAvailable;
+    var spaceType;
 
     // refreshes and cleans the canvas from previous data when refresh button is clicked
     ctx.clearRect(0, 0, cnvs.width, cnvs.height);
 
-    var background = new Image();
-    var path = imagePath;
-
-    //background.style.position = "absolute";
-    //cnvs.style.position = "absolute";
-    //cnvs.style.left = background.offsetLeft + "px";
-    //cnvs.style.top = background.offsetTop + "px";
-
-    background.src = path;
-
-    background.onload = function ()
-    {
+    // once the background image has been loaded
+    background.onload = function () {
         ctx.drawImage(background, 0, 0);
 
+        // assign which overlay data array to use depending on canvas of the garage and floor
         var overlay = [];
         if (canvasId == "canvasNGF1")
             overlay = nGF1;
@@ -1326,130 +1324,151 @@ function drawFloor(canvasId, imagePath, dataArray)
         else if (canvasId == "canvasSGF5")
             overlay = sGF5;
 
-        var isAvailable;
-        var spaceType;
-       
-        for (var i = 0; i < overlay.length; i++)
-        {
-            
-            //for (item in dataArray)
-            for (var ii = 0; ii < dataArray.length; ii++)
-            {
-                
-                //console.log(dataArray[ii].spaceNumber);
-                //if (overlay[i].spaceNumber == item.spaceNumber)
-                var over = "" + overlay[i].spaceNumber;
-                var data = "" + dataArray[ii].spaceNumber;
-                //if (overlay[i].spaceNumber == dataArray[ii].spaceNumber)
-                if(over === data)
-                {
-                    
-                    //isAvailable = item.available;
-                    //spaceType = item.spaceType;
+        // iterate through the data overlay
+        for (var i = 0; i < overlay.length; i++) {
+
+            // iterate through the array obtained from the database
+            for (var ii = 0; ii < dataArray.length; ii++) {
+                // if the parking space from the data overlay and database match
+                if (overlay[i].spaceNumber == dataArray[ii].spaceNumber) {
+                    // transfer the availability and space type from database to local variables
                     isAvailable = dataArray[ii].available;
                     spaceType = dataArray[ii].spaceType;
+                    // after the matching parking space was updated, exit the loop
                     break;
-
                 }
-                else
-                {
-                    
+                else {
+                    // otherwise, set to undefined availibility
                     isAvailable = "null";
-                    spaceType = "reg";
+                    spaceType = "REG";
                 }
             }
-            
-            // var currentAvailability[] =
-            //     obtainData("South", 2);
+
+            // x and y coordinates of where the parking overlay of each space will be drawn from
             var xCor = parseInt(overlay[i].xCor);
             var yCor = parseInt(overlay[i].yCor);
 
-            var rand = Math.floor(Math.random() * 5);
-            //isAvailable = availability[rand];
-            //isAvailable = "true";
-            //isAvailable = "null";
-            /*if (nGF2[i].spaceNumber >= 2117 && nGF2[i].spaceNumber <= 2149) {
-                 isAvailable = null;
-            }*/
-
+            // aligns the space numbers to center
             var xAlignment;
+            // moves the space numbers along with the available space's position
             var yAlignmentDn;
             var yAlignmentUp;
-            if (overlay[i].spaceNumber < 1000)
-            {
+            // for spaces in the south garage
+            if (overlay[i].spaceNumber < 1000) {
                 xAlignment = 27;
+                // space numbers will be printed inside the parking space overlay
                 yAlignmentDn = 350;
                 yAlignmentUp = -90;
             }
-            else
-            {
+            else {
+                // for parking spaces in the north garage
                 xAlignment = 10;
+                // space numbers will be printed outside the parking space overlay
                 yAlignmentDn = 450;
                 yAlignmentUp = 10;
             }
-            if (isAvailable == "true")
-            {
-
+            // if the space is available
+            if (isAvailable == "true") {
+                // initialize font and font size
                 ctx.font = "75px Impact";
-                var yCorMoved;
-                if (overlay[i].yMove == "down")
-                {
-                    yCorMoved = yCor + 150;
+                // colorize the space depending on space type
+                if (spaceType == "DIS")
+                    ctx.fillStyle = '#0094FF';
+                else if (spaceType == "Reserved")
+                    ctx.fillStyle = '#B200FF';
+                else if (spaceType == "Carpool")
+                    ctx.fillStyle = '#FFD800';
+                else if (spaceType == "EV")
+                    ctx.fillStyle = '#32FBFF';
+                else
                     ctx.fillStyle = '#00B050';
+                // moves the available spaces out
+                var yCorMoved;
+                // if the available space needs to be moved out downwards
+                if (overlay[i].yMove == "down") {
+                    yCorMoved = yCor + 150;
                     ctx.fillRect(xCor, yCorMoved, 165, 375);
+                    // space numbers in south garage have white font
                     if (overlay[i].spaceNumber < 1000)
                         ctx.fillStyle = '#FFFFFF';
                     else
+                        // space numbers in north garage have black font
                         ctx.fillStyle = '#000000';
+                    // move the text respectively with the space downwards
                     ctx.fillText(overlay[i].spaceNumber, xCor + xAlignment, yCorMoved + yAlignmentDn);
                 }
-                else if (overlay[i].yMove == "up")
-                {
+
+                else if (overlay[i].yMove == "up") {
+                    // if the available space needs to be moved out upwards
                     yCorMoved = yCor - 150;
-                    ctx.fillStyle = '#00B050';
                     ctx.fillRect(xCor, yCorMoved, 165, 375);
+                    // space numbers in south garage have white font
                     if (overlay[i].spaceNumber < 1000)
                         ctx.fillStyle = '#FFFFFF';
                     else
+                        // space numbers in north garage have black font
                         ctx.fillStyle = '#000000';
+                    // move the text respectively with the space upwards
                     ctx.fillText(overlay[i].spaceNumber, xCor + xAlignment, yCorMoved - yAlignmentUp);
                 }
             }
-            else if (isAvailable == "false")
-            {
+            else if (isAvailable == "false") {
+                // if the space is not available
+                // create the boarder of unique parking space types to be displayed when the space is occupied
+                // to differenciate from regular parking spaces
+                if (spaceType == "DIS")
+                    ctx.fillStyle = '#0094FF';
+                else if (spaceType == "Reserved")
+                    ctx.fillStyle = '#B200FF';
+                else if (spaceType == "Carpool")
+                    ctx.fillStyle = '#FFD800';
+                else if (spaceType == "EV")
+                    ctx.fillStyle = '#32FBFF';
+                else
+                    ctx.fillStyle = '#FF0000';
+                ctx.fillRect(xCor, yCor, 165, 375);
+                // fill the inner of the parking space with red to show that the parking space is occupied
                 ctx.fillStyle = '#FF0000';
-                ctx.fillRect(xCor, yCor, 165, 375);
+                ctx.fillRect(xCor + 25, yCor + 25, 115, 325);
             }
-            else
-            {
-
-                ctx.fillStyle = '#C0C0C0';
+            else {
+                // for the parking spaces that don't have sensors
+                // if the parking space is for motorcycles, create a colorized boarder
+                if (spaceType == "Motorcycle")
+                    ctx.fillStyle = '#FF6A00';
+                else
+                    // otherwise the space will be grayed out
+                    ctx.fillStyle = '#C0C0C0';
                 ctx.fillRect(xCor, yCor, 165, 375);
-
+                // fill the inner of the parking space with grey to show that the parking space doesn't have a sensor
+                ctx.fillStyle = '#C0C0C0';
+                ctx.fillRect(xCor + 25, yCor + 25, 115, 325);
+                // initialize font and font size
                 ctx.font = "75px Impact";
+                // space numbers in south garage have white font
                 if (overlay[i].spaceNumber < 1000)
                     ctx.fillStyle = '#FFFFFF';
                 else
+                    // space numbers in north garage have black font
                     ctx.fillStyle = '#000000';
-
-                if (overlay[i].yMove == "down")
-                {
+                // if the available space needs is moved out downwards, move the text respectively with the space
+                if (overlay[i].yMove == "down") {
                     ctx.fillText(overlay[i].spaceNumber, xCor + xAlignment, yCor + yAlignmentDn);
                 }
-                else if (overlay[i].yMove == "up")
-                {
+                else if (overlay[i].yMove == "up") {
+                    // if the available space needs is moved out upwards, move the text respectively with the space
                     ctx.fillText(overlay[i].spaceNumber, xCor + xAlignment, yCor - yAlignmentUp);
                 }
             }
         }
-
         ctx.stroke();
     }
+    // once all data has been drawn, resize the canvas to fit to window
     resizeCanvas(canvasId);
 }
 
-function resizeCanvas(cId)
-{
+// resizes the canvas based on current window size
+function resizeCanvas(cId) {
     var cnvs = document.getElementById(cId);
     var ctx = cnvs.getContext("2d");
 
@@ -1457,13 +1476,11 @@ function resizeCanvas(cId)
     var windowRatio = window.innerHeight / window.innerWidth;
     var width;
     var height;
-    if (windowRatio < canvasRatio)
-    {
+    if (windowRatio < canvasRatio) {
         height = window.innerHeight;
         width = height / canvasRatio;
     }
-    else
-    {
+    else {
         width = window.innerWidth;
         height = width * canvasRatio;
     }

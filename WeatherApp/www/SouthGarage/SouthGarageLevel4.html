@@ -1,24 +1,33 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
-    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
-    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
-    <script src="../scripts/floorSwipes.js"></script>
-    <script src="../scripts/getData.js"></script>
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js" defer></script>
+    <!--<link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">-->
+    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js" defer></script>
+    <script src="../scripts/getData.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js" defer></script>
+    <!-- FireBase database-->
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js" defer></script>
+    <script src="../scripts/floorSwipes.js" defer></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/BootStrap/bootstrap.css" />
+    <title>Level 4</title>
 </head>
 <body>
-    <h5>Level 4</h5>
-    <div>Content goes here.</div>
     <script>
         obtainData("South", 4).then(function () {
-
-
         });
     </script>
-    <div>
-        <a id="go-up-floor-btn" class="button" data-icon="search" href="SouthGarageLevel5.html">Go Up A Floor</a>
-        <a id="go-down-floor-btn" class="button" data-icon="search" href="SouthGarageLevel3.html">Go Down A Floor</a>
+    <div>Content goes here.</div>
+
+    <div class="col-md-1">
+        <a id="go-up-floor-btn" class="button" href="SouthGarageLevel5.html">Go Up A Floor</a>
+        <!-- invisible button to redirect swipe to North Main-->
+        <a id="go-down-floor-btn" class="btn btn-default" href="SouthGarageLevel3.html" data-ajax="false">Go Down A Floor</a>
+    </div>
+
+    <div class="col-md-1">
+        <a id="go-home-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
     </div>
 </body>
 </html>

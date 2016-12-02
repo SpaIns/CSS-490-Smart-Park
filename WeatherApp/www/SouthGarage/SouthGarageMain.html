@@ -1,27 +1,53 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
+    <title>North Parking Garage</title>
+
     <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
     <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
-    <script src="../scripts/floorSwipes.js"></script>
-    <title>South Parking Garage</title>
+    <!--<link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">-->
+    <script type="text/javascript" src="../scripts/floorSwipes.js" defer></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/BootStrap/bootstrap.css" />
+
 </head>
 <body>
-    <h5>South Parking Garage</h5>
+
     <div>
         <!-- Adding an invisible button for the sake of the floorSwipes.js-->
         <a id="go-up-floor-btn" class="button" data-icon="search" href="SouthGarageLevel1.html"></a>
 
-        <a href="SouthGarageLevel1.html" data-ajax="false"><h5>Level 1</h5></a>
-        <a href="SouthGarageLevel2.html"><h5>Level 2</h5></a>
-        <a href="SouthGarageLevel3.html"><h5>Level 3</h5></a>
-        <a href="SouthGarageLevel4.html"><h5>Level 4</h5></a>
-        <a href="SouthGarageLevel5.html"><h5>Level 5</h5></a>
+        <div class="col-md-1">
+            <a class="btn btn-default" href="SouthGarageLevel1.html" data-ajax="false" id="NL1"><h5 id="SouthLevel1">Level 1</h5></a>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var lvl = "Level 1";
+                var spaces = 12;
+                $("#SouthLevel1").text(lvl + "  Open Spaces: " + spaces);
+            });
+        </script>
+
+        <div class="col-md-1">
+            <a class="btn btn-default" href="SouthGarageLevel2.html" data-ajax="false"><h5 id="SouthLevel2">Level 2</h5></a>
+        </div>
+
+        <div class="col-md-1">
+            <a class="btn btn-default" href="SouthGarageLevel3.html" data-ajax="false"><h5 id="SouthLevel3">Level 3</h5></a>
+        </div>
+
+        <div class="col-md-1">
+            <a class="btn btn-default" href="SouthGarageLevel4.html" data-ajax="false"><h5 id="SouthLevel4">Level 4</h5></a>
+        </div>
+
+        <div class="col-md-1">
+            <a class="btn btn-default" href="SouthGarageLevel5.html" data-ajax="false"><h5 id="SouthLevel5">Level 5</h5></a>
+        </div>
+
     </div>
 
     <div>
-        <a id="go-down-floor-btn" class="button" data-icon="search" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
+        <a id="go-down-floor-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
     </div>
 </body>
 </html>

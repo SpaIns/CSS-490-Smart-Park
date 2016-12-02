@@ -1,59 +1,58 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <script src="../scripts/JQuery/jquery-2.2.4.min.js" defer></script>
-    <!--<link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">-->
-    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js" defer></script>
-    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js" defer></script>
-    <!-- FireBase database-->
-    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js" defer></script>
-    <script  src="../scripts/getData.js" defer></script>
-    <script src="../scripts/floorSwipes.js" defer></script>
-
+    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
     <link rel="stylesheet" type="text/css" href="../css/BootStrap/bootstrap.css" />
-    <title>Level 1</title>   
-</head>
+    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <!-- FireBase database-->
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
+    <script src="../scripts/floorSwipes.js"></script>
+    <script src="../scripts/getData.js"></script>
+    <script src="../scripts/canvas.js"></script>
+    <title>Level 1</title>
 
+</head>
 <body>
-    
+    <p style="text-align: center;">
+        Level 1
+    </p>
+
+    <canvas id='canvasNGF1' width='8000' height='3500'></canvas>
 
     <script>
-        var y;
-        obtainData("North", 1).then(function () {
-            
-            //y = getArray();
-            //document.writeln(y.length);
-            //showArray();
-      
-        });
-        /*
-        for (i=0;i<myarray.length;i++){
-            int num= myarray[i]["spaceNumber"];
-            
-        }
-        */
-    </script>
-    <div>
-    </div>
 
-    <script type="text/javascript">
-            $(document).ready(function () {
-                obtainData("North", 1);
-            });
+        // var refreshButton = document.getElementById('draw-btn');
+        //refreshButton.click();
+        var dataArr;
+        obtainData("North", 1).then(function () {
+
+            dataArr = getArray();
+            var imagePath = "../images/NorthGarage/NorthGarageFloor_1_Layout.png";
+            drawFloor("canvasNGF1", imagePath, dataArr);
+            console.log("dataArray length is: " + dataArr.length);
+        });
+
     </script>
 
     <div>
         <div class="col-md-1">
             <a id="go-down-floor-btn" href="NorthGarageMain.html"></a>
+            <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF1", "../images/NorthGarage/NorthGarageFloor_1_Layout.png", dataArr)'>Refresh</button>
         </div>
 
         <div class="col-md-1">
             <a id="go-up-floor-btn" class="btn btn-default" href="NorthGarageLevel2.html" data-ajax="false">Go Up A Floor</a>
         </div>
-    </div>
 
-    <div class="col-md-1">
-        <a id="go-home-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
+    
+        <div class="col-md-1">
+            <a id="go-down-floor-btn" class="btn btn-default" href="NorthGarageMain.html">Return To North Garage</a>
+        </div>
+        <div class="col-md-1">
+            <a id="go-home-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
+        </div>
     </div>
 </body>
 </html>

@@ -16,9 +16,6 @@
 
 
     <canvas id='canvasSGF5' width='8000' height='5000'></canvas>
-        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF5", "../images/SouthGarage/SouthGarageFloor_5_Layout.png",dataArr)'>Refresh</button>
-    <div>
-    </div>
     <script>
         var dataArr;
         obtainData("South", 5).then(function () {
@@ -32,10 +29,19 @@
 
     <div>Content goes here.</div>
 
+    <div>
+        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF2", "../images/SouthGarage/SouthGarageFloor_5_Layout.png",dataArr)'>Refresh</button>
+        <div class="col-md-1">
+            <a id="go-up-floor-btn" class="" href="SouthGarageMain.html" data-ajax="false"></a>
+        </div>
+
+        <div class="col-md-1">
+            <a id="go-down-floor-btn" class="btn btn-default" href="SouthGarageLevel4.html" data-ajax="false">Go Down A Floor</a>
+        </div>
+    </div>
+
     <div class="col-md-1">
-        <a id="go-up-floor-btn" class="button" href="SouthGarageMain.html"></a>
-        <!-- invisible button to redirect swipe to North Main-->
-        <a id="go-down-floor-btn" class="btn btn-default" href="SouthGarageLevel4.html" data-ajax="false">Go Down A Floor</a>
+        <a id="go-garage-btn" class="btn btn-default" href="SouthGarageMain.html">Return To South Garage</a>
     </div>
 
     <div class="col-md-1">

@@ -22,17 +22,20 @@
     <canvas id='canvasNGF2' width='8000' height='3500'></canvas>
 
     <script>
-        var dataArr;
-        obtainData("North", 2).then(function () {
-            dataArr=getArray();
-            var imagePath = "../images/NorthGarage/NorthGarageFloor_2_Layout.png";
-            drawFloor("canvasNGF2", imagePath,dataArr);
-        });
+        reload();
+        function reload() {
+            var dataArr;
+            obtainData("North", 2).then(function () {
+                dataArr = getArray();
+                var imagePath = "../images/NorthGarage/NorthGarageFloor_2_Layout.png";
+                drawFloor("canvasNGF2", imagePath, dataArr);
+            });
+        }
     </script>
 
     <div>
         <div class="col-md-1">
-            <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF2", "../images/NorthGarage/NorthGarageFloor_2_Layout.png",dataArr)'>Refresh</button>
+            <button id='draw-btn' type="button" onclick='reload()'>Refresh</button>
         </div>
 
         <div class="col-md-1">

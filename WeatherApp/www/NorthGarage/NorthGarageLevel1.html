@@ -22,23 +22,20 @@
     <canvas id='canvasNGF1' width='8000' height='3500'></canvas>
 
     <script>
-
-        // var refreshButton = document.getElementById('draw-btn');
-        //refreshButton.click();
-        var dataArr;
-        obtainData("North", 1).then(function () {
-
-            dataArr = getArray();
-            var imagePath = "../images/NorthGarage/NorthGarageFloor_1_Layout.png";
-            drawFloor("canvasNGF1", imagePath, dataArr);
-            console.log("dataArray length is: " + dataArr.length);
-        });
-
+        reload();
+        function reload() {
+            var dataArr;
+            obtainData("North", 1).then(function () {
+                dataArr = getArray();
+                var imagePath = "../images/NorthGarage/NorthGarageFloor_1_Layout.png";
+                drawFloor("canvasNGF1", imagePath, dataArr);
+            });
+        }
     </script>
 
     <div>
         <div class="col-md-1">
-            <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF1", "../images/NorthGarage/NorthGarageFloor_1_Layout.png", dataArr)'>Refresh</button>
+            <button id='draw-btn' type="button" onclick='reload()'>Refresh</button>
         </div>
 
         <div class="col-md-1">

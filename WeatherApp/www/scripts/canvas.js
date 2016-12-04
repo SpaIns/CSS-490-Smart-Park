@@ -118,8 +118,7 @@ var nGF1 = [
    { spaceNumber: "2028", xCor: "6608", yCor: "2813", yMove: "up" },
    { spaceNumber: "2029", xCor: "6818", yCor: "2813", yMove: "up" },
    { spaceNumber: "2030", xCor: "7028", yCor: "2813", yMove: "up" },
-   { spaceNumber: "2031", xCor: "7237", yCor: "2813", yMove: "up" },
-   { spaceNumber: "2032", xCor: "7437", yCor: "2813", yMove: "up" }
+   { spaceNumber: "2031", xCor: "7390", yCor: "2813", yMove: "up" }
 ];
 
 var nGF2 = [
@@ -309,8 +308,10 @@ var nGF3 = [
    { spaceNumber: "2271", xCor: "4600", yCor: "1825", yMove: "down" },
    { spaceNumber: "2270", xCor: "4808", yCor: "1825", yMove: "down" },
    { spaceNumber: "2269", xCor: "5019", yCor: "1825", yMove: "down" },
-   { spaceNumber: "2268", xCor: "5229", yCor: "1825", yMove: "down" },
-   { spaceNumber: "2267", xCor: "5437", yCor: "1825", yMove: "down" },
+   { spaceNumber: "2476", xCor: "5224", yCor: "1825", yMove: "down" },
+   { spaceNumber: "2477", xCor: "5329", yCor: "1825", yMove: "down" },
+   { spaceNumber: "2454", xCor: "5535", yCor: "1825", yMove: "down" },
+   { spaceNumber: "2267", xCor: "5435", yCor: "1825", yMove: "down" },
    { spaceNumber: "2266", xCor: "5670", yCor: "1825", yMove: "down" },
    { spaceNumber: "2265", xCor: "5880", yCor: "1825", yMove: "down" },
    { spaceNumber: "2264", xCor: "6090", yCor: "1825", yMove: "down" },
@@ -558,8 +559,10 @@ var sGF1 = [
    { spaceNumber: "221", xCor: "5484", yCor: "1987", yMove: "down" },
    { spaceNumber: "220", xCor: "5685", yCor: "1987", yMove: "down" },
    { spaceNumber: "219", xCor: "5885", yCor: "1987", yMove: "down" },
-   { spaceNumber: "126", xCor: "6559", yCor: "1987", yMove: "down" },
-   { spaceNumber: "127", xCor: "6759", yCor: "1987", yMove: "down" },
+   { spaceNumber: "126", xCor: "6557", yCor: "1987", yMove: "down" },
+   { spaceNumber: "127", xCor: "6657", yCor: "1987", yMove: "down" },
+   { spaceNumber: "128", xCor: "6757", yCor: "1987", yMove: "down" },
+   { spaceNumber: "129", xCor: "6859", yCor: "1987", yMove: "down" },
 
    { spaceNumber: "189", xCor: "880", yCor: "2863", yMove: "up" },
    { spaceNumber: "190", xCor: "1080", yCor: "2863", yMove: "up" },
@@ -642,44 +645,46 @@ var sGF1 = [
    { spaceNumber: "159", xCor: "5997", yCor: "4280", yMove: "up" },
    { spaceNumber: "160", xCor: "6198", yCor: "4280", yMove: "up" },
    { spaceNumber: "161", xCor: "6400", yCor: "4280", yMove: "up" },
-   { spaceNumber: "162", xCor: "6600", yCor: "4280", yMove: "up" },
-   { spaceNumber: "163", xCor: "6800", yCor: "4280", yMove: "up" }
+   { spaceNumber: "130", xCor: "6598", yCor: "4280", yMove: "up" },
+   { spaceNumber: "131", xCor: "6698", yCor: "4280", yMove: "up" },
+   { spaceNumber: "132", xCor: "6799", yCor: "4280", yMove: "up" },
+   { spaceNumber: "133", xCor: "6898", yCor: "4280", yMove: "up" }
 ];
 
 var sGF2 = [
-   { spaceNumber: "457", xCor: "405", yCor: "565", yMove: "down" },
-   { spaceNumber: "456", xCor: "605", yCor: "565", yMove: "down" },
-   { spaceNumber: "455", xCor: "805", yCor: "565", yMove: "down" },
-   { spaceNumber: "454", xCor: "1007", yCor: "565", yMove: "down" },
-   { spaceNumber: "453", xCor: "1208", yCor: "565", yMove: "down" },
-   { spaceNumber: "452", xCor: "1409", yCor: "565", yMove: "down" },
-   { spaceNumber: "451", xCor: "1609", yCor: "565", yMove: "down" },
-   { spaceNumber: "450", xCor: "1809", yCor: "565", yMove: "down" },
-   { spaceNumber: "449", xCor: "2011", yCor: "564", yMove: "down" },
-   { spaceNumber: "448", xCor: "2212", yCor: "564", yMove: "down" },
-   { spaceNumber: "447", xCor: "2413", yCor: "564", yMove: "down" },
-   { spaceNumber: "446", xCor: "2613", yCor: "563", yMove: "down" },
-   { spaceNumber: "445", xCor: "2815", yCor: "563", yMove: "down" },
-   { spaceNumber: "444", xCor: "3017", yCor: "562", yMove: "down" },
-   { spaceNumber: "443", xCor: "3217", yCor: "561", yMove: "down" },
-   { spaceNumber: "442", xCor: "3417", yCor: "560", yMove: "down" },
-   { spaceNumber: "441", xCor: "3618", yCor: "559", yMove: "down" },
-   { spaceNumber: "440", xCor: "3819", yCor: "558", yMove: "down" },
-   { spaceNumber: "439", xCor: "4020", yCor: "557", yMove: "down" },
-   { spaceNumber: "438", xCor: "4220", yCor: "556", yMove: "down" },
-   { spaceNumber: "437", xCor: "4420", yCor: "556", yMove: "down" },
-   { spaceNumber: "436", xCor: "4623", yCor: "555", yMove: "down" },
-   { spaceNumber: "435", xCor: "4823", yCor: "555", yMove: "down" },
-   { spaceNumber: "434", xCor: "5023", yCor: "555", yMove: "down" },
-   { spaceNumber: "433", xCor: "5225", yCor: "554", yMove: "down" },
-   { spaceNumber: "432", xCor: "5426", yCor: "553", yMove: "down" },
-   { spaceNumber: "431", xCor: "5628", yCor: "552", yMove: "down" },
-   { spaceNumber: "430", xCor: "5829", yCor: "551", yMove: "down" },
-   { spaceNumber: "429", xCor: "6029", yCor: "551", yMove: "down" },
-   { spaceNumber: "428", xCor: "6229", yCor: "551", yMove: "down" },
-   { spaceNumber: "427", xCor: "6430", yCor: "550", yMove: "down" },
-   { spaceNumber: "000", xCor: "6631", yCor: "550", yMove: "down" },
-   { spaceNumber: "001", xCor: "6831", yCor: "550", yMove: "down" },
+   { spaceNumber: "459", xCor: "405", yCor: "565", yMove: "down" },
+   { spaceNumber: "458", xCor: "605", yCor: "565", yMove: "down" },
+   { spaceNumber: "457", xCor: "805", yCor: "565", yMove: "down" },
+   { spaceNumber: "456", xCor: "1007", yCor: "565", yMove: "down" },
+   { spaceNumber: "455", xCor: "1208", yCor: "565", yMove: "down" },
+   { spaceNumber: "454", xCor: "1409", yCor: "565", yMove: "down" },
+   { spaceNumber: "453", xCor: "1609", yCor: "565", yMove: "down" },
+   { spaceNumber: "452", xCor: "1809", yCor: "565", yMove: "down" },
+   { spaceNumber: "451", xCor: "2011", yCor: "564", yMove: "down" },
+   { spaceNumber: "450", xCor: "2212", yCor: "564", yMove: "down" },
+   { spaceNumber: "449", xCor: "2413", yCor: "564", yMove: "down" },
+   { spaceNumber: "448", xCor: "2613", yCor: "563", yMove: "down" },
+   { spaceNumber: "447", xCor: "2815", yCor: "563", yMove: "down" },
+   { spaceNumber: "446", xCor: "3017", yCor: "562", yMove: "down" },
+   { spaceNumber: "445", xCor: "3217", yCor: "561", yMove: "down" },
+   { spaceNumber: "444", xCor: "3417", yCor: "560", yMove: "down" },
+   { spaceNumber: "443", xCor: "3618", yCor: "559", yMove: "down" },
+   { spaceNumber: "442", xCor: "3819", yCor: "558", yMove: "down" },
+   { spaceNumber: "441", xCor: "4020", yCor: "557", yMove: "down" },
+   { spaceNumber: "440", xCor: "4220", yCor: "556", yMove: "down" },
+   { spaceNumber: "439", xCor: "4420", yCor: "556", yMove: "down" },
+   { spaceNumber: "438", xCor: "4623", yCor: "555", yMove: "down" },
+   { spaceNumber: "437", xCor: "4823", yCor: "555", yMove: "down" },
+   { spaceNumber: "436", xCor: "5023", yCor: "555", yMove: "down" },
+   { spaceNumber: "435", xCor: "5225", yCor: "554", yMove: "down" },
+   { spaceNumber: "434", xCor: "5426", yCor: "553", yMove: "down" },
+   { spaceNumber: "433", xCor: "5628", yCor: "552", yMove: "down" },
+   { spaceNumber: "432", xCor: "5829", yCor: "551", yMove: "down" },
+   { spaceNumber: "431", xCor: "6029", yCor: "551", yMove: "down" },
+   { spaceNumber: "430", xCor: "6229", yCor: "551", yMove: "down" },
+   { spaceNumber: "429", xCor: "6430", yCor: "550", yMove: "down" },
+   { spaceNumber: "428", xCor: "6631", yCor: "550", yMove: "down" },
+   { spaceNumber: "427", xCor: "6831", yCor: "550", yMove: "down" },
 
    { spaceNumber: "404", xCor: "1284", yCor: "1439", yMove: "up" },
    { spaceNumber: "405", xCor: "1486", yCor: "1439", yMove: "up" },
@@ -1285,6 +1290,12 @@ var sGF5 = [
    { spaceNumber: "824", xCor: "6849", yCor: "2865", yMove: "up" }
 ];
 
+function clearCanvas(canvasId)
+{
+    var cnvs = document.getElementById(canvasId);
+    var ctx = cnvs.getContext("2d");
+    ctx.clearRect(0, 0, cnvs.width, cnvs.height);
+}
 // draws the floor layout and the visual overlay of parking space data
 function drawFloor(canvasId, imagePath, dataArray) {
     var cnvs = document.getElementById(canvasId);
@@ -1355,17 +1366,33 @@ function drawFloor(canvasId, imagePath, dataArray) {
             var yAlignmentUp;
             // for spaces in the south garage
             if (overlay[i].spaceNumber < 1000) {
-                xAlignment = 27;
-                // space numbers will be printed inside the parking space overlay
+                // align the text to the center of the parking space cell
+                if (spaceType == "Motorcycle" || overlay[i].spaceNumber == "2476" || overlay[i].spaceNumber == "2477") {
+                    xAlignment = 8;
+                    // space numbers will be printed inside the parking space overlay
+                    yAlignmentUp = -60;
+                }
+                else {
+                    xAlignment = 27;
+                    // space numbers will be printed inside the parking space overlay
+                    yAlignmentUp = -90;
+                }
                 yAlignmentDn = 350;
-                yAlignmentUp = -90;
             }
             else {
                 // for parking spaces in the north garage
-                xAlignment = 10;
-                // space numbers will be printed outside the parking space overlay
-                yAlignmentDn = 450;
-                yAlignmentUp = 10;
+                // align the text to the center of the parking space cell
+                if (spaceType == "Motorcycle" || overlay[i].spaceNumber == "2476" || overlay[i].spaceNumber == "2477") {
+                    xAlignment = 0;
+                    // space numbers will be printed outside the parking space overlay
+                    yAlignmentDn = 425;
+                }
+                else {
+                    xAlignment = 10;
+                    // space numbers will be printed outside the parking space overlay
+                    yAlignmentDn = 450;
+                    yAlignmentUp = 10;
+                }
             }
             // if the space is available
             if (isAvailable == "true") {
@@ -1375,9 +1402,9 @@ function drawFloor(canvasId, imagePath, dataArray) {
                 if (spaceType == "DIS")
                     ctx.fillStyle = '#0094FF';
                 else if (spaceType == "Reserved")
-                    ctx.fillStyle = '#B200FF';
+                    ctx.fillStyle = '#FF9D00';
                 else if (spaceType == "Carpool")
-                    ctx.fillStyle = '#FFD800';
+                    ctx.fillStyle = '#B200FF';
                 else if (spaceType == "EV")
                     ctx.fillStyle = '#32FBFF';
                 else
@@ -1419,9 +1446,9 @@ function drawFloor(canvasId, imagePath, dataArray) {
                 if (spaceType == "DIS")
                     ctx.fillStyle = '#0094FF';
                 else if (spaceType == "Reserved")
-                    ctx.fillStyle = '#B200FF';
+                    ctx.fillStyle = '#FF9D00';
                 else if (spaceType == "Carpool")
-                    ctx.fillStyle = '#FFD800';
+                    ctx.fillStyle = '#B200FF';
                 else if (spaceType == "EV")
                     ctx.fillStyle = '#32FBFF';
                 else
@@ -1433,30 +1460,33 @@ function drawFloor(canvasId, imagePath, dataArray) {
             }
             else {
                 // for the parking spaces that don't have sensors
-                // if the parking space is for motorcycles, create a colorized boarder
-                if (spaceType == "Motorcycle")
-                    ctx.fillStyle = '#FF6A00';
-                else
-                    // otherwise the space will be grayed out
-                    ctx.fillStyle = '#C0C0C0';
-                ctx.fillRect(xCor, yCor, 165, 375);
-                // fill the inner of the parking space with grey to show that the parking space doesn't have a sensor
+                // fill the parking space with grey to show that the parking space doesn't have a sensor
                 ctx.fillStyle = '#C0C0C0';
-                ctx.fillRect(xCor + 25, yCor + 25, 115, 325);
-                // initialize font and font size
-                ctx.font = "75px Impact";
+                // if the parking space is for motorcycles, create a smaller sized box
+                if (spaceType == "Motorcycle" || overlay[i].spaceNumber == "2476" || overlay[i].spaceNumber == "2477") {
+                    ctx.fillRect(xCor, yCor, 70, 375);
+                    // initialize font and font size
+                    ctx.font = "37px Impact";
+                }
+                else {
+                    // otherwise the space size will remain unchanged
+                    ctx.fillRect(xCor, yCor, 165, 375);
+                    // initialize font and font size
+                    ctx.font = "75px Impact";
+                }
+
                 // space numbers in south garage have white font
                 if (overlay[i].spaceNumber < 1000)
                     ctx.fillStyle = '#FFFFFF';
                 else
                     // space numbers in north garage have black font
                     ctx.fillStyle = '#000000';
-                // if the available space needs is moved out downwards, move the text respectively with the space
+                // if the available space is moved out downwards, move the text respectively with the space
                 if (overlay[i].yMove == "down") {
                     ctx.fillText(overlay[i].spaceNumber, xCor + xAlignment, yCor + yAlignmentDn);
                 }
                 else if (overlay[i].yMove == "up") {
-                    // if the available space needs is moved out upwards, move the text respectively with the space
+                    // if the available space is moved out upwards, move the text respectively with the space
                     ctx.fillText(overlay[i].spaceNumber, xCor + xAlignment, yCor - yAlignmentUp);
                 }
             }

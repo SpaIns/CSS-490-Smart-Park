@@ -25,6 +25,9 @@ var link = "/spaces"
   });
 */
 function obtainData(garage, floor) {
+    while (data.length > 0) {
+        data.pop();
+    }
     return new Promise(function (resolve, reject) {//handle the aysnchronous call
         firebase.database().ref(link).once('value').then(function (snap) {
 

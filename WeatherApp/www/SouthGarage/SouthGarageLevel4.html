@@ -15,21 +15,22 @@
     <h5>Level 4</h5>
 
     <div>
-        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF4", "../images/SouthGarage/SouthGarageFloor_4_Layout.png",dataArr)'>Refresh</button>
+        <button id='draw-btn' type="button" onclick='reload()'>Refresh</button>
         <a id="go-up-floor-btn" class="button" data-icon="search" href="SouthGarageLevel5.html">Go Up A Floor</a>
         <a id="go-down-floor-btn" class="button" data-icon="search" href="SouthGarageLevel3.html">Go Down A Floor</a>
     </div>
 
     <canvas id='canvasSGF4' width='8000' height='5000'></canvas>
     <script>
-        var dataArr;
-        obtainData("South", 4).then(function () {
-            dataArr=getArray();
-            var imagePath = "../images/SouthGarage/SouthGarageFloor_4_Layout.png";
-            drawFloor("canvasSGF4", imagePath,dataArr);
-
-
-        });
+        reload();
+        function reload() {
+            var dataArr;
+            obtainData("South", 4).then(function () {
+                dataArr = getArray();
+                var imagePath = "../images/SouthGarage/SouthGarageFloor_4_Layout.png";
+                drawFloor("canvasSGF4", imagePath, dataArr);
+            });
+        }
     </script>
 
 </body>

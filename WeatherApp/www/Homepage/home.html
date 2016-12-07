@@ -6,32 +6,54 @@
         <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js" defer></script>
            
         <link rel="stylesheet" type="text/css" href="../css/home.css">
-        <link rel="stylesheet" type="text/css" href="../css/BootStrap/bootstrap.css" />
-
+        <!--<link rel="stylesheet" type="text/css" href="../css/BootStrap/bootstrap.css" />
+            -->
         <title>Homepage</title>
     </head>
 
-    <body>
-        <div>Content goes hereee.</div>
+    <body bgcolor="#444444">
+    <div id="wrapper">
+        <!--Header-->
+        <header><center>Smart Park</center></header>
+        <br />
 
         <!--Links-->
         <div id="redirects">
-            <div class="col-md-1">
-                <a class="btn btn-default" id="favorite-lot" href="" data-ajax="false"><h5>Favorite Lot</h5></a>
-            </div>
-
-            <div class="col-md-1">
-                <a class="btn btn-default" href="../NorthGarage/NorthGarageMain.html" data-ajax="false"><h5>North Garage</h5></a>
-            </div>
-
-            <div class="col-md-1">
-                <a class="btn btn-default" href="../SouthGarage/SouthGarageMain.html" data-ajax="false"><h5>South Garage</h5></a>
-            </div>
-
-            <div class="col-md-1">
-                <a class="btn btn-default" href="../preferences.html" data-ajax="false"><h5>Preferences</h5></a>
-            </div>
+            <center>
+                <!--North Garage-->
+                <div class="container">
+                    <div class="col-md-1">
+                        <center><a class="btn btn-default" href="../NorthGarage/NorthGarageMain.html" data-ajax="false"><font size="6" color="blue">North Garage</font></a></center>
+                    </div>
+                    <hr />
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut malesuada venenatis sem quis vulputate. Etiam ut purus non nulla congue congue. Aliquam ullamcorper maximus nulla, gravida.
+                </div>
+            </center>
+            <br />
+            <center>
+                <!--South Garage-->
+                <div class="container">
+                    <div class="col-md-1">
+                        <center><a class="btn btn-default" href="../SouthGarage/SouthGarageMain.html" data-ajax="false"><font size="6" color="blue">South Garage</font></a></center>
+                    </div>
+                    <hr />
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut malesuada venenatis sem quis vulputate. Etiam ut purus non nulla congue congue. Aliquam ullamcorper maximus nulla, gravida.
+                </div>
+            </center>
         </div>
+
+        <!--Footer-->
+        <footer>
+            <div data-role="navbar">
+                <div id="redirects">
+                    <ul>
+                        <li><a class="btn btn-default" id="favorite-lot" href="" data-ajax="false">Favorite Lot</a></li>
+                        <li><a class="btn btn-default" href="../preferences.html" data-ajax="false">Preferences</a></li>
+                        <li style="float:right"><a class="btn btn-default" href="../Homepage/home.html" data-ajax="false">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
 
         <script type="text/javascript">
             $(document).ready(function () {
@@ -45,14 +67,13 @@
                     //make an onclick action that states that the pref isn't set as alert on click
                     $('#favorite-lot').click(function () {
                         alert("Favorite lot not set - go to preferences menu to set.");
-                    }); 
+                    });
                 }
             });
         </script>
 
-        <!--Footer-->
-        <footer data-role="footer" data-position="absolute">
-            <h4>Smart Park - Because Parking </h4>
-        </footer>
-    </body>
+
+    </div>
+</body>
+
 </html>

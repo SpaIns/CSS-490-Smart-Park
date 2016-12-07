@@ -8,16 +8,22 @@
     <!--<link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">-->
     <script type="text/javascript" src="../scripts/floorSwipes.js" defer></script>
         
-    <link rel="stylesheet" type="text/css" href="../css/BootStrap/bootstrap.css" />
+    <!--<link rel="stylesheet" type="text/css" href="../css/BootStrap/bootstrap.css" />
+    -->
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
 
     <link rel="stylesheet" type="text/css" href="../css/mainPageButton.css" />
 
 </head>
-<body>
-    
-    <div>
-        <!-- Adding an invisible button for the sake of the floorSwipes.js-->
-        <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel1.html"></a>
+<body bgcolor="#0033cc">
+    <div id="wrapper">
+        <!--Header-->
+        <header><center>Smart Park</center></header>
+        <div>
+            <center>
+                <h2>North Garage</h2>
+                <!-- Adding an invisible button for the sake of the floorSwipes.js-->
+                <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel1.html"></a>
 
         <div class="col-md-1">
             <a class="btn btn-default-green" href="NorthGarageLevel1.html" data-ajax="false" id="NL1"><h5 id="NorthLevel1">Level 1</h5></a>
@@ -36,22 +42,36 @@
             });
         </script>
 
-        <div class="col-md-1">
-            <a class="btn btn-default" href="NorthGarageLevel2.html" data-ajax="false"><h5 id="NorthLevel2">Level 2</h5></a>
+                <div class="container">
+                    <a class="btn btn-default" href="NorthGarageLevel2.html" data-ajax="false"><h5 id="NorthLevel2">Level 2</h5></a>
+                </div>
+                <br />
+                <div class="container">
+                    <a class="btn btn-default" href="NorthGarageLevel3.html" data-ajax="false"><h5 id="NorthLevel3">Level 3</h5></a>
+                </div>
+                <br />
+                <div class="container">
+                    <a class="btn btn-default" href="NorthGarageLevel4.html" data-ajax="false"><h5 id="NorthLevel4">Level 4</h5></a>
+                </div>
+            </center>
         </div>
+        <!--
+        <div>
+            <a id="go-down-floor-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
+        </div>-->
 
-        <div class="col-md-1">
-            <a class="btn btn-default" href="NorthGarageLevel3.html" data-ajax="false"><h5 id="NorthLevel3">Level 3</h5></a>
+        <!--Footer-->
+        <footer>
+            <div data-role="navbar">
+                <div id="redirects">
+                    <ul>
+                        <li><a class="btn btn-default" id="favorite-lot" href="" data-ajax="false">Favorite Lot</a></li>
+                        <li><a class="btn btn-default" href="../preferences.html" data-ajax="false">Preferences</a></li>
+                        <li style="float:right"><a class="btn btn-default" href="../Homepage/home.html" data-ajax="false">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
         </div>
-
-        <div class="col-md-1">
-            <a class="btn btn-default" href="NorthGarageLevel4.html" data-ajax="false"><h5 id="NorthLevel4">Level 4</h5></a>
-        </div>
-
-    </div>
-
-    <div>
-        <a id="go-down-floor-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
-    </div>
 </body>
 </html>

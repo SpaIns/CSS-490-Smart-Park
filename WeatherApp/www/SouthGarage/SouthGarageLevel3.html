@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
     <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
     <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
     <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
@@ -11,40 +12,63 @@
     <script src="../scripts/getData.js"></script>
     <script src="../scripts/canvas.js"></script>
 </head>
-<body>
-    <h5>Level 3</h5>
 
+<body bgcolor="#4B2E83">
+    <div id="wrapper">
+        <!--Header-->
+        <header><center>Smart Park</center></header>
+        <div>
+            <center>
+                <h2>South Garage - Level 3</h2>
 
-    <canvas id='canvasSGF3' width='8000' height='5000'></canvas>
-    <script>
-        var dataArr;
-        obtainData("South", 3).then(function () {
-            dataArr=getArray();
-            var imagePath = "../images/SouthGarage/SouthGarageFloor_3_Layout.png";
-            drawFloor("canvasSGF3", imagePath,dataArr);
+                <canvas id='canvasSGF3' width='8000' height='5000'></canvas>
+                <script>
+                    var dataArr;
+                    obtainData("South", 3).then(function () {
+                        dataArr = getArray();
+                        var imagePath = "../images/SouthGarage/SouthGarageFloor_3_Layout.png";
+                        drawFloor("canvasSGF3", imagePath, dataArr);
+                    });
+                </script>
 
-        });
-    </script>
+                <div>
+                    <br />
+                    <div class="container">
+                        <a id="go-down-floor-btn" href="SouthGarageMain.html"></a>
+                        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF2", "../images/SouthGarage/SouthGarageFloor_3_Layout.png",dataArr)'>Refresh</button>
+                    </div>
 
-    <div>Content goes here.</div>
+                    <br />
+                    <div class="container">
+                        <a id="go-up-floor-btn" class="btn btn-default" href="SouthGarageLevel4.html" data-ajax="false">Go Up A Floor</a>
+                    </div>
 
-    <div>
-        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF2", "../images/SouthGarage/SouthGarageFloor_3_Layout.png",dataArr)'>Refresh</button>
-        <div class="col-md-1">
-            <a id="go-up-floor-btn" class="btn btn-default" href="SouthGarageLevel4.html" data-ajax="false">Go Up A Floor</a>
+                    <br />
+                    <div class="container">
+                        <a id="go-down-floor-btn" class="btn btn-default" href="SouthGarageLevel2.html" data-ajax="false">Go Down A Floor</a>
+                    </div>
+
+                    <br />
+                    <div class="container">
+                        <a id="go-garage-btn" class="btn btn-default" href="SouthGarageMain.html" data-ajax="false">Return To South Garage</a>
+                    </div>
+                </div>
+            </center>
         </div>
 
-        <div class="col-md-1">
-            <a id="go-down-floor-btn" class="btn btn-default" href="SouthGarageLevel2.html" data-ajax="false">Go Down A Floor</a>
-        </div>
-    </div>
+        <!--Footer-->
+        <footer>
+            <div data-role="navbar">
+                <div id="redirects">
+                    <ul>
+                        <li><a class="btn btn-default" id="favorite-lot" href="" data-ajax="false">Favorite Lot</a></li>
+                        <li><a class="btn btn-default" href="../preferences.html" data-ajax="false">Preferences</a></li>
+                        <li style="float:right"><a class="btn btn-default" href="../Homepage/home.html" data-ajax="false">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
 
-    <div class="col-md-1">
-        <a id="go-garage-btn" class="btn btn-default" href="SouthGarageMain.html">Return To South Garage</a>
-    </div>
-
-    <div class="col-md-1">
-        <a id="go-home-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
     </div>
 </body>
 </html>

@@ -14,9 +14,6 @@
 <body>
     <h5>Level 3</h5>
 
-    <div>
-        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF3", "../images/SouthGarage/SouthGarageFloor_3_Layout.png",dataArr)'>Refresh</button>
-    </div>
 
     <canvas id='canvasSGF3' width='8000' height='5000'></canvas>
     <script>
@@ -32,6 +29,7 @@
     <div>Content goes here.</div>
 
     <div>
+        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF2", "../images/SouthGarage/SouthGarageFloor_3_Layout.png",dataArr)'>Refresh</button>
         <div class="col-md-1">
             <a id="go-up-floor-btn" class="btn btn-default" href="SouthGarageLevel4.html" data-ajax="false">Go Up A Floor</a>
         </div>
@@ -39,6 +37,10 @@
         <div class="col-md-1">
             <a id="go-down-floor-btn" class="btn btn-default" href="SouthGarageLevel2.html" data-ajax="false">Go Down A Floor</a>
         </div>
+    </div>
+
+    <div class="col-md-1">
+        <a id="go-garage-btn" class="btn btn-default" href="SouthGarageMain.html">Return To South Garage</a>
     </div>
 
     <div class="col-md-1">

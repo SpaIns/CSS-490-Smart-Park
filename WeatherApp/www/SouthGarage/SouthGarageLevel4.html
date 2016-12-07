@@ -14,9 +14,6 @@
 <body>
     <h5>Level 4</h5>
 
-    <div>
-        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF4", "../images/SouthGarage/SouthGarageFloor_4_Layout.png",dataArr)'>Refresh</button>
-    </div>
 
     <canvas id='canvasSGF4' width='8000' height='5000'></canvas>
     <script>
@@ -32,10 +29,19 @@
 
     <div>Content goes here.</div>
 
+    <div>
+        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF2", "../images/SouthGarage/SouthGarageFloor_4_Layout.png",dataArr)'>Refresh</button>
+        <div class="col-md-1">
+            <a id="go-up-floor-btn" class="btn btn-default" href="SouthGarageLevel5.html" data-ajax="false">Go Up A Floor</a>
+        </div>
+
+        <div class="col-md-1">
+            <a id="go-down-floor-btn" class="btn btn-default" href="SouthGarageLevel3.html" data-ajax="false">Go Down A Floor</a>
+        </div>
+    </div>
+
     <div class="col-md-1">
-        <a id="go-up-floor-btn" class="button" href="SouthGarageLevel5.html">Go Up A Floor</a>
-        <!-- invisible button to redirect swipe to North Main-->
-        <a id="go-down-floor-btn" class="btn btn-default" href="SouthGarageLevel3.html" data-ajax="false">Go Down A Floor</a>
+        <a id="go-garage-btn" class="btn btn-default" href="SouthGarageMain.html">Return To South Garage</a>
     </div>
 
     <div class="col-md-1">

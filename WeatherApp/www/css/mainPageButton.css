@@ -1,0 +1,11 @@
+﻿.btn-default-red {
+  color: #333;
+  background-color: #ff0000;
+  border-color: #ff0000;
+}
+
+.btn-default-green {
+  color: #333;
+  background-color: #00ff21;
+  border-color: #ccc;
+}

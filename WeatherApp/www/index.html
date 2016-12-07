@@ -1,56 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <!--
-        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
-        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
-    -->
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com http://api.openweathermap.org 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Smart Park</title>
-
+        <meta http-equiv="refresh" content="5; Homepage/home.html">
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="scripts/platformOverrides.js"></script>
         <script type="text/javascript" src="scripts/index.js"></script>
-        
-        <meta http-equiv="refresh" content="5; Homepage/home.html">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Smart Park</title>
     </head>
     <body>
-
-
-        <div data-role="page" id="weather-page">
-           <img src="css/images/Background.png"/>
-            
-            <!--timeout thing
-                setTimeout(function() { 
-                window.location.href = $("a")[0].href; 
-                }, 2000);
-                -->
-            <!--
-             <div data-role="header" class="header">
-                <h1 id="app-title"><img src="images/header.png"/></h1>
-            </div>
-
-            <div role="main" class="ui-content">
-                <a id="favorite-lot" href=""><h5>Favorite Lot</h5></a>
-                <a href="NorthGarage/NorthGarageMain.html"><h5>North Garage</h5></a>
-                <a href="SouthGarage/SouthGarageMain.html"><h5>South Garage</h5></a>
-                <a href="preferences.html"><h5>Preferences</h5></a>
-                <div id="error-msg" class="not-displayed">
-                </div>
-
-     
-
-            </div>
-
-            <footer data-role="footer" data-position="fixed">
-                <h4>Smart Park - Because Parking </h4>
-            </footer>
-                -->
+        <div data-role="page" id="weather-page">   
         </div>
     </body>
 </html>

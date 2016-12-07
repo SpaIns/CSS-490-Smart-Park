@@ -1,24 +1,74 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
     <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
     <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
     <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <!-- FireBase database-->
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
     <script src="../scripts/floorSwipes.js"></script>
     <script src="../scripts/getData.js"></script>
+    <script src="../scripts/canvas.js"></script>
 </head>
-<body>
-    <h5>Level 3</h5>
-    <div>Content goes here.</div>
-    <script>
-        obtainData("South", 3).then(function () {
 
+<body bgcolor="#4B2E83">
+    <div id="wrapper">
+        <!--Header-->
+        <header><center>Smart Park</center></header>
+        <div>
+            <center>
+                <h2>South Garage - Level 3</h2>
 
-        });
-    </script>
-    <div>
-        <a id="go-up-floor-btn" class="button" data-icon="search" href="SouthGarageLevel4.html">Go Up A Floor</a>
-        <a id="go-down-floor-btn" class="button" data-icon="search" href="SouthGarageLevel2.html">Go Down A Floor</a>
+                <canvas id='canvasSGF3' width='8000' height='5000'></canvas>
+                <script>
+                    var dataArr;
+                    obtainData("South", 3).then(function () {
+                        dataArr = getArray();
+                        var imagePath = "../images/SouthGarage/SouthGarageFloor_3_Layout.png";
+                        drawFloor("canvasSGF3", imagePath, dataArr);
+                    });
+                </script>
+
+                <div>
+                    <br />
+                    <div class="container">
+                        <a id="go-down-floor-btn" href="SouthGarageMain.html"></a>
+                        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF2", "../images/SouthGarage/SouthGarageFloor_3_Layout.png",dataArr)'>Refresh</button>
+                    </div>
+
+                    <br />
+                    <div class="container">
+                        <a id="go-up-floor-btn" class="btn btn-default" href="SouthGarageLevel4.html" data-ajax="false">Go Up A Floor</a>
+                    </div>
+
+                    <br />
+                    <div class="container">
+                        <a id="go-down-floor-btn" class="btn btn-default" href="SouthGarageLevel2.html" data-ajax="false">Go Down A Floor</a>
+                    </div>
+
+                    <br />
+                    <div class="container">
+                        <a id="go-garage-btn" class="btn btn-default" href="SouthGarageMain.html" data-ajax="false">Return To South Garage</a>
+                    </div>
+                </div>
+            </center>
+        </div>
+
+        <!--Footer-->
+        <footer>
+            <div data-role="navbar">
+                <div id="redirects">
+                    <ul>
+                        <li><a class="btn btn-default" id="favorite-lot" href="" data-ajax="false">Favorite Lot</a></li>
+                        <li><a class="btn btn-default" href="../preferences.html" data-ajax="false">Preferences</a></li>
+                        <li style="float:right"><a class="btn btn-default" href="../Homepage/home.html" data-ajax="false">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
     </div>
 </body>
 </html>

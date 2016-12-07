@@ -1,38 +1,77 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <script src="../scripts/JQuery/jquery-2.2.4.min.js" defer></script>
-    <!--<link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">-->
-    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js" defer></script>
-    <script src="../scripts/getData.js" defer></script>
-    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js" defer></script>
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
+    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
     <!-- FireBase database-->
-    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js" defer></script>
-    <script src="../scripts/floorSwipes.js" defer></script>
-
-    <link rel="stylesheet" type="text/css" href="../css/BootStrap/bootstrap.css" />
-    <title>Level 2</title>
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
+    <script src="../scripts/getData.js"></script>
+    <script src="../scripts/floorSwipes.js"></script>
+    <script src="../scripts/canvas.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <title>NG - Level 2</title>
 </head>
-<body>
-    <script>
-        obtainData("North", 2).then(function () {
 
+<body bgcolor="#0033cc">
+    <div id="wrapper">
+        <!--Header-->
+        <header><center>Smart Park</center></header>
+        <div>
+            <center>
+                <h2>North Garage - Level 2</h2>
 
-        });
-    </script>
-    <div>
-        <div class="col-md-1">
-            <a id="go-down-floor-btn" class="btn btn-default" href="NorthGarageLevel1.html" data-ajax="false">Go Down A Floor</a>
+                <canvas id='canvasNGF2' width='8000' height='3500'></canvas>
+
+                <script>
+                    var dataArr;
+                    obtainData("North", 2).then(function () {
+                        dataArr = getArray();
+                        var imagePath = "../images/NorthGarage/NorthGarageFloor_2_Layout.png";
+                        drawFloor("canvasNGF2", imagePath, dataArr);
+                    });
+                </script>
+
+                <div>
+                    <br />
+                    <div class="container">
+                        <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF2", "../images/NorthGarage/NorthGarageFloor_2_Layout.png",dataArr)'>Refresh</button>
+                    </div>
+                    <br />
+                    <div class="container">
+                        <a id="go-up-floor-btn" class="btn btn-default" href="NorthGarageLevel3.html" data-ajax="false">Go Up A Floor</a>
+                    </div>
+                    <br />
+                    <div class="container">
+                        <a id="go-down-floor-btn" class="btn btn-default" href="NorthGarageLevel1.html" data-ajax="false">Go Down A Floor</a>
+                    </div>
+                </div>
+                <br />
+                <div class="container">
+                    <a id="go-garage-btn" class="btn btn-default" href="NorthGarageMain.html" data-ajax="false">Return To North Garage</a>
+                </div>
+
+                <!--
+                <div class="container">
+                    <a id="go-home-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
+                </div>
+                    -->
+            </center>
         </div>
-
-        <div class="col-md-1">
-            <a id="go-up-floor-btn" class="btn btn-default" href="NorthGarageLevel3.html" data-ajax="false">Go Up A Floor</a>
-        </div>
-
+        <!--Footer-->
+        <footer>
+            <div data-role="navbar">
+                <div id="redirects">
+                    <ul>
+                        <li><a class="btn btn-default" id="favorite-lot" href="" data-ajax="false">Favorite Lot</a></li>
+                        <li><a class="btn btn-default" href="../preferences.html" data-ajax="false">Preferences</a></li>
+                        <li style="float:right"><a class="btn btn-default" href="../Homepage/home.html" data-ajax="false">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
     </div>
 
-    <div class="col-md-1">
-        <a id="go-down-floor-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
-    </div>
 </body>
 </html>

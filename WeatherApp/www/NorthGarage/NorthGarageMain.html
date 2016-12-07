@@ -25,22 +25,23 @@
                 <!-- Adding an invisible button for the sake of the floorSwipes.js-->
                 <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel1.html"></a>
 
-        <div class="col-md-1">
-            <a class="btn btn-default-green" href="NorthGarageLevel1.html" data-ajax="false" id="NL1"><h5 id="NorthLevel1">Level 1</h5></a>
-        </div>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                var lvl = "Level 1";
-                var spaces = 12;
-                $("#NorthLevel1").text(lvl + "  Open Spaces: " + spaces);
+                <div class="container">
+                    <a class="btn btn-default-green" href="NorthGarageLevel1.html" data-ajax="false" id="NL1"><h5 id="NorthLevel1">Level 1</h5></a>
+                </div>
+                <br/>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        var lvl = "Level 1";
+                        var spaces = 12;
+                        $("#NorthLevel1").text(lvl + "  Open Spaces: " + spaces);
 
-                if (spaces == 0) {
-                    $('#NorthLevel1').removeClass();
-                    $('#NorthLevel1').addClass('btn');
-                    //$('#NorthLevel1').addClass('btn-default-red');
-                }
-            });
-        </script>
+                        if (spaces == 0) {
+                            $('#NorthLevel1').removeClass();
+                            $('#NorthLevel1').addClass('btn');
+                            $('#NorthLevel1').addClass('btn-default-red');
+                        }
+                    });
+                </script>
 
                 <div class="container">
                     <a class="btn btn-default" href="NorthGarageLevel2.html" data-ajax="false"><h5 id="NorthLevel2">Level 2</h5></a>

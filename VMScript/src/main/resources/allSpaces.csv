@@ -266,7 +266,6 @@
 2266,3,North,REG
 2454,3,North,Motorcycle
 2267,3,North,Motorcycle
-2268,3,North,REG
 2269,3,North,REG
 2270,3,North,REG
 2271,3,North,REG
@@ -333,6 +332,8 @@
 2333,3,North,DIS
 2334,3,North,DIS
 2335,3,North,DIS
+2476,3,North,Motorcycle
+2477,3,North,Motorcycle
 2336,4,North,REG
 2337,4,North,REG
 2338,4,North,REG
@@ -485,8 +486,6 @@
 159,1,South,REG
 160,1,South,REG
 161,1,South,REG
-162,1,South,REG
-163,1,South,REG
 164,1,South,REG
 165,1,South,REG
 166,1,South,REG
@@ -779,6 +778,8 @@
 455,2,South,REG
 456,2,South,REG
 457,2,South,REG
+458,2,South,REG
+459,2,South,REG
 460,3,South,REG
 461,3,South,REG
 462,3,South,REG

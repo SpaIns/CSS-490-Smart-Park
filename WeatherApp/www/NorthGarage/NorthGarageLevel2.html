@@ -23,6 +23,10 @@
 
     <script>
         reload();
+        setInterval(function () {
+            reload();
+        },60*1000);
+        
         function reload() {
             var dataArr;
             obtainData("North", 2).then(function () {

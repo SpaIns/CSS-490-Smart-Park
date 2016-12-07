@@ -23,6 +23,12 @@
 
     <script>
         reload();
+        setInterval(function () {
+            reload();
+        }, 60 * 1000);
+        
+        
+        
         function reload() {
             var dataArr;
             obtainData("North", 1).then(function () {
@@ -31,6 +37,7 @@
                 drawFloor("canvasNGF1", imagePath, dataArr);
             });
         }
+        
     </script>
 
     <div>

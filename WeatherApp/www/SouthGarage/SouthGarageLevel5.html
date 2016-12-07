@@ -23,6 +23,9 @@
     <canvas id='canvasSGF5' width='8000' height='5000'></canvas>
     <script>
         reload();
+        setInterval(function () {
+            reload();
+        }, 60 * 1000);
         function reload() {
             var dataArr;
             obtainData("South", 5).then(function () {

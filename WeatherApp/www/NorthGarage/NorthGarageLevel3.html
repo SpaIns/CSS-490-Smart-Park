@@ -1,6 +1,10 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <link rel="stylesheet" type="text/css" href="../css/mainPageButton.css" />
+
     <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
     <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
@@ -10,50 +14,68 @@
     <script src="../scripts/getData.js"></script>
     <script src="../scripts/floorSwipes.js"></script>
     <script src="../scripts/canvas.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/home.css">
     <title>NG - Level 3</title>
 </head>
 
 <body bgcolor="#0033cc">
     <div id="wrapper">
         <!--Header-->
-        <header><center>Smart Park</center></header>
+        <header><center>North Garage - Level 3</center></header>
         <div>
             <center>
-                <h2>North Garage - Level 3</h2>
-
-                <canvas id='canvasNGF3' width='8000' height='3500'></canvas>
+                <br />
+                <canvas id='canvasNGF2' width='8000' height='3500'></canvas>
 
                 <script>
                     var dataArr;
-                    obtainData("North", 3).then(function () {
+                    obtainData("North", 2).then(function () {
                         dataArr = getArray();
                         var imagePath = "../images/NorthGarage/NorthGarageFloor_3_Layout.png";
-                        drawFloor("canvasNGF3", imagePath, dataArr);
+                        drawFloor("canvasNGF2", imagePath, dataArr);
                     });
                 </script>
+                <br /><br />
+                <table>
+                    <tr>
+                        <td width="20%">
+                            <!--Refresh-->
+                            <br />
+                            <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF1", "../images/NorthGarage/NorthGarageFloor_3_Layout.png", dataArr)'>
+                                <center><img src="../images/refresh-button.png" width="35" height="35" /></center>
+                            </button>
 
-                <div>
-                    <br />
-                    <div class="container">
-                        <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF3", "../images/NorthGarage/NorthGarageFloor_3_Layout.png",dataArr)'>Refresh</button>
-                    </div>
+                            <!--Go back-->
+                            <br />
+                            <a id="go-garage-btn" class="btn btn-return" href="NorthGarageMain.html" data-ajax="false">
+                                <img src="../images/back.png" width="40" height="40" />
+                            </a>
+                        </td>
 
-                    <br />
-                    <div class="container">
-                        <a id="go-up-floor-btn" class="btn btn-default" href="NorthGarageLevel4.html" data-ajax="false">Go Up A Floor</a>
-                    </div>
+                        <td colspan="2">
+                            <!--Spaces available-->
+                            <div class="container3">###</div>
+                        </td>
 
-                    <br />
-                    <div class="container">
-                        <a id="go-down-floor-btn" class="btn btn-default" href="NorthGarageLevel2.html" data-ajax="false">Go Down A Floor</a>
-                    </div>
-                </div>
+                        <td width="20%">
+                            <center>
+                                <!--Go Up-->
+                                <br />
+                                <a id="go-up-floor-btn" class="btn btn-levelNav" href="NorthGarageLevel4.html" data-ajax="false">
+                                    <img src="../images/upArrow.png" width="40" height="40" />
+                                </a>
 
-                <br />
-                <div class="container">
-                    <a id="go-garage-btn" class="btn btn-default" href="NorthGarageMain.html" data-ajax="false">Return To North Garage</a>
-                </div>
+                                <!--Current Level-->
+                                <a id="go-up-floor-btn" class="btn btn-level" data-ajax="false">3</a>
+
+                                <!--Go Down-->
+                                <a id="go-down-floor-btn" class="btn btn-levelNav" href="NorthGarageLevel2.html" data-ajax="false">
+                                    <img src="../images/downArrow.png" width="40" height="40" />
+                                </a>
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+
             </center>
         </div>
 
@@ -62,14 +84,27 @@
             <div data-role="navbar">
                 <div id="redirects">
                     <ul>
-                        <li><a class="btn btn-default" id="favorite-lot" href="" data-ajax="false">Favorite Lot</a></li>
-                        <li><a class="btn btn-default" href="../preferences.html" data-ajax="false">Preferences</a></li>
-                        <li style="float:right"><a class="btn btn-default" href="../Homepage/home.html" data-ajax="false">Home</a></li>
+                        <li>
+                            <a class="btn btn-nav" id="favorite-lot" href="" data-ajax="false">
+                                <img src="../images/favorite.png" width="30" height="30" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-nav" href="../preferences.html" data-ajax="false">
+                                <img src="../images/preferences.png" width="30" height="30" />
+                            </a>
+                        </li>
+                        <li style="float:right">
+                            <a class="btn btn-nav" href="../Homepage/home.html" data-ajax="false">
+                                <img src="../images/homeLogo.png" width="40" height="30" />
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </footer>
 
     </div>
+
 </body>
 </html>

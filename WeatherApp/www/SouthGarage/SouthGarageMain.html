@@ -6,59 +6,85 @@
     <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="../scripts/floorSwipes.js" defer></script>
     <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <link rel="stylesheet" type="text/css" href="../css/mainPageButton.css" />
 </head>
 <body bgcolor="#4B2E83">
     <div id="wrapper">
         <!--Header-->
-        <header><center>Smart Park</center></header>
-
+        <header><center>South Garage</center></header>
         <div>
             <center>
-                <h2>South Garage</h2>
                 <!-- Adding an invisible button for the sake of the floorSwipes.js-->
                 <a id="go-up-floor-btn" class="button" data-icon="search" href="SouthGarageLevel1.html"></a>
 
-                <div class="container">
-                    <a class="btn btn-default" href="SouthGarageLevel1.html" data-ajax="false" id="NL1"><h5 id="SouthLevel1">Level 1</h5></a>
+                <!--Floor/Parking Spaces Available-->
+                <div class="columnText">
+                    <div class="columnLeft">Floor</div>
+                    <div class="columnRight">Parking Spaces Available</div>
                 </div>
-                <br />
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        var lvl = "Level 1";
-                        var spaces = 12;
-                        $("#SouthLevel1").text(lvl + "  Open Spaces: " + spaces);
-                    });
-                </script>
 
-                <div class="container">
-                    <a class="btn btn-default" href="SouthGarageLevel2.html" data-ajax="false"><h5 id="SouthLevel2">Level 2</h5></a>
-                </div>
+                <!--Level 1 Button Space-->
+                <a class="btn btn-default" href="SouthGarageLevel1.html" data-ajax="false" id="SL1">
+                    <div class="levelNum">1</div>
+                    <div class="levelText">###</div>
+                </a>
                 <br />
-                <div class="container">
-                    <a class="btn btn-default" href="SouthGarageLevel3.html" data-ajax="false"><h5 id="SouthLevel3">Level 3</h5></a>
-                </div>
+
+                <!--Level 2 Button Space-->
+                <a class="btn btn-default" href="SouthGarageLevel2.html" data-ajax="false" id="SL2">
+                    <div class="levelNum">2</div>
+                    <div class="levelText">###</div>
+                </a>
                 <br />
-                <div class="container">
-                    <a class="btn btn-default" href="SouthGarageLevel4.html" data-ajax="false"><h5 id="SouthLevel4">Level 4</h5></a>
-                </div>
+
+                <!--Level 3 Button Space-->
+                <a class="btn btn-default" href="SouthGarageLevel3.html" data-ajax="false" id="SL3">
+                    <div class="levelNum">3</div>
+                    <div class="levelText">###</div>
+                </a>
                 <br />
-                <div class="container">
-                    <a class="btn btn-default" href="SouthGarageLevel5.html" data-ajax="false"><h5 id="SouthLevel5">Level 5</h5></a>
-                </div>
+
+                <!--Level 4 Button Space-->
+                <a class="btn btn-default" href="SouthGarageLevel4.html" data-ajax="false" id="SL4">
+                    <div class="levelNum">4</div>
+                    <div class="levelText">###</div>
+                </a>
+                <br />
+              
+                <!--Level 4 Button Space-->
+                <a class="btn btn-default" href="SouthGarageLevel5.html" data-ajax="false" id="SL5">
+                    <div class="levelNum">5</div>
+                    <div class="levelText">###</div>
+                </a>
+                <br />
+
+                <!--Extra-->
+                <a class="btn btn-newuser" href="../Homepage/help.html" data-ajax="false">
+                    <center>No Spaces Available?</center>
+                </a>
             </center>
         </div>
-        <!--
-        <div>
-            <a id="go-down-floor-btn" class="btn btn-default" href="../Homepage/home.html" data-ajax="false"><h3>Return Home</h3></a>
-        </div>
--->
+
+        <!--Footer-->
         <footer>
             <div data-role="navbar">
                 <div id="redirects">
                     <ul>
-                        <li><a class="btn btn-default" id="favorite-lot" href="" data-ajax="false">Favorite Lot</a></li>
-                        <li><a class="btn btn-default" href="../preferences.html" data-ajax="false">Preferences</a></li>
-                        <li style="float:right"><a class="btn btn-default" href="../Homepage/home.html" data-ajax="false">Home</a></li>
+                        <li>
+                            <a class="btn btn-nav" id="favorite-lot" href="" data-ajax="false">
+                                <img src="../images/favorite.png" width="30" height="30" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-nav" href="../preferences.html" data-ajax="false">
+                                <img src="../images/preferences.png" width="30" height="30" />
+                            </a>
+                        </li>
+                        <li style="float:right">
+                            <a class="btn btn-nav" href="../Homepage/home.html" data-ajax="false">
+                                <img src="../images/homeLogo.png" width="40" height="30" />
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

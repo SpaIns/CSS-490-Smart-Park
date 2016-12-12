@@ -26,14 +26,20 @@
                 <canvas id='canvasNGF1' width='8000' height='3500'></canvas>
 
                 <script>
-                    var dataArr;
-                    obtainData("North", 1).then(function () {
-
-                        dataArr = getArray();
-                        var imagePath = "../images/NorthGarage/NorthGarageFloor_1_Layout.png";
-                        drawFloor("canvasNGF1", imagePath, dataArr);
-                        console.log("dataArray length is: " + dataArr.length);
-                    });
+                    reload();
+                    setInterval(function () {
+                        reload();
+                    }, 60 * 1000);
+                    function reload() {
+                        var dataArr;
+                        obtainData("North", 1).then(function () {
+                            dataArr = getArray();
+                            var imagePath = "../images/NorthGarage/NorthGarageFloor_1_Layout.png";
+                            drawFloor("canvasNGF1", imagePath, dataArr);
+                            console.log("dataArray length is: " + dataArr.length);
+                        });
+                    }
+                    
 
                 </script>
                 <br /><br />
@@ -43,7 +49,7 @@
                         <td width="20%">
                             <!--Refresh-->
                             <br />
-                            <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF1", "../images/NorthGarage/NorthGarageFloor_1_Layout.png", dataArr)'>
+                            <button id='draw-btn' type="button" onclick='reload()'>
                                 <img src="../images/refresh-button.png" width="35" height="35"/>
                             </button>
 

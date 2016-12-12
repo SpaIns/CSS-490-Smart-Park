@@ -25,12 +25,20 @@
                 <br />
                 <canvas id='canvasSGF3' width='8000' height='5000'></canvas>
                 <script>
-                    var dataArr;
-                    obtainData("South", 3).then(function () {
-                        dataArr = getArray();
-                        var imagePath = "../images/SouthGarage/SouthGarageFloor_3_Layout.png";
-                        drawFloor("canvasSGF3", imagePath, dataArr);
-                    });
+                    reload();
+                    setInterval(function () { 
+                        reload();
+                    },60*1000)
+                   
+                    function reload() {
+                        var dataArr;
+                        obtainData("South", 3).then(function () {
+                            dataArr = getArray();
+                            var imagePath = "../images/SouthGarage/SouthGarageFloor_3_Layout.png";
+                            drawFloor("canvasSGF3", imagePath, dataArr);
+                        });
+                    }
+                    
                 </script>
                 <br /><br />
 
@@ -39,7 +47,7 @@
                         <td width="20%">
                             <!--Refresh-->
                             <br />
-                            <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF3", "../images/SouthGarage/SouthGarageFloor_3_Layout.png",dataArr)'>
+                            <button id='draw-btn' type="button" onclick='reload()'>
                                 <img src="../images/refresh-button.png" width="35" height="35" />
                             </button>
 

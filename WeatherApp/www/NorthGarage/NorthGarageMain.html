@@ -4,7 +4,12 @@
     <title>North Parking Garage</title>
     <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
     <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <!-- FireBase database-->
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
     <script type="text/javascript" src="../scripts/floorSwipes.js" defer></script>
+    <script src="../scripts/getData.js"></script>
+    <script src="../scripts/canvas.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/home.css">
     <link rel="stylesheet" type="text/css" href="../css/mainPageButton.css" />
 
@@ -15,7 +20,37 @@
         <header><center>North Garage</center></header>
         <div>
             <center>
+                <script>
+                    
+                    
+                    var floor1 = document.getElementById("NL1");
+                    var floor2 = document.getElementById("NL2");
+                    var floor3 = document.getElementById("NL3");
+                    var floor4 = document.getElementById("NL4");
+                
+                    function load() { 
+                        getTotals("North").then(function () {
+                            //Alice here is where you would change the text
 
+                            //floor1.value = getSpaces("North", 1)+"";//returns level 1 open spaces 
+                            //floor2.value = getSpaces("North", 2);//returns level 2 open spaces 
+                            //floor3.value = getSpaces("North", 3);//returns level 3 open spaces 
+                            //floor4.value = getSpaces("North", 4);//returns level 4 open spaces
+                            
+                            //just call getSpaces inside this .then() function with parameters like above
+                          
+                            
+                        });
+                    }
+                  
+                    setInterval(function () {
+                        load()
+                    
+                    }, 60 * 1000);
+
+                    initTotals();
+                    load();
+                </script>
                 <!-- Adding an invisible button for the sake of the floorSwipes.js-->
                 <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel1.html"></a>
                 

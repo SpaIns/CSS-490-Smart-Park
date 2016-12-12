@@ -24,14 +24,15 @@
         <div>
             <center>
                 <br />
-                <canvas id='canvasNGF2' width='8000' height='3500'></canvas>
+                <canvas id='canvasNGF3' width='8000' height='3500'></canvas>
 
                 <script>
                     var dataArr;
-                    obtainData("North", 2).then(function () {
+                    obtainData("North", 3).then(function () {
                         dataArr = getArray();
                         var imagePath = "../images/NorthGarage/NorthGarageFloor_3_Layout.png";
-                        drawFloor("canvasNGF2", imagePath, dataArr);
+                        drawFloor("canvasNGF3", imagePath, dataArr);
+                        
                     });
                 </script>
                 <br /><br />
@@ -40,7 +41,7 @@
                         <td width="20%">
                             <!--Refresh-->
                             <br />
-                            <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF1", "../images/NorthGarage/NorthGarageFloor_3_Layout.png", dataArr)'>
+                            <button id='draw-btn' type="button" onclick='drawFloor("canvasNGF3", "../images/NorthGarage/NorthGarageFloor_3_Layout.png", dataArr)'>
                                 <center><img src="../images/refresh-button.png" width="35" height="35" /></center>
                             </button>
 

@@ -23,13 +23,13 @@
         <div>
             <center>
                 <br />
-                <canvas id='canvasSGF2' width='8000' height='5000'></canvas>
+                <canvas id='canvasSGF5' width='8000' height='5000'></canvas>
                 <script>
                     var dataArr;
-                    obtainData("South", 2).then(function () {
+                    obtainData("South", 5).then(function () {
                         dataArr = getArray();
                         var imagePath = "../images/SouthGarage/SouthGarageFloor_5_Layout.png";
-                        drawFloor("canvasSGF2", imagePath, dataArr);
+                        drawFloor("canvasSGF5", imagePath, dataArr);
                     });
                 </script>
                 <br /><br />
@@ -39,7 +39,7 @@
                         <td width="20%">
                             <!--Refresh-->
                             <br />
-                            <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF2", "../images/SouthGarage/SouthGarageFloor_5_Layout.png",dataArr)'>
+                            <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF5", "../images/SouthGarage/SouthGarageFloor_5_Layout.png",dataArr)'>
                                 <img src="../images/refresh-button.png" width="35" height="35" />
                             </button>
 

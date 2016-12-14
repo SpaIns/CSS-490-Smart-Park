@@ -185,7 +185,7 @@ public class Firebase {
 					isAvailable = "unknown";
 				}
 				// These spaces are motorcycle spaces which don't have sensors
-				else if((spaceNumber >= 126 && spaceNumber <= 133) || (spaceNumber == 2454) || (spaceNumber == 2267)) {
+				else if(spaceType.equals("Motorcycle")) {
 					isAvailable = "unknown";
 				}
 				Space spaceToAdd = new Space(spaceNumber, floorNumber, garage, isAvailable, spaceType);

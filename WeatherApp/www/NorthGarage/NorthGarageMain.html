@@ -15,14 +15,15 @@
 
 </head>
 <body bgcolor="#0033cc">
+    <script>
+            $.mobile.loading().hide();
+    </script>
     <div id="wrapper">
         <!--Header-->
         <header><center>North Garage</center></header>
         <div>
             <center>
                 <script>
-                    
-                    
                     var floor1 = document.getElementById("NL1");
                     var floor2 = document.getElementById("NL2");
                     var floor3 = document.getElementById("NL3");
@@ -38,19 +39,16 @@
                             //floor4.value = getSpaces("North", 4);//returns level 4 open spaces
                             
                             //just call getSpaces inside this .then() function with parameters like above
-                          
-                            
                         });
                     }
-                  
                     setInterval(function () {
                         load()
                     
                     }, 60 * 1000);
-
                     initTotals();
                     load();
                 </script>
+
                 <!-- Adding an invisible button for the sake of the floorSwipes.js-->
                 <a id="go-up-floor-btn" class="button" data-icon="search" href="NorthGarageLevel1.html"></a>
                 

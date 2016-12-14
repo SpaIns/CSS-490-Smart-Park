@@ -1,8 +1,10 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/home.css">
     <link rel="stylesheet" href="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js">
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <link rel="stylesheet" type="text/css" href="../css/mainPageButton.css" />
+
     <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
     <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
@@ -12,41 +14,71 @@
     <script src="../scripts/getData.js"></script>
     <script src="../scripts/canvas.js"></script>
     <script src="../scripts/favoriteLotExecution.js"></script>
+    <title>SG - Level 5</title>
 </head>
+
 <body bgcolor="#4B2E83">
     <div id="wrapper">
         <!--Header-->
-        <header><center>Smart Park</center></header>
+        <header><center>South Garage - Level 5</center></header>
         <div>
             <center>
-                <h2>South Garage - Level 5</h2>
-
+                <br />
                 <canvas id='canvasSGF5' width='8000' height='5000'></canvas>
                 <script>
-                    var dataArr;
-                    obtainData("South", 5).then(function () {
-                        dataArr = getArray();
-                        var imagePath = "../images/SouthGarage/SouthGarageFloor_5_Layout.png";
-                        drawFloor("canvasSGF5", imagePath, dataArr);
+                    reload();
+                    setInterval(function () {
+                        reload();
                     });
+                    function reload() {
+                        var dataArr;
+                        obtainData("South", 5).then(function () {
+                            dataArr = getArray();
+                            var imagePath = "../images/SouthGarage/SouthGarageFloor_5_Layout.png";
+                            drawFloor("canvasSGF5", imagePath, dataArr);
+                        });
+                    }
+                    
                 </script>
+                <br /><br />
 
-                <div>
-                    <br />
-                    <div class="container">
-                        <button id='draw-btn' type="button" onclick='drawFloor("canvasSGF2", "../images/SouthGarage/SouthGarageFloor_5_Layout.png",dataArr)'>Refresh</button>
-                    </div>
+                <table>
+                    <tr>
+                        <td width="20%">
+                            <!--Refresh-->
+                            <br />
+                            <button id='draw-btn' type="button" onclick='reload()'>
+                                <img src="../images/refresh-button.png" width="35" height="35" />
+                            </button>
 
-                    <br />
-                    <div class="container">
-                        <a id="go-down-floor-btn" class="btn btn-default" href="SouthGarageLevel4.html" data-ajax="false">Go Down A Floor</a>
-                    </div>
+                            <!--Go back-->
+                            <br />
+                            <a id="go-garage-btn" class="btn btn-return" href="SouthGarageMain.html" data-ajax="false">
+                                <img src="../images/back.png" width="40" height="40" />
+                            </a>
+                        </td>
 
-                    <br />
-                    <div class="container">
-                        <a id="go-garage-btn" class="btn btn-default" href="SouthGarageMain.html" data-ajax="false">Return To South Garage</a>
-                    </div>
-                </div>
+                        <td colspan="2">
+                            <!--Spaces available-->
+                            <div class="container3">###</div>
+                        </td>
+
+                        <td width="20%">
+                            <center>
+                                <!--Current Level-->
+                                <a id="go-up-floor-btn" class="btn btn-level" data-ajax="false">
+                                    5
+                                </a>
+
+                                <!--Go Down-->
+                                <a id="go-up-floor-btn" class="btn btn-levelNav" href="SouthGarageLevel4.html" data-ajax="false">
+                                    <img src="../images/downArrow.png" width="40" height="40" />
+                                </a>
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+
             </center>
         </div>
 
@@ -55,9 +87,21 @@
             <div data-role="navbar">
                 <div id="redirects">
                     <ul>
-                        <li><a class="btn btn-default" id="favorite-lot" href="" data-ajax="false">Favorite Lot</a></li>
-                        <li><a class="btn btn-default" href="../preferences.html" data-ajax="false">Preferences</a></li>
-                        <li style="float:right"><a class="btn btn-default" href="../Homepage/home.html" data-ajax="false">Home</a></li>
+                        <li>
+                            <a class="btn btn-nav" id="favorite-lot" href="" data-ajax="false">
+                                <img src="../images/favorite.png" width="30" height="30" />
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-nav" href="../preferences.html" data-ajax="false">
+                                <img src="../images/preferences.png" width="30" height="30" />
+                            </a>
+                        </li>
+                        <li style="float:right">
+                            <a class="btn btn-nav" href="../Homepage/home.html" data-ajax="false">
+                                <img src="../images/homeLogo.png" width="40" height="30" />
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

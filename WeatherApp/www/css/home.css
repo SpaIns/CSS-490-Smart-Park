@@ -1,22 +1,32 @@
 ﻿body {
     min-height: 100%;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.content {
+    padding: 15px;
 }
 
 header {
     bottom: 0;
-    width: 100%;
     color: white;
     background: black;
     padding: 5px;
+    padding-top:10px;
+    padding-bottom:10px;
+    overflow:hidden;
 }
 
 footer {
     bottom: 0;
-    width: 100%;
     color: white;
     background: black;    
     position: fixed;
+    overflow:hidden;
+    width: 100%;
+    font-size:15px;
 }
 
 ul {
@@ -33,6 +43,7 @@ li {
 
 a {
     display: block;
+    text-decoration:none;
 }
 
 li a {
@@ -60,4 +71,71 @@ li a {
     padding: 5px;
     border: 2px solid black;
     background: white;
+    border-radius: 10px;
+}
+.container2 {
+    width: 90%;
+    padding: 10px;
+    border: 2px solid black;
+    background: white;
+    border-radius: 10px;
+}
+.container3 {
+    width: 200px;
+    height:200px;
+    padding: 10px;
+    background-color:black;
+    color:white;
+    border-radius:10px;
+    text-align:center;
+    vertical-align:central;
+}
+.levelNum {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border: 2px solid black;
+    background: black;
+    color: white;
+    float: left;
+    font-size: 30px;
+    border-radius:10px;
+}
+
+.levelText {
+    padding-left:75px;
+    font-size: 35px;
+}
+
+.columnText {
+    width: 80%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color:white;
+    font-size:15px;
+}
+
+.columnLeft {
+    width: 40px;
+    float: left;
+    padding-left: 10px;
+}
+
+.columnRight {
+    padding-left: 70px;
+}
+
+button {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    padding: 5px;
+    width: 55px;
+    height:55px;
+    overflow: hidden;
+    border-radius:50px;
+    margin-left:5px;
+    margin-right:5px;
 }

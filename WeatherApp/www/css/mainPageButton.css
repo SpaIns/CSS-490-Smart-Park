@@ -1,11 +1,112 @@
-﻿.btn-default-red {
-  color: #333;
-  background-color: #ff0000;
-  border-color: #ccc;
+﻿
+.btn-default-red {
+    color: #333;
+    background-color: #ff0000;
+    border-color: #ff0000;
+    padding: 5px;
 }
 
 .btn-default-green {
-  color: #333;
-  background-color: #00ff21;
-  border-color: #ccc;
+    color: #333;
+    background-color: #00ff21;
+    border-color: #ccc;
+    padding: 5px;
+}
+
+.btn-default {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    padding: 5px;
+    width: 80%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-radius:10px;
+}
+
+.btn-nav {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: black;
+}
+
+.btn-south {
+    background-color:#4B2E83;
+    color:white;
+    padding:5px;
+    border-radius:10px;
+}
+
+.btn-north {
+    background-color:#0033cc;
+    color:white;
+    padding:5px;
+    border-radius:10px;
+}
+
+.btn-newuser {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px; 
+    width: 50%;
+    overflow: hidden;
+    border-radius:10px;
+}
+
+.btn-levelNav {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    padding: 5px;
+    width: 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-radius:50px;
+}
+
+.btn-level {
+    color: white;
+    background-color: black;
+    border: 2px solid black;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius:50px;
+    text-align:center;
+    vertical-align:central;
+    font-size: 40px;
+    margin: 5px;
+}
+
+.btn-return {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    padding: 5px;
+    width: 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-radius:50px;
+    margin-top:5px;
+    margin-left:5px;
+    margin-right:5px;
+}
+
+.btn-jump {
+    width:40px;
+    height:40px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color:white;
+    color:white;
+    padding: 5px;
+    margin:5px;
+    text-align:center;
 }

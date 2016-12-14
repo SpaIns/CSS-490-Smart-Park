@@ -19,12 +19,21 @@
 
 <body bgcolor="#0033cc">
     <div id="wrapper">
+        <script>
+            $.mobile.loading().hide();
+        </script>
         <!--Header-->
         <header><center>North Garage - Level 1</center></header>
         <div>
             <center>
                 <br />
                 <canvas id='canvasNGF1' width='8000' height='3500'></canvas>
+
+                <script>
+                    getTotals("North").then(function () {
+                        var x = getSpaces("North",1)
+                    });
+                </script>
 
                 <script>
                     reload();

@@ -9,7 +9,6 @@
     <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
     <script type="text/javascript" src="../scripts/floorSwipes.js" defer></script>
     <script src="../scripts/getData.js"></script>
-    <script src="../scripts/canvas.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/home.css">
     <link rel="stylesheet" type="text/css" href="../css/mainPageButton.css" />
 
@@ -24,21 +23,12 @@
         <div>
             <center>
                 <script>
-                    var floor1 = document.getElementById("NL1");
-                    var floor2 = document.getElementById("NL2");
-                    var floor3 = document.getElementById("NL3");
-                    var floor4 = document.getElementById("NL4");
-                
+                 
                     function load() { 
                         getTotals("North").then(function () {
-                            //Alice here is where you would change the text
-
-                            //floor1.value = getSpaces("North", 1)+"";//returns level 1 open spaces 
-                            //floor2.value = getSpaces("North", 2);//returns level 2 open spaces 
-                            //floor3.value = getSpaces("North", 3);//returns level 3 open spaces 
-                            //floor4.value = getSpaces("North", 4);//returns level 4 open spaces
-                            
-                            //just call getSpaces inside this .then() function with parameters like above
+                            level1Text.innerText = getSpaces("North", 1);//returns level 1 open spaces 
+                            level2Text.innerText = getSpaces("North", 2);//returns level 2 open spaces 
+                            level3Text.innerText = getSpaces("North", 3);//returns level 3 open spaces 
                         });
                     }
                     setInterval(function () {
@@ -47,6 +37,7 @@
                     }, 60 * 1000);
                     initTotals();
                     load();
+
                 </script>
 
                 <!-- Adding an invisible button for the sake of the floorSwipes.js-->
@@ -63,7 +54,7 @@
                 <!--Level 1 Button Space-->
                 <a class="btn btn-default" href="NorthGarageLevel1.html" data-ajax="false" id="NL1">
                     <div class="levelNum">1</div>
-                    <div class="levelText">###</div>
+                    <div class="levelText" id="level1Text">Unknown</div>
                 </a>
                 <br />
 <!--
@@ -81,7 +72,7 @@
                 <!--Level 2 Button Space-->
                 <a class="btn btn-default" href="NorthGarageLevel2.html" data-ajax="false" id="NL2">
                     <div class="levelNum">2</div>
-                    <div class="levelText">###</div>
+                    <div class="levelText"id="level2Text">Unknown</div>
                 </a>
                 <br />
 <!--
@@ -96,14 +87,14 @@
                 <!--Level 3 Button Space-->
                 <a class="btn btn-default" href="NorthGarageLevel3.html" data-ajax="false" id="NL3">
                     <div class="levelNum">3</div>
-                    <div class="levelText">###</div>
+                    <div class="levelText" id="level3Text">Unknown</div>
                 </a>
                 <br />
 
                 <!--Level 4 Button Space-->
                 <a class="btn btn-default" href="NorthGarageLevel4.html" data-ajax="false" id="NL4">
                     <div class="levelNum">4</div>
-                    <div class="levelText">###</div>
+                    <div class="unknown" id="level4Text">Unknown</div>
                 </a>
                 <br />
 

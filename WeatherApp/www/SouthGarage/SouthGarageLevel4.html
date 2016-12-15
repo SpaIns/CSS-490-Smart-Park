@@ -20,6 +20,9 @@
 <body bgcolor="#4B2E83">
     <div id="wrapper">
         <!--Header-->
+        <script>
+            $.mobile.loading().hide();
+        </script>
         <header><center>South Garage - Level 4</center></header>
         <div>
             <center>
@@ -36,6 +39,9 @@
                             dataArr = getArray();
                             var imagePath = "../images/SouthGarage/SouthGarageFloor_4_Layout.png";
                             drawFloor("canvasSGF4", imagePath, dataArr);
+                        });
+                        getTotals("South").then(function () {
+                            level4Text.innerText = getSpaces("South", 4);
                         });
                     
                     }
@@ -61,7 +67,7 @@
 
                         <td colspan="2">
                             <!--Spaces available-->
-                            <div class="container3">###</div>
+                            <div class="container3" id="level4Text">Unknown</div>
                         </td>
 
                         <td width="20%">

@@ -32,7 +32,7 @@
                     reload();
                     setInterval(function () {
                         reload();
-                    },60*1000);
+                    },60 * 1000);
                     function reload() {
                         var dataArr;
                         obtainData("South", 1).then(function () {
@@ -40,6 +40,9 @@
                             var imagePath = "../images/SouthGarage/SouthGarageFloor_1_Layout.png";
                             drawFloor("canvasSGF1", imagePath, dataArr);
 
+                        });
+                        getTotals("South").then(function () {
+                            level1Text.innerText = getSpaces("South", 1);
                         });
                     }
                     
@@ -64,7 +67,7 @@
 
                         <td colspan="2">
                             <!--Spaces available-->
-                            <div class="container3">###</div>
+                            <div class="container3" id="level1Text">Unknown</div>
                         </td>
 
                         <td width="20%">

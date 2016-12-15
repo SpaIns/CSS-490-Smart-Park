@@ -36,7 +36,7 @@
                     setInteval(function () {
                         reload();
 
-                    },60*1000);
+                    },60 * 1000);
                     function reload() {
                         var dataArr;
                         obtainData("North", 3).then(function () {
@@ -44,6 +44,9 @@
                             var imagePath = "../images/NorthGarage/NorthGarageFloor_3_Layout.png";
                             drawFloor("canvasNGF3", imagePath, dataArr);
 
+                        });
+                        getTotals("North").then(function () {
+                            level3Text.innerText = getSpaces("North", 3);
                         });
                     }
                     
@@ -67,7 +70,7 @@
 
                         <td colspan="2">
                             <!--Spaces available-->
-                            <div class="container3">###</div>
+                            <div class="container3" id="level3Text">Unknown</div>
                         </td>
 
                         <td width="20%">

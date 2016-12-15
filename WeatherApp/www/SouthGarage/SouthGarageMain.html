@@ -8,6 +8,7 @@
     <!-- FireBase database-->
     <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
     <script type="text/javascript" src="../scripts/floorSwipes.js" defer></script>
+    <script src="../scripts/getData.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/home.css">
     <link rel="stylesheet" type="text/css" href="../css/mainPageButton.css" />
 </head>
@@ -21,23 +22,13 @@
         <div>
             <center>
                 <script>
-                    var floor1 = document.getElementById("SL1");
-                    var floor2 = document.getElementById("SL2");
-                    var floor3 = document.getElementById("SL3");
-                    var floor4 = document.getElementById("SL4");
-                    var floor5 = document.getElementById("SL5");
                     function load() {
                         getTotals("South").then(function () {
-                            //Alice here is where you would change the text
-
-                            //floor1.value = getSpaces("South", 1);//returns level 1 open spaces
-                            //floor2.value = getSpaces("South", 2);//returns level 2 open spaces
-                            //floor3.value = getSpaces("South", 3);//returns level 3 open spaces
-                            //floor4.value = getSpaces("South", 4);//returns level 4 open spaces
-                            //floor5.value = getSpaces("South", 5);//returns level 4 open spaces
-
-                            //just call getSpaces inside this .then() function with parameters like above
-                            
+                            console.log("made it here!");
+                            level1Text.innerText = getSpaces("South", 1);//returns level 1 open spaces 
+                            level2Text.innerText = getSpaces("South", 2);//returns level 2 open spaces 
+                            level3Text.innerText = getSpaces("South", 3);//returns level 3 open spaces 
+                            level4Text.innerText = getSpaces("South", 4);//returns level 4 open spaces
                         });
                     }
 
@@ -61,35 +52,35 @@
                 <!--Level 1 Button Space-->
                 <a class="btn btn-default" href="SouthGarageLevel1.html" data-ajax="false" id="SL1">
                     <div class="levelNum">1</div>
-                    <div class="levelText">###</div>
+                    <div class="levelText" id="level1Text">Unknown</div>
                 </a>
                 <br />
 
                 <!--Level 2 Button Space-->
                 <a class="btn btn-default" href="SouthGarageLevel2.html" data-ajax="false" id="SL2">
                     <div class="levelNum">2</div>
-                    <div class="levelText">###</div>
+                    <div class="levelText" id="level2Text">Unknown</div>
                 </a>
                 <br />
 
                 <!--Level 3 Button Space-->
                 <a class="btn btn-default" href="SouthGarageLevel3.html" data-ajax="false" id="SL3">
                     <div class="levelNum">3</div>
-                    <div class="levelText">###</div>
+                    <div class="levelText" id="level3Text">Unknown</div>
                 </a>
                 <br />
 
                 <!--Level 4 Button Space-->
                 <a class="btn btn-default" href="SouthGarageLevel4.html" data-ajax="false" id="SL4">
                     <div class="levelNum">4</div>
-                    <div class="levelText">###</div>
+                    <div class="levelText" id="level4Text">Unknown</div>
                 </a>
                 <br />
               
-                <!--Level 4 Button Space-->
+                <!--Level 5 Button Space-->
                 <a class="btn btn-default" href="SouthGarageLevel5.html" data-ajax="false" id="SL5">
                     <div class="levelNum">5</div>
-                    <div class="levelText">###</div>
+                    <div class="unknown" id="level5Text">Unknown</div>
                 </a>
                 <br />
 

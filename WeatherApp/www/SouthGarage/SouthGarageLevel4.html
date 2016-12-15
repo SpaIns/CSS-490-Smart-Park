@@ -36,6 +36,9 @@
                             var imagePath = "../images/SouthGarage/SouthGarageFloor_4_Layout.png";
                             drawFloor("canvasSGF4", imagePath, dataArr);
                         });
+                        getTotals("South").then(function () {
+                            level4Text.innerText = "At least "+ getSpaces("South", 4);
+                        });
                     
                     }
 
@@ -60,7 +63,7 @@
 
                         <td colspan="2">
                             <!--Spaces available-->
-                            <div class="container3">###</div>
+                            <div class="container3" id="level4Text">Unknown</div>
                         </td>
 
                         <td width="20%">

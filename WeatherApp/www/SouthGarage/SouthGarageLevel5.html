@@ -31,13 +31,16 @@
                     reload();
                     setInterval(function () {
                         reload();
-                    });
+                    },60*1000);
                     function reload() {
                         var dataArr;
                         obtainData("South", 5).then(function () {
                             dataArr = getArray();
                             var imagePath = "../images/SouthGarage/SouthGarageFloor_5_Layout.png";
                             drawFloor("canvasSGF5", imagePath, dataArr);
+                        });
+                        getTotals("South").then(function () {
+                            //for when we can get level 5 data
                         });
                     }
                     
@@ -62,7 +65,7 @@
 
                         <td colspan="2">
                             <!--Spaces available-->
-                            <div class="container3">###</div>
+                            <div class="container3" id="level5Text">Unknown</div>
                         </td>
 
                         <td width="20%">

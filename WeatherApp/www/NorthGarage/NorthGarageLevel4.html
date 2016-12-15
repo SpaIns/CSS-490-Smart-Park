@@ -33,7 +33,7 @@
                     reload();
                     setInterval(function () { 
                         reload();
-                    },60*1000);
+                    },60 * 1000);
                     function reload() {
                         var dataArr;
                         obtainData("North", 4).then(function () {
@@ -62,7 +62,7 @@
 
                         <td colspan="2">
                             <!--Spaces available-->
-                            <div class="container3">###</div>
+                            <div class="container3" id="level4Text">Unknown</div>
                         </td>
 
                         <td width="20%">

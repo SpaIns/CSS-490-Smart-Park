@@ -29,12 +29,6 @@
                 <canvas id='canvasNGF1' width='8000' height='3500'></canvas>
 
                 <script>
-                    getTotals("North").then(function () {
-                        var x = getSpaces("North",1)
-                    });
-                </script>
-
-                <script>
                     reload();
                     setInterval(function () {
                         reload();
@@ -46,6 +40,10 @@
                             var imagePath = "../images/NorthGarage/NorthGarageFloor_1_Layout.png";
                             drawFloor("canvasNGF1", imagePath, dataArr);
                             console.log("dataArray length is: " + dataArr.length);
+                        });
+
+                        getTotals("North").then(function () {
+                            level1Text.innerText = getSpaces("North", 1);
                         });
                     }
                     
@@ -71,7 +69,7 @@
 
                         <td colspan="2">
                             <!--Spaces available-->
-                            <div class="container3">###</div>
+                            <div class="container3" id="level1Text">Unknown</div>
                         </td>
 
                         <td width="20%">

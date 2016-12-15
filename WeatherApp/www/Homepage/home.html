@@ -1,79 +1,134 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        
-        <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
-        <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js" defer></script>
-           
-        <link rel="stylesheet" type="text/css" href="../css/home.css">
-        <!--<link rel="stylesheet" type="text/css" href="../css/BootStrap/bootstrap.css" />
-            -->
-        <title>Homepage</title>
-    </head>
+<head>
+    <title>North Parking Garage</title>
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
+    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <!-- FireBase database-->
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
+    <script type="text/javascript" src="../scripts/floorSwipes.js" defer></script>
+    <script src="../scripts/getData.js"></script>
+    <script src="../scripts/canvas.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <link rel="stylesheet" type="text/css" href="../css/mainPageButton.css" />
+    <title>Homepage</title>
+</head>
 
-    <body bgcolor="#444444">
-    <div id="wrapper">
-        <!--Header-->
-        <header><center>Smart Park</center></header>
-        <br />
+<body bgcolor="#444444">
+    <script>
+        $.mobile.loading().hide();
+    </script>
+    <!--Header-->
+    <header><center>Smart Park</center></header>
+    <div class="content">
+        <div id="wrapper">
 
-        <!--Links-->
-        <div id="redirects">
-            <center>
-                <!--North Garage-->
-                <div class="container">
-                    <div class="col-md-1">
-                        <center><a class="btn btn-default" href="../NorthGarage/NorthGarageMain.html" data-ajax="false"><font size="6" color="blue">North Garage</font></a></center>
+            <!--Links-->
+            <div id="redirects">
+                    <script>
+                        function load() {
+                            getTotals("South").then(function () {
+                                console.log("made it here!");
+                                southGarageText.innerText = getSpaces("South", 1) + getSpaces("South", 2) + getSpaces("South", 3) + getSpaces("South", 4) + getSpaces("South", 5);
+                            });
+                            getTotals("North").then(function () {
+                                console.log("made it here!");
+                                northGarageText.innerText = getSpaces("North", 1) + getSpaces("North", 2) + getSpaces("North", 3) + getSpaces("North", 4);
+                            })
+                        }
+
+                        setInterval(function () {
+                            load()
+
+                        }, 60 * 1000);
+
+                        initTotals();
+                        load();
+                    </script>
+                <center>
+                    <h2>Select a parking garage</h2>
+                    <br />
+                    <!--North Garage-->
+                    <div class="container">
+                        <div class="col-md-1">
+                            <a class="btn btn-north" href="../NorthGarage/NorthGarageMain.html" data-ajax="false">
+                                <p class="title"><font size="6">North Garage</font></p>
+                            </a>
+                        </div>
+                        <hr />
+                        <font size="2">Located near Cascadia Community College</font>
+                        <hr />
+                        <p class="thick">Parking Spaces Available: </p><div class="bold" id="northGarageText">Unknown</div>
                     </div>
-                    <hr />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut malesuada venenatis sem quis vulputate. Etiam ut purus non nulla congue congue. Aliquam ullamcorper maximus nulla, gravida.
-                </div>
-            </center>
-            <br />
-            <center>
-                <!--South Garage-->
-                <div class="container">
-                    <div class="col-md-1">
-                        <center><a class="btn btn-default" href="../SouthGarage/SouthGarageMain.html" data-ajax="false"><font size="6" color="blue">South Garage</font></a></center>
-                    </div>
-                    <hr />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut malesuada venenatis sem quis vulputate. Etiam ut purus non nulla congue congue. Aliquam ullamcorper maximus nulla, gravida.
-                </div>
-            </center>
-        </div>
+                    <br />
 
-        <!--Footer-->
-        <footer>
-            <div data-role="navbar">
-                <div id="redirects">
-                    <ul>
-                        <li><a class="btn btn-default" id="favorite-lot" href="" data-ajax="false">Favorite Lot</a></li>
-                        <li><a class="btn btn-default" href="../preferences.html" data-ajax="false">Preferences</a></li>
-                        <li style="float:right"><a class="btn btn-default" href="../Homepage/home.html" data-ajax="false">Home</a></li>
-                    </ul>
-                </div>
+                    <!--South Garage-->
+                    <div class="container">
+                        <div class="col-md-1">
+                            <a class="btn btn-south" href="../SouthGarage/SouthGarageMain.html" data-ajax="false">
+                                <p class="title"><font size="6">South Garage</font></p>
+                            </a>
+                        </div>
+                        <hr />
+                        <font size="2">Located near UW1 and UW2</font>
+                        <hr />
+                        <p class="thick"> Parking Spaces Available: </p><div class="bold" id="southGarageText"></div>
+                    </div>
+                    <br />
+
+                    <!--Extra-->
+                    <a class="btn btn-newuser" href="../Homepage/newuser.html" data-ajax="false">
+                        <center>First time user?</center>
+                    </a>
+
+                </center>
             </div>
-        </footer>
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-                //Enable the changing of the Href here
-                var href = window.localStorage.getItem("favoriteLot");
-                if (href != null) {
-                    $('#favorite-lot').prop("href", href);
-                    //alert(href);
-                }
-                else {
-                    //make an onclick action that states that the pref isn't set as alert on click
-                    $('#favorite-lot').click(function () {
-                        alert("Favorite lot not set - go to preferences menu to set.");
-                    });
-                }
-            });
-        </script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    //Enable the changing of the Href here
+                    var href = window.localStorage.getItem("favoriteLot");
+                    if (href != null) {
+                        $('#favorite-lot').prop("href", href);
+                        //alert(href);
+                    }
+                    else {
+                        //make an onclick action that states that the pref isn't set as alert on click
+                        $('#favorite-lot').click(function () {
+                            alert("Favorite lot not set - go to preferences menu to set.");
+                        });
+                    }
+                });
+            </script>
 
-
+        </div>
     </div>
+
+    <!--Footer-->
+    <footer>
+        <div data-role="navbar">
+            <div id="redirects">
+                <ul>
+                    <li>
+                        <a class="btn btn-nav" id="favorite-lot" href="" data-ajax="false">
+                            <img src="../images/favorite.png" width="30" height="30" />
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-nav" href="../preferences.html" data-ajax="false">
+                            <img src="../images/preferences.png" width="30" height="30" />
+                        </a>
+                    </li>
+                    <li style="float:right">
+                        <a class="btn btn-nav" href="../Homepage/home.html" data-ajax="false">
+                            <img src="../images/homeLogo.png" width="40" height="30" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

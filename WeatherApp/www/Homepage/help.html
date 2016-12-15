@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>North Parking Garage</title>
+    <script src="../scripts/JQuery/jquery-2.2.4.min.js"></script>
+    <script src="../scripts/JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+    <!-- FireBase database-->
+    <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
+    <script type="text/javascript" src="../scripts/floorSwipes.js" defer></script>
+    <script src="../scripts/getData.js"></script>
+    <script src="../scripts/canvas.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <link rel="stylesheet" type="text/css" href="../css/mainPageButton.css" />
+    <link rel="stylesheet" type="text/css" href="../css/extra.css" />
+    <title>Homepage</title>
+</head>
+
+<body bgcolor="#444444">
+    <script>
+        $.mobile.loading().hide();
+    </script>
+    <!--Header-->
+    <header><center>Smart Park</center></header>
+    <div class="content">
+        <div id="wrapper">
+            <center>
+                <div class="container">
+                    <br />
+                    <h2>Additional</h2>
+                    <h2>Parking Locations</h2>
+                   
+                    <br />
+                    South Surface Lots:
+                    <br />
+                    One is located on NE 180th ST, and the other is located south of the South Parking Garage.
+                    <br />
+                    
+                    <br />
+                    Chase House Lot:
+                    <br />
+                    Located east of the South Garage. Metered parking also available.
+                    <br />
+
+                    <br />
+                    Campus Way NE:
+                    <br />
+                    Limited parking available.
+                    <br />
+
+                    <br />
+                    Beardslee Building:
+                    <br />
+                    Located on Beardslee Blvd.
+                    <br />
+                    
+                    <br />
+                    Husky Village:
+                    <br />
+                    There are numbered parking spots available to all students.
+                    <br />
+
+                    <br />
+                    Behind Husky Hall:
+                    <br />
+                    Located on 185th ST.
+                    <br />
+
+
+
+                    <p align="left" style="font-size: 13px">
+                    <p class="thick">
+                        
+                    </p>
+                    <p align="left" style="margin:5px"></p>
+
+                </div>
+            </center>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    //Enable the changing of the Href here
+                    var href = window.localStorage.getItem("favoriteLot");
+                    if (href != null) {
+                        $('#favorite-lot').prop("href", href);
+                        //alert(href);
+                    }
+                    else {
+                        //make an onclick action that states that the pref isn't set as alert on click
+                        $('#favorite-lot').click(function () {
+                            alert("Favorite lot not set - go to preferences menu to set.");
+                        });
+                    }
+                });
+            </script>
+
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer>
+        <div data-role="navbar">
+            <div id="redirects">
+                <ul>
+                    <li>
+                        <a class="btn btn-nav" id="favorite-lot" href="" data-ajax="false">
+                            <img src="../images/favorite.png" width="30" height="30" />
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-nav" href="../preferences.html" data-ajax="false">
+                            <img src="../images/preferences.png" width="30" height="30" />
+                        </a>
+                    </li>
+                    <li style="float:right">
+                        <a class="btn btn-nav" href="../Homepage/home.html" data-ajax="false">
+                            <img src="../images/homeLogo.png" width="40" height="30" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,22 +1,32 @@
 ﻿body {
     min-height: 100%;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.content {
+    padding: 15px;
 }
 
 header {
     bottom: 0;
-    width: 100%;
     color: white;
     background: black;
     padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
 }
 
 footer {
     bottom: 0;
-    width: 100%;
     color: white;
-    background: black;    
+    background: black;
     position: fixed;
+    overflow: hidden;
+    width: 100%;
+    font-size: 15px;
 }
 
 ul {
@@ -26,13 +36,14 @@ ul {
 }
 
 li {
-    display: inline; 
+    display: inline;
     float: left;
     text-align: center;
 }
 
 a {
     display: block;
+    text-decoration: none;
 }
 
 li a {
@@ -44,10 +55,10 @@ li a {
 }
 
 .nav ul {
-  list-style: none;
-  text-align: center;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
 .active {
@@ -60,4 +71,107 @@ li a {
     padding: 5px;
     border: 2px solid black;
     background: white;
+    border-radius: 10px;
+}
+
+.container2 {
+    width: 90%;
+    padding: 10px;
+    border: 2px solid black;
+    background: white;
+    border-radius: 10px;
+}
+
+.container3 {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    display: table-cell;
+    text-align: center;
+    vertical-align:middle;
+    font-size: 80px;
+}
+
+.levelNum {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border: 2px solid black;
+    background: black;
+    color: white;
+    float: left;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.levelText {
+    padding-left: 50px;
+    font-size: 35px;
+    float: right;
+    width: 120px;
+    color: green;
+}
+
+.unknown {
+    padding-left: 50px;
+    font-size: 35px;
+    float: right;
+    width: 120px;
+    color: black;
+}
+
+.columnText {
+    width: 80%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: white;
+    font-size: 15px;
+}
+
+.columnLeft {
+    width: 40px;
+    float: left;
+    padding-left: 10px;
+}
+
+.columnRight {
+    padding-left: 70px;
+}
+
+button {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    padding: 5px;
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    border-radius: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+p.thick {
+    font-weight: bold;
+    margin: 0px;
+}
+
+p.title {
+    font-family: 'Arial Rounded MT';
+    margin: 3px;
+}
+
+.bold {
+    color: green;
+    font-size: 40px;
+}
+
+h2 {
+    margin: 0px;
+    padding: 0px;
 }

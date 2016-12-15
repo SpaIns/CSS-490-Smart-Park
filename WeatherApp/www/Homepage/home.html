@@ -17,7 +17,7 @@
 
 <body bgcolor="#444444">
     <script>
-            $.mobile.loading().hide();
+        $.mobile.loading().hide();
     </script>
     <!--Header-->
     <header><center>Smart Park</center></header>
@@ -26,17 +26,40 @@
 
             <!--Links-->
             <div id="redirects">
-                <center>
+                    <script>
+                        function load() {
+                            getTotals("South").then(function () {
+                                console.log("made it here!");
+                                southGarageText.innerText = getSpaces("South", 1) + getSpaces("South", 2) + getSpaces("South", 3) + getSpaces("South", 4) + getSpaces("South", 5);
+                            });
+                            getTotals("North").then(function () {
+                                console.log("made it here!");
+                                northGarageText.innerText = getSpaces("North", 1) + getSpaces("North", 2) + getSpaces("North", 3) + getSpaces("North", 4);
+                            })
+                        }
 
+                        setInterval(function () {
+                            load()
+
+                        }, 60 * 1000);
+
+                        initTotals();
+                        load();
+                    </script>
+                <center>
+                    <h2>Select a parking garage</h2>
+                    <br />
                     <!--North Garage-->
                     <div class="container">
                         <div class="col-md-1">
                             <a class="btn btn-north" href="../NorthGarage/NorthGarageMain.html" data-ajax="false">
-                                <font size="6">North Garage</font>
+                                <p class="title"><font size="6">North Garage</font></p>
                             </a>
                         </div>
                         <hr />
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut malesuada venenatis sem quis vulputate. Etiam ut purus non nulla congue congue. Aliquam ullamcorper maximus nulla, gravida.
+                        <font size="2">Located near Cascadia Community College</font>
+                        <hr />
+                        <p class="thick">Parking Spaces Available: </p><div class="bold" id="northGarageText">Unknown</div>
                     </div>
                     <br />
 
@@ -44,13 +67,15 @@
                     <div class="container">
                         <div class="col-md-1">
                             <a class="btn btn-south" href="../SouthGarage/SouthGarageMain.html" data-ajax="false">
-                                <font size="6">South Garage</font>
+                                <p class="title"><font size="6">South Garage</font></p>
                             </a>
                         </div>
                         <hr />
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut malesuada venenatis sem quis vulputate. Etiam ut purus non nulla congue congue. Aliquam ullamcorper maximus nulla, gravida.
+                        <font size="2">Located near UW1 and UW2</font>
+                        <hr />
+                        <p class="thick"> Parking Spaces Available: </p><div class="bold" id="southGarageText"></div>
                     </div>
-                    <br /><br />
+                    <br />
 
                     <!--Extra-->
                     <a class="btn btn-newuser" href="../Homepage/newuser.html" data-ajax="false">
@@ -87,7 +112,7 @@
                 <ul>
                     <li>
                         <a class="btn btn-nav" id="favorite-lot" href="" data-ajax="false">
-                        <img src="../images/favorite.png" width="30" height="30" />
+                            <img src="../images/favorite.png" width="30" height="30" />
                         </a>
                     </li>
                     <li>

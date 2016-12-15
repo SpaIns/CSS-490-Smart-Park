@@ -19,6 +19,9 @@
 <body bgcolor="#4B2E83">
     <div id="wrapper">
         <!--Header-->
+        <script>
+            $.mobile.loading().hide();
+        </script>
         <header><center>South Garage - Level 4</center></header>
         <div>
             <center>
@@ -37,7 +40,7 @@
                             drawFloor("canvasSGF4", imagePath, dataArr);
                         });
                         getTotals("South").then(function () {
-                            level4Text.innerText = "At least "+ getSpaces("South", 4);
+                            level4Text.innerText = getSpaces("South", 4);
                         });
                     
                     }

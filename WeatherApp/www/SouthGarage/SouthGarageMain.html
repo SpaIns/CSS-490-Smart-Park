@@ -22,20 +22,13 @@
         <div>
             <center>
                 <script>
-                  
                     function load() {
                         getTotals("South").then(function () {
                             console.log("made it here!");
-                            //Alice here is where you would change the text
-                            //leveliText is the id I added for each floor
-
                             level1Text.innerText = getSpaces("South", 1);//returns level 1 open spaces 
                             level2Text.innerText = getSpaces("South", 2);//returns level 2 open spaces 
                             level3Text.innerText = getSpaces("South", 3);//returns level 3 open spaces 
-                            level4Text.innerText ="At least "+ getSpaces("South", 4);//returns level 4 open spaces
-
-                            //just call getSpaces inside this .then() function with parameters like above
-                            
+                            level4Text.innerText = getSpaces("South", 4);//returns level 4 open spaces
                         });
                     }
 
@@ -84,10 +77,10 @@
                 </a>
                 <br />
               
-                <!--Level 4 Button Space-->
+                <!--Level 5 Button Space-->
                 <a class="btn btn-default" href="SouthGarageLevel5.html" data-ajax="false" id="SL5">
                     <div class="levelNum">5</div>
-                    <div class="levelText" id="level5Text">Unknown</div>
+                    <div class="unknown" id="level5Text">Unknown</div>
                 </a>
                 <br />
 

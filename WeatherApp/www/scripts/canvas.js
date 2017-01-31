@@ -1290,8 +1290,7 @@ var sGF5 = [
    { spaceNumber: "824", xCor: "6849", yCor: "2865", yMove: "up" }
 ];
 
-function clearCanvas(canvasId)
-{
+function clearCanvas(canvasId) {
     var cnvs = document.getElementById(canvasId);
     var ctx = cnvs.getContext("2d");
     ctx.clearRect(0, 0, cnvs.width, cnvs.height);
@@ -1337,9 +1336,12 @@ function drawFloor(canvasId, imagePath, dataArray) {
 
         // iterate through the data overlay
         for (var i = 0; i < overlay.length; i++) {
-
+            //if (dataArray[ii].spaceNumber >= 455) {
+            console.log("The space " + dataArray[i].spaceNumber + " is in the database. It's ");
+            //}
             // iterate through the array obtained from the database
             for (var ii = 0; ii < dataArray.length; ii++) {
+
                 // if the parking space from the data overlay and database match
                 if (overlay[i].spaceNumber == dataArray[ii].spaceNumber) {
                     // transfer the availability and space type from database to local variables

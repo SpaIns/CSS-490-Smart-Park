@@ -33,6 +33,10 @@ function obtainData(garage, floor) {
 
             snap.forEach(function (cSnap) {//for each space 
                 val = cSnap.val();
+                if (val.spaceNumber == 458 || val.spaceNumber == 459)
+                {
+                    console.log("Space 458 or 459 is in");
+                }
                 if (val.garage == garage && val.floor == floor) { //if the floor and garage are correct          
                     dict = { "spaceNumber": val.spaceNumber, "spaceType": val.spaceType, "available": val.isAvailable, "pref": "true" };
                     data.push(dict);//save the number, type, availability, and preference 
